@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form1 – Data Collection & Pre-Analytics</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Stage 2 – Form1: Capturing and Preparing Data for Analysis</h1>
+        <p>This form captures structured data and stores it in SQL Server to power descriptive and diagnostic analytics.</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>📘 What Is Data Analytics?</h2>
+            <p><strong>Data analytics</strong> involves transforming raw data into insights:</p>
+            <ul>
+                <li><strong>Descriptive analytics:</strong> “What happened?” It summarizes past data.</li>
+                <li><strong>Diagnostic analytics:</strong> “Why did it happen?” It explains reasons for changes or patterns.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🛠 Visual Studio Setup</h2>
+            <ol>
+                <li>In Visual Studio, create a <strong>Windows Forms App (.NET Framework, VB.NET)</strong> project.</li>
+                <li>
+                    Add controls:
+                    <ul>
+                        <li>TextBoxes: <code>TextBoxAmountSpent</code>, <code>TextBoxSpentOn</code>, <code>TextBoxCategory</code>, <code>TextBoxPlaceSpent</code></li>
+                        <li>ComboBox: <code>ComboBoxPaymentMethod</code> (with payment options)</li>
+                        <li>DateTimePicker: <code>DateTimePickerDateSpent</code></li>
+                        <li>DataGridView: <code>dgvExpenses</code> with 7 columns</li>
+                        <li>Buttons: Insert, Update, Clear, Dashboard, Report</li>
+                    </ul>
+                </li>
+                <li>Install NuGet package: <code>Microsoft.Data.SqlClient</code></li>
+                <li>
+                    In <code>Settings.settings</code>, add:
+                    <br><code>Name:</code> DbConnectionString |
+                    <code>Type:</code> (Connection String) |
+                    <code>Value:</code> <code>Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=ExpensesDb;Integrated Security=True;</code>
+                </li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Initial Imports and Form Setup for Form1</h2>
+            <p>
+                Before diving into the interactive parts (like the insert click event), ensure you include these essential import statements and the form's initial load method.
+                These lines import the necessary libraries for SQL connectivity and set up the form to automatically load existing expense records when it starts.
+            </p>
+            <pre><code>
+Imports Microsoft.Data.SqlClient
+Imports System.Data
+
+Public Class Form1
+
+    ' Form Load: Retrieve existing data from SQL Server upon form initialization.
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        LoadExpensesFromDatabase()
+    End Sub
+
+    ' ... (Insert click and other event handlers follow)
+End Class
+  </code></pre>
+            <p>
+                Place this block at the very top of your Form1.vb file. This ensures that all necessary libraries are imported and your form is initialized with up-to-date expense data.
+            </p>
+        </section>
+
+
+        <section>
+            <h2>💾 Insert Logic</h2>
+            <pre><code>
+Private Sub ButtonInsert_Click(...) Handles ButtonInsert.Click
+    Dim amount As Decimal
+    If Not Decimal.TryParse(TextBoxAmountSpent.Text, amount) Then
+        MessageBox.Show("Enter a valid amount.") : Exit Sub
+    End If
+
+    Dim connStr = My.Settings.DbConnectionString
+    Using conn As New SqlConnection(connStr)
+        conn.Open()
+        Dim transaction = conn.BeginTransaction()
+
+        Try
+            Dim query = "
+            INSERT INTO Expenses (DateSpent, AmountSpent, SpentOn, Category, PlaceSpent, PaymentMethod)
+            VALUES (@DateSpent, @AmountSpent, @SpentOn, @Category, @PlaceSpent, @PaymentMethod);
+            SELECT CAST(SCOPE_IDENTITY() AS INT);"
+
+            Using cmd As New SqlCommand(query, conn, transaction)
+                cmd.Parameters.AddWithValue("@DateSpent", DateTimePickerDateSpent.Value.Date)
+                cmd.Parameters.AddWithValue("@AmountSpent", amount)
+                cmd.Parameters.AddWithValue("@SpentOn", TextBoxSpentOn.Text)
+                cmd.Parameters.AddWithValue("@Category", TextBoxCategory.Text)
+                cmd.Parameters.AddWithValue("@PlaceSpent", TextBoxPlaceSpent.Text)
+                cmd.Parameters.AddWithValue("@PaymentMethod", ComboBoxPaymentMethod.Text)
+
+                Dim newId = Convert.ToInt32(cmd.ExecuteScalar())
+                transaction.Commit()
+
+                dgvExpenses.Rows.Add(newId, DateTimePickerDateSpent.Value.Date, amount,
+                    TextBoxSpentOn.Text, TextBoxCategory.Text,
+                    TextBoxPlaceSpent.Text, ComboBoxPaymentMethod.Text)
+            End Using
+        Catch ex As Exception
+            transaction.Rollback()
+            MessageBox.Show("Error saving record: " & ex.Message)
+        End Try
+    End Using
+
+    ClearControls()
+End Sub
+    </code></pre>
+            <p>This inserts new expenses into the SQL table using parameters, commits the transaction, and displays the result in the grid.</p>
+        </section>
+
+        <section>
+            <h2>📄 Load Expenses on Form Load</h2>
+            <pre><code>
+Private Sub LoadExpensesFromDatabase()
+    dgvExpenses.Rows.Clear()
+    Dim connStr = My.Settings.DbConnectionString
+
+    Using conn As New SqlConnection(connStr)
+        Dim query = "SELECT ExpenseId, DateSpent, AmountSpent, SpentOn, Category, PlaceSpent, PaymentMethod <br />FROM Expenses ORDER BY DateSpent"
+        Using cmd As New SqlCommand(query, conn)
+            conn.Open()
+            Using reader = cmd.ExecuteReader()
+                While reader.Read()
+                    dgvExpenses.Rows.Add(reader("ExpenseId"), reader("DateSpent"), reader("AmountSpent"),
+                                         reader("SpentOn"), reader("Category"),
+                                         reader("PlaceSpent"), reader("PaymentMethod"))
+                End While
+            End Using
+        End Using
+    End Using
+End Sub
+    </code></pre>
+            <p>Retrieves data using <code>SELECT</code> and fills the DataGridView — enabling users to visually inspect their transaction history.</p>
+        </section>
+
+        <section>
+            <h2>DataGridView Cell Click and Update Event</h2>
+            <p>
+                The following code snippets demonstrate essential functionality in Form1. When a user clicks on a row in the DataGridView, the form fields are populated with that row’s data (the cell click event). Then, the "Update" button allows the user to modify the data and commit the changes back to SQL Server.
+            </p>
+
+            <h3>DataGridView Cell Click Event</h3>
+            <pre><code>
+Private Sub dgvExpenses_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvExpenses.CellClick
+    ' Ensure the clicked cell belongs to a valid row (not the header or new row)
+    If e.RowIndex >= 0 AndAlso Not dgvExpenses.Rows(e.RowIndex).IsNewRow Then
+        Dim row = dgvExpenses.Rows(e.RowIndex)
+        ' Populate the form fields with values from the selected row
+        DateTimePickerDateSpent.Value = Convert.ToDateTime(row.Cells("Column2").Value)
+        TextBoxAmountSpent.Text = row.Cells("Column3").Value?.ToString()
+        TextBoxSpentOn.Text = row.Cells("Column4").Value?.ToString()
+        TextBoxCategory.Text = row.Cells("Column5").Value?.ToString()
+        TextBoxPlaceSpent.Text = row.Cells("Column6").Value?.ToString()
+        ComboBoxPaymentMethod.Text = row.Cells("Column7").Value?.ToString()
+    End If
+End Sub
+  </code></pre>
+            <p>
+                <strong>Explanation:</strong> When a user clicks a cell in the DataGridView, this event handler checks if the row index is valid. It then retrieves values from each cell (using column indexes or names) and populates the corresponding input controls (DateTimePicker and TextBoxes) on the form. This sets the stage for a smooth update process.
+            </p>
+
+            <h3>Update Button Event</h3>
+            <pre><code>
+Private Sub ButtonUpdate_Click(sender As Object, e As EventArgs) Handles ButtonUpdate.Click
+    ' Ensure a row is selected.
+    If dgvExpenses.SelectedRows.Count = 0 Then
+        MessageBox.Show("Please select a row to update.")
+        Exit Sub
+    End If
+
+    Dim selectedRow = dgvExpenses.SelectedRows(0)
+    Dim id = selectedRow.Cells("Column1").Value
+    If id Is Nothing Then Exit Sub
+
+    ' Validate and parse the updated amount.
+    Dim amount As Decimal
+    If Not Decimal.TryParse(TextBoxAmountSpent.Text, amount) Then
+        MessageBox.Show("Enter a valid amount.")
+        Exit Sub
+    End If
+
+    Dim connStr As String = My.Settings.DbConnectionString
+    Using conn As New SqlConnection(connStr)
+        conn.Open()
+        ' Begin a SQL transaction for safe update operation.
+        Dim transaction = conn.BeginTransaction()
+        Try
+            Dim query As String = "
+                UPDATE Expenses SET 
+                    DateSpent = @DateSpent,
+                    AmountSpent = @AmountSpent,
+                    SpentOn = @SpentOn,
+                    Category = @Category,
+                    PlaceSpent = @PlaceSpent,
+                    PaymentMethod = @PaymentMethod
+                WHERE ExpenseId = @ExpenseId;"
+
+            Using cmd As New SqlCommand(query, conn, transaction)
+                ' Set parameter values using the updated form controls.
+                cmd.Parameters.AddWithValue("@DateSpent", DateTimePickerDateSpent.Value.Date)
+                cmd.Parameters.AddWithValue("@AmountSpent", amount)
+                cmd.Parameters.AddWithValue("@SpentOn", TextBoxSpentOn.Text)
+                cmd.Parameters.AddWithValue("@Category", TextBoxCategory.Text)
+                cmd.Parameters.AddWithValue("@PlaceSpent", TextBoxPlaceSpent.Text)
+                cmd.Parameters.AddWithValue("@PaymentMethod", ComboBoxPaymentMethod.Text)
+                cmd.Parameters.AddWithValue("@ExpenseId", Convert.ToInt32(id))
+                cmd.ExecuteNonQuery()
+            End Using
+
+            transaction.Commit()
+
+            ' Update the DataGridView to reflect changes.
+            selectedRow.Cells("Column2").Value = DateTimePickerDateSpent.Value.Date
+            selectedRow.Cells("Column3").Value = amount
+            selectedRow.Cells("Column4").Value = TextBoxSpentOn.Text
+            selectedRow.Cells("Column5").Value = TextBoxCategory.Text
+            selectedRow.Cells("Column6").Value = TextBoxPlaceSpent.Text
+            selectedRow.Cells("Column7").Value = ComboBoxPaymentMethod.Text
+
+            ' Clear the form inputs after updating.
+            ClearControls()
+        Catch ex As Exception
+            transaction.Rollback()
+            MessageBox.Show("Update failed: " & ex.Message)
+        End Try
+    End Using
+End Sub
+  </code></pre>
+            <p>
+                <strong>Explanation:</strong> The ButtonUpdate_Click event verifies that a row is selected, parses the updated values, and initiates a SQL transaction to update the record. Using parameterized queries (to protect against SQL injection), it updates the record in the database. If successful, the DataGridView is updated to reflect the new data. Finally, the form input controls are cleared for a clean subsequent operation.
+            </p>
+        </section>
+
+
+        <section>
+            <h2>🧹 Clear Form Fields</h2>
+            <pre><code>
+Private Sub ClearControls()
+    DateTimePickerDateSpent.Value = Date.Today
+    TextBoxAmountSpent.Clear()
+    TextBoxSpentOn.Clear()
+    TextBoxCategory.Clear()
+    TextBoxPlaceSpent.Clear()
+    ComboBoxPaymentMethod.SelectedIndex = -1
+End Sub
+
+Private Sub ButtonClear_Click(sender As Object, e As EventArgs) Handles ButtonClear.Click
+    ClearControls()
+End Sub
+    </code></pre>
+            <p><strong>Explanation:</strong> The Clear button resets all input controls to default state — this is especially helpful after adding or editing data, maintaining a clean UI experience.</p>
+        </section>
+
+        <section>
+            <h2>🧭 Navigation Buttons</h2>
+            <pre><code>
+Private Sub ButtonDashboard_Click(sender As Object, e As EventArgs) Handles ButtonDashboard.Click
+    Dim Dashboard As New Form2
+    Dashboard.ShowDialog()
+End Sub
+
+Private Sub ButtonReport_Click(sender As Object, e As EventArgs) Handles ButtonReport.Click
+    Dim Report As New Form3
+    Report.ShowDialog()
+End Sub
+    </code></pre>
+            <p><strong>Explanation:</strong> These two buttons launch <code>Form2</code> and <code>Form3</code> as modal dialogs. Form2 will later handle dashboard visualizations, and Form3 will handle DOCX reports — both driven by SQL queries based on the data curated here in Form1.</p>
+        </section>
+
+        <section>
+            <h2>✅ Recap: What Form1 Achieves</h2>
+            <ul>
+                <li>Serves as the main input interface for SQL-backed expense data</li>
+                <li>Reinforces safe SQL practices via parameterized queries and transactions</li>
+                <li>Prepares clean, query-ready data for descriptive and diagnostic analytics</li>
+                <li>Builds learner confidence by connecting code, forms, and databases in real time</li>
+            </ul>
+            <p><em>With Form1, you're not just adding expenses — you're building a live, learner-driven data infrastructure.</em></p>
+        </section>
+
+        <section>
+            <h2>📚 Coming Up: Form2 and Form3</h2>
+            <p><strong>Form2</strong> will introduce diagnostic analytics via charts and graphs exported to Excel, and <strong>Form3</strong> will guide learners through building reportable insights in DOCX format.</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>SQL Craft Academy &copy; 2025 | Learning Beyond Limits</p>
+    </footer>
+
+</body>
+</html>
