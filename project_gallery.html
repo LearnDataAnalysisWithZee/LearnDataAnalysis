@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Forms Gallery</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main>
+    <section>
+      <h2>📸 Forms Gallery</h2>
+      <div id="gallery" style="text-align: center;">
+        <img id="gallery-image" src="images/form1img.png" alt="Form 1 UI" style="width: 100%; max-width: 700px; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.4);">
+        <p id="gallery-caption">🧾 Form1: Initial data entry interface with validation controls.</p>
+        <div class="controls" style="margin-top: 1rem;">
+          <button onclick="prevImage()">Previous</button>
+          <button onclick="nextImage()">Next</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const images = [
+      { src: 'images/form1img.png', caption: '🧾 Form1: Pre-analysis interface for Sql Server DB.' },
+      { src: 'images/form2imga.png', caption: '📊 Form2a: Diagnostic analytics engine to export to Excel where dashboard is created for visualising insights, explains why did it happen or how so did happen, what happened!' },
+      { src: 'images/form2imgb.png', caption: '📊 Form2b: When the export button is clicked and Excel workbook with seven sheets is prepared and saved wherever desirable so as to make sense of the descriptive report on the way.' },
+      { src: 'images/form3img.png', caption: '📈 Form3: Descriptive report explaining what happened that the dashboard revealed prepared in a word document file for auditing.' }
+    ];
+
+    let currentIndex = 0;
+
+    function showImage(index) {
+      const image = document.getElementById('gallery-image');
+      const caption = document.getElementById('gallery-caption');
+      image.src = images[index].src;
+      caption.textContent = images[index].caption;
+    }
+
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
+    }
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    }
+
+    // Initialize
+    showImage(currentIndex);
+  </script>
+</body>
+</html>
+
+
