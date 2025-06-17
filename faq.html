@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>FAQ — SqlCraftAcademy</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <main>
+    <h1>Frequently Asked Questions</h1>
+
+    <input type="text" id="searchBox" placeholder="Search FAQs..." />
+
+    <section class="faq">
+      <h2>1. Using a Graphical Interface</h2>
+      <p><strong>Q:</strong> Why use a graphical interface when working with a database?</p>
+      <p><strong>A:</strong> A graphical interface offers a more intuitive and accessible way to interact with the database, making tasks easier—especially for users who aren’t comfortable writing SQL code directly.</p>
+    </section>
+
+    <section class="faq">
+      <h2>2. Security and Personal Use</h2>
+      <p><strong>Q:</strong> Isn’t this a financial app—and doesn’t that mean it should include a secure login system?</p>
+      <p><strong>A:</strong> Since this is a personal desktop app, it relies on the user’s existing Windows login for security. Each user runs the app independently on their own device, which keeps things simple and secure for individual use.</p>
+    </section>
+
+    <section class="faq">
+      <h2>3. Sharing Your Application</h2>
+      <p><strong>Q:</strong> If I wanted to build and share something like this professionally, how could I make it accessible to users?</p>
+      <p><strong>A:</strong> One common approach is offering it as a downloadable installer from a secure website—with permission and approval from the administrator or client.</p>
+    </section>
+
+    <section class="faq">
+      <h2>4. Regulatory Requirements</h2>
+      <p><strong>Q:</strong> Aren’t financial apps required to follow specific regulations or obtain licenses?</p>
+      <p><strong>A:</strong> In many cases, yes—but this app is designed for personal budgeting. While financial regulation is ideal for commercial apps, it’s not mandatory for private use. Users remain responsible for protecting and backing up their personal data.</p>
+    </section>
+
+    <section class="faq">
+      <h2>5. Educational Intent</h2>
+      <p><strong>Q:</strong> Why are you showing us how to build this kind of application?</p>
+      <p><strong>A:</strong> The goal is to help learners understand and practice SQL in a real-world context. This hands-on project is designed as an educational tool, not a commercial product.</p>
+    </section>
+
+    <section class="faq">
+      <h2>6. Using AI Tools</h2>
+      <p><strong>Q:</strong> Can we use AI tools to assist us during our learning or project work?</p>
+      <p><strong>A:</strong> Absolutely—as long as we stay honest with ourselves and make an effort to understand what we’re building. Tools like Microsoft Copilot can enhance learning when used thoughtfully. In fact, this very project benefited from Copilot’s support.</p>
+    </section>
+
+    <section class="faq">
+      <h2>7. Role of VB in Database Work</h2>
+      <p><strong>Q:</strong> What role does a programming language like VB play when working with databases?</p>
+      <p><strong>A:</strong> VB.NET can turn SQL queries into practical tools—like forms or interfaces—making tasks like data entry or updates quicker and more user-friendly, without constantly rewriting SQL commands.</p>
+    </section>
+
+    <section class="faq">
+      <h2>8. Styling Windows Forms</h2>
+      <p><strong>Q:</strong> Is it possible to style or customize the appearance of Windows Forms?</p>
+      <p><strong>A:</strong> Definitely. You can use the toolbox controls in the designer and fine-tune their appearance through the Properties window to match your desired look and feel.</p>
+    </section>
+
+    <section class="faq">
+      <h2>9. Use Cases Beyond Personal Finance</h2>
+      <p><strong>Q:</strong> Aside from personal or household use, who else might benefit from an expense tracker like this?</p>
+      <p><strong>A:</strong> Small businesses, freelancers, and even accountants could benefit. In an accounting environment, such a tracker can be used alongside mainstream accounting software to simplify internal expense logging or pre-processing of receipts before formal entry.</p>
+    </section>
+
+    <section class="faq">
+      <h2>10. Normalization & Learning Progress</h2>
+      <p><strong>Q:</strong> Can splitting a table into multiple tables help reduce redundancy in a database?</p>
+      <p><strong>A:</strong> Yes—it’s a common technique called normalization, which structures your data across related tables to reduce duplication and improve accuracy. In fact, learners will be guided step-by-step through normalizing this expense tracker database in an upcoming tutorial as part of their SQL learning journey.</p>
+    </section>
+  </main>
+
+  <script>
+    const searchInput = document.getElementById('searchBox');
+    const faqs = document.querySelectorAll('.faq');
+
+    searchInput.addEventListener('input', function () {
+      const term = this.value.toLowerCase();
+      faqs.forEach(faq => {
+        faq.style.display = faq.textContent.toLowerCase().includes(term) ? 'block' : 'none';
+      });
+    });
+  </script>
+
+</body>
+</html>
+
+
