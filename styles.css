@@ -1,0 +1,254 @@
+/* 🔁 Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #e6ffe6, #ccf5cc);
+  color: #1a1a1a;
+  margin: 0;
+  padding: 0;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* 📐 Layout Containers */
+main, header, footer {
+  max-width: 1000px;
+  margin: auto;
+  padding: 3rem 2rem;
+}
+
+/* 🎯 Headings */
+h1, h2, h3 {
+  font-weight: 600;
+  color: #2e7d32;
+  line-height: 1.3;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  border-bottom: 2px solid #66bb6a;
+  padding-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 1.7rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  color: #388e3c;
+}
+
+/* ✍️ Text Blocks */
+p {
+  margin-bottom: 1.1rem;
+  color: #333;
+}
+
+ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+li::marker {
+  color: #66bb6a;
+}
+
+li {
+  margin-bottom: 0.4rem;
+}
+
+/* 🧮 Code Block Styling */
+pre {
+  background-color: #f1f8f4;
+  color: #0f3e25;
+  padding: 1rem 1.2rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+  overflow-x: auto;
+  border-left: 5px solid #66bb6a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+code {
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.95rem;
+  color: #2e7d32;
+}
+
+/* 📦 Sections */
+section {
+  margin-bottom: 4rem;
+  border-bottom: 1px solid #a5d6a7;
+  padding-bottom: 2rem;
+}
+
+/* 🔗 Links */
+a {
+  color: #2e7d32;
+  text-decoration: none;
+  border-bottom: 1px dotted #66bb6a;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  background-color: #66bb6a;
+  color: white;
+  padding: 0.1rem 0.3rem;
+  border-radius: 4px;
+}
+
+/* 🖼️ Project Gallery */
+.gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.gallery figure {
+  width: 90%;
+  max-width: 800px;
+  background-color: #f5fff5;
+  border: 1px solid #a5d6a7;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  object-fit: cover;
+}
+
+.gallery figure:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.08);
+}
+
+.gallery figcaption {
+  font-size: 1rem;
+  color: #2e7d32;
+}
+
+/* ❓ FAQ Layout */
+.faq .faq-item {
+  margin-bottom: 1.8rem;
+}
+
+.faq h3 {
+  color: #388e3c;
+  margin-bottom: 0.5rem;
+}
+
+.faq p {
+  margin: 0;
+  color: #333;
+}
+
+/* 🧭 Responsive Nav Bar */
+.navbar {
+  background-color: #c8e6c9;
+  padding: 1rem 2rem;
+  border-bottom: 2px solid #81c784;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.site-title {
+  font-size: 1.8rem;
+  color: #2e7d32;
+  margin: 0;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  padding-left: 0;
+  margin: 0;
+}
+
+.nav-links li a {
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  padding: 0.4rem 0.7rem;
+  border-radius: 6px;
+}
+
+.nav-links li a:hover {
+  background-color: #66bb6a;
+  color: white;
+}
+
+/* 🦶 Footer */
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #4e654f;
+  padding: 2rem;
+  border-top: 1px solid #a5d6a7;
+  background-color: #edf9ed;
+  margin-top: 3rem;
+}
+
+/* 📱 Responsive Enhancements */
+@media (max-width: 700px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  h3 {
+    font-size: 1.15rem;
+  }
+
+  main, header, footer {
+    padding: 2rem 1rem;
+  }
+
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .gallery figure {
+    width: 95%;
+  }
+}
+
+
+
+
