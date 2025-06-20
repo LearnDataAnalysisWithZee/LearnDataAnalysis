@@ -3,352 +3,59 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Welcome to Sql Craft Academy</title>
+  <title>LearnProgrammingWithZee</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- 🧭 Navigation -->
-  <header class="navbar">
-    <div class="nav-container">
-      <h1 class="site-title">SQL Craft Academy</h1>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#tech">Tech</a></li>
-          <li><a href="#pathway">Pathway</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#code">Code</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
+  <!-- Header -->
+  <header class="site-header">
+    <h1>LearnProgrammingWithZee</h1>
+    <p>A grassroots initiative to teach Visual Basic programming and practical analytics — no registration, just real skills.</p>
+    <nav class="navbar">
+      <a href="#about">About Me</a>
+      <a href="#initiative">The Initiative</a>
+      <a href="#learning">VB Curriculum</a>
+      <a href="#contact">Get in Touch</a>
+    </nav>
   </header>
 
-  <main>
+  <!-- About Me Section -->
+  <section id="about" class="content-section">
+    <h2>About Me</h2>
+    <p>Hi! I'm Ahmed, an educator and data enthusiast passionate about teaching practical programming and analytics skills. Through hands-on learning and real-world examples, I aim to make technical knowledge accessible and empowering.</p>
+  </section>
 
-    <!-- 👤 About -->
-    <section id="about">
-      <h2>👨‍💻 About Ahmed Zeeshan Maqsood</h2>
-      <p>I’m an educator, developer, and creator of SQL Skills Initiative. My passion lies in structured learning and practical data literacy. I believe clean data and simple systems can unlock transformative insights.</p>
-      <h3>My Skills</h3>
-      <ul>
-        <li>📊 SQL Server — schema design, query building, analytics</li>
-        <li>⚙️ VB.NET — automating Excel & Word report generation</li>
-        <li>🌐 HTML & CSS — building learning guides and technical pages</li>
-        <li>📈 Excel Dashboards & 📄 Word Reports using OpenXML</li>
-        <li>🧭 Learning Design — building tutorials that actually teach</li>
-      </ul>
-    </section>
+  <!-- About the Initiative Section -->
+  <section id="initiative" class="content-section">
+    <h2>About LearnProgrammingWithZee</h2>
+    <p><strong>LearnProgrammingWithZee</strong> is an independent digital learning initiative that provides free, project-based tutorials in Visual Basic, data automation, and reporting. We're not a registered organisation — just a growing platform built to share skills that matter in the real world.</p>
+  </section>
 
-    <!-- 🧰 Tech -->
-    <section id="tech">
-      <h2>Technologies Used</h2>
-      <ul>
-        <li>Excel Workbook (.xlsx)</li>
-        <li>Visual Basic (.NET 9 Console Application)</li>
-        <li>OpenXML SDK for file manipulation</li>
-        <li>Visual Studio as IDE</li>
-      </ul>
-    </section>
+  <!-- VB Curriculum Overview -->
+  <section id="learning" class="content-section">
+    <h2>What You'll Learn</h2>
+    <p>Through this series, you’ll build a complete <strong>VB.NET 9 console application</strong> that interacts with Excel. Along the way, you’ll explore:</p>
+    <ul>
+      <li>Core programming concepts in Visual Basic</li>
+      <li>Data input, validation, and file interaction</li>
+      <li>Using SQL for querying and analyzing data</li>
+      <li>Automating Excel reports and dashboards using VBA</li>
+    </ul>
+    <p>By the end, you’ll have a fully functioning app that bridges code and spreadsheets — ideal for analytics and automation tasks.</p>
+  </section>
 
-    <!-- 🛠️ Pathway -->
-    <section id="pathway">
-      <h2>Project Pathway</h2>
-      <ol>
-        <li>
-          <strong>Make Excel Workbook</strong>
-          <ul>
-            <li><strong>Workbook Name:</strong> <code>ExpensesTracker.xlsx</code></li>
-            <li><strong>Sheets:</strong>
-              <ul>
-                <li>Expenses</li>
-                <li>Categories</li>
-                <li>Places</li>
-                <li>Payment Methods</li>
-                <li>SQL Queries <em>(for later tutorial)</em></li>
-                <li>Dashboard <em>(for later tutorial)</em></li>
-              </ul>
-            </li>
-            <li>Pre-populate <code>Categories</code>, <code>Places</code>, and <code>Payment Methods</code> for referential integrity</li>
-          </ul>
-        </li>
-        <li>
-          <strong>Create Console App in Visual Studio</strong>
-          <ul>
-            <li><code>Program.vb</code> — main menu navigation</li>
-            <li><code>Expenses.vb</code> — data entry module with validation and insertion logic</li>
-          </ul>
-        </li>
-      </ol>
-    </section>
+  <!-- Contact -->
+  <section id="contact" class="content-section">
+    <h2>Get in Touch</h2>
+    <p>Have feedback, ideas, or want to collaborate? You can reach me via <a href="mailto:your.email@example.com">email</a> or connect on <a href="https://github.com/LearnProgrammingWithZee" target="_blank">GitHub</a>.</p>
+  </section>
 
-    <!-- 🎓 Skills -->
-    <section>
-      <h2>Skills Gained</h2>
-      <ul>
-        <li>Building a modular data entry console in VB.NET</li>
-        <li>Maintaining referential integrity between Excel sheets</li>
-        <li>Exception handling and workbook structure validation</li>
-        <li>Creating SQL-based reports in Excel</li>
-        <li>Excel dashboard development for analytics</li>
-      </ul>
-    </section>
-
-    <!-- 🖼️ Gallery -->
-    <section id="gallery">
-      <h2>Project Gallery</h2>
-      <div class="gallery">
-        <figure><img src="projectimage.png" alt="Screenshot 1"/><figcaption>Expenses</figcaption></figure>
-        <figure><img src="projectimage1.png" alt="Screenshot 2"/><figcaption>Categories</figcaption></figure>
-        <figure><img src="projectimage2.png" alt="Screenshot 3"/><figcaption>Places</figcaption></figure>
-        <figure><img src="projectimage4.png" alt="Screenshot 4"/><figcaption>Payment Methods</figcaption></figure>
-        <figure><img src="projectimage5.png" alt="Screenshot 5"/><figcaption>Console Overview</figcaption></figure>
-      </div>
-    </section>
-
-    <!-- 💻 Code -->
-    <section id="code">
-      <h2>VB.NET Modules</h2>
-
-      <h3>Program.vb (Main Menu)</h3>
-      <pre><code>
-Module Program
-    Sub Main()
-        Dim choice As String
-        Do
-            Console.Clear()
-            Console.WriteLine("=== Expenses Tracker App ===")
-            Console.WriteLine("1. Add Expense")
-            Console.WriteLine("2. Exit")
-            Console.Write("Select an option (1–2): ")
-            choice = Console.ReadLine()
-
-            Select Case choice
-                Case "1"
-                    Expenses.InsertExpenseEntry()
-                Case "2"
-                    Console.WriteLine("Exiting... Goodbye!")
-                    Threading.Thread.Sleep(1000)
-                Case Else
-                    Console.WriteLine("Invalid option. Press Enter to try again.")
-                    Console.ReadLine()
-            End Select
-        Loop Until choice = "2"
-    End Sub
-End Module
-      </code></pre>
-
-      <h3>Expenses.vb (Validated Data Entry)</h3>
-<pre><code>
-' Expenses.vb - Handles validated insertion of expense data
-Imports DocumentFormat.OpenXml.Packaging
-Imports DocumentFormat.OpenXml.Spreadsheet
-Imports System.IO
-
-Module Expenses
-    Private filePath As String = "ExpensesTracker.xlsx"
-
-    Sub InsertExpenseEntry()
-        Try
-            If Not File.Exists(filePath) Then
-                Console.WriteLine("Excel file not found.")
-                Return
-            End If
-
-            Using document As SpreadsheetDocument = SpreadsheetDocument.Open(filePath, True)
-                Dim workbookPart = document.WorkbookPart
-                Dim sheet = workbookPart.Workbook.Descendants(Of Sheet)().
-                            FirstOrDefault(Function(s) s.Name = "Expenses")
-                If sheet Is Nothing Then
-                    Console.WriteLine("Expenses sheet not found.")
-                    Return
-                End If
-
-                Dim worksheetPart = CType(workbookPart.GetPartById(sheet.Id), WorksheetPart)
-                Dim sheetData = worksheetPart.Worksheet.GetFirstChild(Of SheetData)()
-                Dim nextId As Integer = GetSafeNextId(sheetData, workbookPart)
-
-                ' Collect inputs from user
-                Console.Write("Date (yyyy-MM-dd): ")
-                Dim dateSpent = Console.ReadLine()
-                Console.Write("Amount Spent: ")
-                Dim amountSpent = Console.ReadLine()
-                Console.Write("Spent On: ")
-                Dim spentOn = Console.ReadLine()
-                Console.Write("Category ID: ")
-                Dim categoryId = Console.ReadLine()
-                Console.Write("Place ID: ")
-                Dim placeId = Console.ReadLine()
-                Console.Write("Payment Method ID: ")
-                Dim paymentMethodId = Console.ReadLine()
-
-                ' Validate foreign keys
-                If Not IdExists("Categories", categoryId, workbookPart) Then
-                    Console.WriteLine("❌ Category ID does not exist.")
-                    Exit Sub
-                End If
-                If Not IdExists("Places", placeId, workbookPart) Then
-                    Console.WriteLine("❌ Place ID does not exist.")
-                    Exit Sub
-                End If
-                If Not IdExists("PaymentMethods", paymentMethodId, workbookPart) Then
-                    Console.WriteLine("❌ Payment Method ID does not exist.")
-                    Exit Sub
-                End If
-
-                ' Add new expense row
-                Dim newRow As New Row()
-                newRow.Append(CreateTextCell("A", nextId.ToString()))
-                newRow.Append(CreateTextCell("B", dateSpent))
-                newRow.Append(CreateTextCell("C", amountSpent))
-                newRow.Append(CreateTextCell("D", spentOn))
-                newRow.Append(CreateTextCell("E", categoryId))
-                newRow.Append(CreateTextCell("F", placeId))
-                newRow.Append(CreateTextCell("G", paymentMethodId))
-
-                sheetData.AppendChild(newRow)
-                worksheetPart.Worksheet.Save()
-                Console.WriteLine("✅ Expense entry added successfully.")
-            End Using
-        Catch ex As Exception
-            Console.WriteLine($"An error occurred: {ex.Message}")
-        End Try
-
-        Console.WriteLine("Press Enter to return to menu.")
-        Console.ReadLine()
-    End Sub
-
-    Private Function GetSafeNextId(sheetData As SheetData, workbookPart As WorkbookPart) As Integer
-        Dim numericIds = sheetData.Elements(Of Row)().
-            Select(Function(r) GetCellValue(workbookPart, r.Elements(Of Cell).FirstOrDefault())).
-            Where(Function(value) Integer.TryParse(value, Nothing)).
-            Select(Function(value) Integer.Parse(value))
-        Return If(numericIds.Any(), numericIds.Max() + 1, 1)
-    End Function
-
-    Private Function IdExists(sheetName As String, idToFind As String, workbookPart As WorkbookPart) As Boolean
-        Dim sheet = workbookPart.Workbook.Descendants(Of Sheet)().
-            FirstOrDefault(Function(s) s.Name = sheetName)
-        If sheet Is Nothing Then Return False
-
-        Dim worksheetPart = CType(workbookPart.GetPartById(sheet.Id), WorksheetPart)
-        Dim sheetData = worksheetPart.Worksheet.GetFirstChild(Of SheetData)()
-        Return sheetData.Elements(Of Row)().
-            Any(Function(r) GetCellValue(workbookPart, r.Elements(Of Cell).First()).Trim() = idToFind)
-    End Function
-
-    Private Function CreateTextCell(column As String, value As String) As Cell
-        Return New Cell With {
-            .CellReference = column,
-            .DataType = CellValues.String,
-            .CellValue = New CellValue(value)
-        }
-    End Function
-
-    Private Function GetCellValue(workbookPart As WorkbookPart, cell As Cell) As String
-        If cell Is Nothing Then Return ""
-        If cell.DataType IsNot Nothing AndAlso cell.DataType.Value = CellValues.SharedString Then
-            Dim sstPart = workbookPart.GetPartsOfType(Of SharedStringTablePart)().FirstOrDefault()
-            Return If(sstPart IsNot Nothing,
-                      sstPart.SharedStringTable.ElementAt(Integer.Parse(cell.CellValue.Text)).InnerText,
-                      "")
-        Else
-            Return cell.CellValue?.Text
-        End If
-    End Function
-End Module
-</code></pre>
-
-    </section>
-
-    <!-- ❓ FAQ -->
-    <section id="faq">
-  <h2>Frequently Asked Questions</h2>
-  <div class="faq">
-
-    <div class="faq-item">
-      <h3>Q1. How do I install Visual Studio if I’ve never used it before?</h3>
-      <p>You can download Visual Studio from Microsoft’s official website. Choose the Community Edition (free), run the installer, select the ".NET desktop development" workload, and follow the setup prompts. It handles all components automatically.</p>
-    </div>
-
-<div class="faq-item">
-  <h3>Q2. Is SQL Craft Academy a registered organisation?</h3>
-  <p>Nope — not yet! <strong>SQL Craft Academy</strong> is an independent digital learning initiative run by a passionate educator and data professional by the name of Ahmed Zeeshan Maqsood. We currently operate informally to keep resources accessible and flexible. While we’re not registered as a company or charity, we take our mission of hands-on, practical learning seriously — and we’re laying the groundwork for future growth.</p>
-</div>
-
-    <div class="faq-item">
-      <h3>Q3. Why does the app ask for IDs instead of names for Categories or Places?</h3>
-      <p>Using numeric IDs mirrors how foreign keys work in relational databases. It guarantees consistency and allows efficient cross-referencing between sheets.</p>
-    </div>
-
-    <div class="faq-item">
-      <h3>Q4. What is OpenXML and why is it used here?</h3>
-      <p>OpenXML is a .NET SDK that lets you read, write, and manipulate Excel files without needing Microsoft Office installed. It’s fast, lightweight, and ideal for structured automation like this app.</p>
-    </div>
-
-    <div class="faq-item">
-      <h3>Q5. How does the app generate a new ID for each expense?</h3>
-      <p>The GetSafeNextId function scans the existing 'Expenses' sheet, finds the highest ID, and returns the next available one. This ensures all entries have unique identifiers without overlap.</p>
-    </div>
-
-    <div class="faq-item">
-  <h3>Q6. Is this Expenses Tracker subject to financial regulations or legal compliance?</h3>
-  <p>This application is designed for personal or family use—it’s not a financial service, budgeting product, or regulated accounting system. Therefore, it does not fall under the UK’s Financial Services and Markets Act or require FCA (Financial Conduct Authority) registration.</p>
-  <p>Under UK data protection law (including the Data Protection Act 2018 and UK GDPR), individuals creating tools for private, non-commercial use are not obligated to meet the same compliance standards as companies handling customer data. As long as the tracker is used locally or shared among close family without public exposure or sensitive personal identifiers, it's legally compliant.</p>
-  <p>Always keep your data secure, avoid storing unnecessary personal identifiers (e.g. full names + account numbers), and never share exported files publicly unless anonymised. This tool is educational and practical—and safely within the boundaries of responsible personal use.</p>
-</div>
-
-
-    <div class="faq-item">
-      <h3>Q7. What happens if I enter an invalid ID?</h3>
-      <p>The app performs validation using the IdExists function. If the ID doesn’t exist in the corresponding sheet, it shows an error message and cancels the entry—this protects your data from corruption.</p>
-    </div>
-
-    <div class="faq-item">
-      <h3>Q8. Where should I place my Excel file for this to work?</h3>
-      <p>Place ExpensesTracker.xlsx in the same folder as the compiled .exe file. That way, the app can find it using a relative path and work seamlessly across machines.</p>
-    </div>
-
-    <div class="faq-item">
-  <h3>Q9. Can I use this system on another computer or create a shareable version of the app?</h3>
-  <p>Yes. The app is designed to be portable and shared. Visual Studio makes it easy to create an `.exe` by going to <strong>Build &gt; Publish</strong>, selecting <strong>Folder</strong>, and choosing an output location. Once published, you'll have a folder containing your `.exe` and dependencies.</p>
-  <p>You can zip and share this folder—or copy it directly to another computer. As long as <code>ExpensesTracker.xlsx</code> is in the same folder, the app will run without issue.</p>
-  <p>This project is personal-use focused and doesn’t require any regulatory approvals or certifications, making it perfect for family budgeting or self-tracking expenses without external dependencies.</p>
-</div>
-
-
-    <div class="faq-item">
-  <h3>Q10. I’m new to VB.NET—where should I start?</h3>
-  <p>
-    This tutorial is a great place to begin. It’s hands-on, beginner-friendly, and forms the <strong>first part of a broader Expenses Tracker application</strong> that will grow in complexity over time—adding features like SQL-based reports, Excel dashboards, and even AI-assisted analytics.
-  </p>
-  <p>
-    As you go further, you can explore <a href="https://learn.microsoft.com/en-us/training/" target="_blank">Microsoft Learn</a> for guided lessons, or use <strong>Microsoft Copilot</strong> to help understand error messages, refactor code, or brainstorm features as you build. Think of this project as your gateway into .NET development—with helpful tools ready to support every step.
-  </p>
-</div>
-
-
-  </div>
-</section>
-
-
-    <!-- 📬 Contact -->
-    <section id="contact">
-      <h2>📬 Get in Touch</h2>
-      <p>If you'd like to collaborate, share feedback, or reach out:</p>
-      <ul>
-        <li>Email: <a href="mailto:AhmedZM33@outlook.com">AhmedZM33@outlook.com</a></li>
-        <li>GitHub: <a href="https://github.com/SqlCraftAcademy" target="_blank">github.com/SqlCraftAcademy</a></li>
-      </ul>
-      <p>Thanks for visiting SQL Craft Academy. Let's turn learning into real-world skill. 🚀</p>
-    </section>
-
-  </main>
-
-  <footer>
-    <p>SQL Craft Academy &copy; 2025 — Designed by Ahmed Zeeshan Maqsood</p>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2025 LearnProgrammingWithZee. All rights reserved.</p>
   </footer>
 
-</body
+</body>
+</html>
+
