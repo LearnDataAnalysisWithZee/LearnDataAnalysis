@@ -63,6 +63,34 @@ body {
   color: #2e7d51;
   border-top: 2px solid #bdeacc;
 }
+/* Table Styles for Data Type Section */
+.content-section table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 1rem;
+}
+
+.content-section th,
+.content-section td {
+  padding: 0.75rem 1rem;
+  border: 1px solid #bdeacc;
+  text-align: left;
+}
+
+.content-section th {
+  background-color: #d8f5e3;
+  color: #2e7d51;
+  font-weight: bold;
+}
+
+.content-section tr:nth-child(even) {
+  background-color: #f9fdfb;
+}
+
+.content-section tr:hover {
+  background-color: #ecfdf1;
+}
 
 
 
