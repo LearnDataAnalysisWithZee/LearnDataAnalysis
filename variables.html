@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Page Under Construction – Learn Programming With Zee</title>
+  <title>Variables in VB.NET – Learn Programming With Zee</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -16,19 +16,115 @@
       <a href="conditions.html">Conditions</a>
       <a href="loops.html">Loops</a>
       <a href="functions.html">Functions</a>
+      <a href="input-output.html">Input-Output</a>
+      <a href="error-handling.html">Error Handling</a>
+      <a href="collections.html">Arrays & Lists</a>
+       <a href="modularity.html">Modular Code & Structure</a>
     </nav>
   </header>
 
   <main class="content-section">
-    <h2>This Page is Coming Soon 🚧</h2>
-    <p>Thanks for stopping by! We're still putting the finishing touches on this lesson.</p>
-    <p>At <strong>Learn Programming With Zee</strong>, we’re building each tutorial with care — so that every page is easy to follow and practical to apply.</p>
-    <p>Check back soon, or return to the <a href="index.html">main page</a> to explore available sections.</p>
+    <h2>Welcome!</h2>
+    <p>Have you ever thought, "I want to make applications, but programming seems daunting?"</p>
+    <p>Have you ever wondered, "Will I ever be able to program?"</p>
+    <p>If you're curious about what programming really is and what it can help you create—brace yourself! You're in the right place.</p>
+
+    <h2>What Is Programming?</h2>
+    <p>Programming is only a way of telling a computer what to do—step by step. It's like writing instructions for a robot or building a recipe.</p>
+    <p>🧁 <em>Example:</em> “Boil water, add tea bag, pour into cup” is a real-world algorithm. When written in code, it's programming!</p>
+
+    <h2>Tutorial Objectives</h2>
+    <ul>
+      <li>Write and declare variables using the correct syntax</li>
+      <li>Discuss variables and how they relate to data types</li>
+      <li>Think critically about how data is stored and used in code</li>
+    </ul>
+
+    <h2>What Is a Variable?</h2>
+    <p>A <strong>variable</strong> is similar to a labeled container or sticky note in your computer’s memory. You give it a name, assign a type, and store a value inside that you can reuse or change later.</p>
+    <p>🎒 <em>Example:</em> A college backpack has compartments labeled “Books,” “Lunch,” and “Keys.” Each acts like a variable: a name, a specific data type, and a value.</p>
+
+    <h2>Understanding Data Types</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Data Type</th>
+          <th>Description</th>
+          <th>Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><code>String</code></td><td>Text or characters</td><td>"Notebook"</td></tr>
+        <tr><td><code>Integer</code></td><td>Whole numbers</td><td>42</td></tr>
+        <tr><td><code>Double</code></td><td>Decimal numbers</td><td>9.99</td></tr>
+        <tr><td><code>Boolean</code></td><td>True/False value</td><td>True</td></tr>
+        <tr><td><code>Date</code></td><td>Date/time values</td><td>01/01/2025</td></tr>
+        <tr><td><code>Char</code></td><td>Single character</td><td>'A'</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Example Declarations</h2>
+    <pre><code>' Declare a string
+Dim assessmentTitle As String = "Variables in Visual Basic"
+
+' Declare an integer
+Dim assessmentQuestions As Integer = 50
+
+' Declare a double
+Dim assessmentScore As Double = 12.99
+
+' Declare a boolean
+Dim assessmentPassed As Boolean = True</code></pre>
+
+    <h2>Real-Life Analogy</h2>
+    <p>Think of a variable as a luggage tag at the airport. The tag says "Owner: Mike". The word “Owner” is the label (variable name), and “Mike” is the data it stores.</p>
+    <pre><code>Dim luggageOwnerName As String = "Mike"</code></pre>
+
+    <h2>How a Variable Works (Styled Diagram)</h2>
+    <div style="background-color: #eef7f1; padding: 1.5rem; border-radius: 8px; font-family: monospace; color: #2c3e50;">
+      <div style="margin-bottom: 0.5rem;">📌 <strong>Dim</strong> → Tells the computer to create a new variable</div>
+      <div style="border: 1px solid #6fcf97; border-radius: 6px; padding: 1rem;">
+        <div><strong>Variable Name:</strong> <span style="color: #004d26;">productPrice</span></div>
+        <div><strong>Data Type:</strong> <span style="color: #004d26;">Double</span></div>
+        <div><strong>Stored Value:</strong> <span style="color: #004d26;">12.99</span></div>
+      </div>
+    </div>
+
+    <h2>How Programming Connects Data to What We See</h2>
+    <ul>
+      <li><strong>The script</strong> is your data</li>
+      <li><strong>The program</strong> (like the director) interprets and processes that data</li>
+      <li><strong>The output</strong> is what the user sees — a message, a report, or a visual</li>
+    </ul>
+    <p><em>As we progress through the tutorials and eventually reach input/output, you'll see how these fundamentals — variables, types, and data flow — come together to power real interactions.</em></p>
+
+    <h2>Frequently Asked Questions (FAQ)</h2>
+    <h3>Q: What is programming?</h3>
+    <p>Programming is writing instructions a computer can follow. Like giving directions to a robot: "turn left", "grab item", "say hello".</p>
+
+    <h3>Q: What is a variable?</h3>
+    <p>A variable is a named space in memory that stores a value you can use or update in your program.</p>
+
+    <h3>Q: What does <code>Dim</code> mean?</h3>
+    <p>Abbreviated form of "Dimension", <code>Dim</code> is how you create a new variable in Visual Basic. It's like saying: “Make room for this named value.”</p>
+
+    <h3>Q: Why are data types important?</h3>
+    <p>They help your code treat each variable correctly—text, numbers, logic, or dates all need different handling rules.</p>
+
+    <h3>Q: Can a variable change?</h3>
+    <p>Yes! Most variables can be reassigned. For example, <code>Dim correctAnswers As Integer = 20</code> could later become <code>correctAnswers = 15</code>.</p>
+
+    <h3>Q: Why aren’t we using input/output yet?</h3>
+    <p>We’re building foundational concepts first. Once you’re confident with variables and types, working with user input becomes much easier.</p>
+
+    <h3>Q: How does programming use data?</h3>
+    <p>Programming takes data (like numbers, text, or settings) and uses logic to give instructions to the application—telling it how to behave, respond, or process that data.</p>
   </main>
 
   <footer class="site-footer">
-    <p>© 2025 LearnProgrammingWithZee — Original learning content and name established by first public use. All rights reserved. Content in progress!</p>
+    <p>© 2025 LearnProgrammingWithZee — Original learning content and name established by first public use. All rights reserved.</p>
   </footer>
 
 </body>
 </html>
+
