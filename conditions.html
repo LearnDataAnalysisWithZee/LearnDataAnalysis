@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Page Under Construction – Learn Programming With Zee</title>
+  <title>Conditions in VB.NET – Learn Programming With Zee</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -16,19 +16,83 @@
       <a href="conditions.html">Conditions</a>
       <a href="loops.html">Loops</a>
       <a href="functions.html">Functions</a>
+      <a href="input-output.html">Input-Output</a>
+      <a href="error-handling.html">Error Handling</a>
+      <a href="collections.html">Arrays & Lists</a>
+       <a href="modularity.html">Modular Code & Structure</a>
     </nav>
   </header>
 
   <main class="content-section">
-    <h2>This Page is Coming Soon 🚧</h2>
-    <p>Thanks for stopping by! We're still putting the finishing touches on this lesson.</p>
-    <p>At <strong>Learn Programming With Zee</strong>, we’re building each tutorial with care — so that every page is easy to follow and practical to apply.</p>
-    <p>Check back soon, or return to the <a href="index.html">main page</a> to explore available sections.</p>
+    <h2>Welcome to Conditions!</h2>
+    <p>Now that you understand variables and how we store information in a program, you're ready to explore how we make decisions with that information.</p>
+
+    <h2>Why Do We Use Conditions?</h2>
+    <p>Variables let us store facts and data. But what happens next depends on logic—and that’s where <strong>conditions</strong> come in.</p>
+    <p>Conditions let our programs ask questions like: “Is the score high enough to pass?” or “Has the user entered the correct password?” Based on the answer (True or False), the program chooses what to do next.</p>
+    <p>Think of conditions as the brain of your code—choosing different paths, options, and behaviors depending on what’s inside the variables.</p>
+
+    <h2>Real-Life Analogy: Airport Check-In</h2>
+    <p>Imagine arriving at an airport. The staff checks your ticket:</p>
+    <ul>
+      <li>If your seat is confirmed → you’re allowed to board.</li>
+      <li>If your seat is missing → you need to speak to a supervisor.</li>
+    </ul>
+    <p>Your “ticket status” is like a variable. The program (airport staff) checks the status using a condition and acts accordingly.</p>
+
+    <h2>One-Line Conditions</h2>
+    <p>Sometimes you want to check a condition and respond quickly. In VB.NET, one-line conditions use this format:</p>
+    <pre><code>If score >= 80 Then Console.WriteLine("Distinction")</code></pre>
+    <p>This checks the value inside the variable <code>score</code> and runs the command if the condition is True. It's perfect for short, clear logic.</p>
+
+    <h2>How Conditions Relate to Variables</h2>
+    <p>Variables store your data. Conditions check those values and decide what to do. You’ll rarely write meaningful conditions without using variables!</p>
+    <pre><code>Dim userAge As Integer = 16
+
+If userAge >= 18 Then
+    Console.WriteLine("You can vote.")
+End If</code></pre>
+
+    <section>
+      <h2>Types of Conditional Statements</h2>
+      <p>VB.NET gives you several ways to write conditional logic:</p>
+      <ul style="background-color: #f9fdfb; border: 1px solid #bdeacc; border-radius: 8px; padding: 1rem; list-style: none;">
+        <li><strong>1. If</strong> – Simple one-way check<br><code>If condition Then action</code></li>
+        <li><strong>2. If...Else</strong> – Choose between two options<br><code>If A Then... Else...</code></li>
+        <li><strong>3. If...ElseIf...Else</strong> – Handle multiple conditions<br><code>If A Then... ElseIf B Then... Else...</code></li>
+        <li><strong>4. Select Case</strong> – Cleaner way to check many values<br><code>Select Case variable... Case 10, Case 20...</code></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Frequently Asked Questions (FAQ)</h2>
+
+      <h3>Q: What are the main types of condition statements?</h3>
+      <p><code>If</code>, <code>If...Else</code>, <code>If...ElseIf...Else</code>, and <code>Select Case</code>—each lets your program decide what to do based on what it knows.</p>
+
+      <h3>Q: When should I use <code>Select Case</code> instead of <code>If</code> statements?</h3>
+      <p>Use <code>Select Case</code> when checking a single variable against multiple possible values—it's cleaner and easier to read.</p>
+
+      <h3>Q: Can I use variables inside conditions?</h3>
+      <p>Absolutely. That's the whole point! We store data in variables, and then use conditions to decide what to do with that data.</p>
+
+      <h3>Q: What if none of the conditions are true?</h3>
+      <p>If you’ve included an <code>Else</code> or <code>Case Else</code>, that part runs. If not, the program skips that block entirely.</p>
+
+      <h3>Q: Can I put one condition inside another?</h3>
+      <p>Yes, that’s called nested logic. It lets you make complex decisions with multiple checks—just be sure to keep your indentation clean.</p>
+
+      <h3>Q: How do I change the path based on a variable’s value?</h3>
+      <p>Just write a condition that checks the variable:</p>
+      <pre><code>Dim attempts As Integer = 3
+If attempts >= 3 Then Console.WriteLine("Account locked!")</code></pre>
+    </section>
   </main>
 
   <footer class="site-footer">
-    <p>Learn Programming With Zee 2025. Content in progress!</p>
+    <p>Learn Programming With Zee 2025.</p>
   </footer>
 
 </body>
 </html>
+
