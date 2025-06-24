@@ -64,6 +64,117 @@ End If</code></pre>
       </ul>
     </section>
 
+<section>
+  <h2>Examples of Conditional Statements</h2>
+
+  <h3>1. If Statement</h3>
+  <p>Used when you want to do something only if a condition is true.</p>
+  <pre><code>Dim score As Integer = 90
+
+If score >= 80 Then
+    Console.WriteLine("Distinction!")
+End If</code></pre>
+
+  <h3>2. If...Else Statement</h3>
+  <p>Used when you want to choose between two outcomes.</p>
+  <pre><code>Dim age As Integer = 16
+
+If age >= 18 Then
+    Console.WriteLine("Adult")
+Else
+    Console.WriteLine("Minor")
+End If</code></pre>
+
+  <h3>3. If...ElseIf...Else Statement</h3>
+  <p>Used when you need to check multiple possibilities in sequence.</p>
+  <pre><code>Dim marks As Integer = 75
+
+If marks >= 85 Then
+    Console.WriteLine("A grade")
+ElseIf marks >= 70 Then
+    Console.WriteLine("B grade")
+Else
+    Console.WriteLine("Needs improvement")
+End If</code></pre>
+
+  <h3>4. Select Case Statement</h3>
+  <p>Best used when you're comparing one variable against multiple specific values.</p>
+  <pre><code>Dim grade As Char = "B"c
+
+Select Case grade
+    Case "A"c
+        Console.WriteLine("Excellent")
+    Case "B"c
+        Console.WriteLine("Good job")
+    Case "C"c
+        Console.WriteLine("Satisfactory")
+    Case Else
+        Console.WriteLine("Review needed")
+End Select</code></pre>
+</section>
+<section>
+  <h2>Comparison and Logical Operators</h2>
+  <p>Operators are symbols that let your conditions ask questions like: “Is this equal?”, “Is it greater?”, or “Are both of these true?” You can't write conditions without them!</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Operator</th>
+        <th>Meaning</th>
+        <th>Example</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>=</code></td>
+        <td>Equal to</td>
+        <td><code>score = 100</code></td>
+      </tr>
+      <tr>
+        <td><code>&lt;&gt;</code></td>
+        <td>Not equal to</td>
+        <td><code>score &lt;&gt; 0</code></td>
+      </tr>
+      <tr>
+        <td><code>&gt;</code></td>
+        <td>Greater than</td>
+        <td><code>score &gt; 70</code></td>
+      </tr>
+      <tr>
+        <td><code>&lt;</code></td>
+        <td>Less than</td>
+        <td><code>score &lt; 70</code></td>
+      </tr>
+      <tr>
+        <td><code>&gt;=</code></td>
+        <td>Greater than or equal to</td>
+        <td><code>score &gt;= 80</code></td>
+      </tr>
+      <tr>
+        <td><code>&lt;=</code></td>
+        <td>Less than or equal to</td>
+        <td><code>score &lt;= 40</code></td>
+      </tr>
+      <tr>
+        <td><code>And</code></td>
+        <td>Both conditions must be true</td>
+        <td><code>a &gt; 0 And b &gt; 0</code></td>
+      </tr>
+      <tr>
+        <td><code>Or</code></td>
+        <td>Either condition can be true</td>
+        <td><code>isWeekend Or isHoliday</code></td>
+      </tr>
+      <tr>
+        <td><code>Not</code></td>
+        <td>Negates a condition</td>
+        <td><code>Not isLoggedIn</code></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+    
     <section>
       <h2>Frequently Asked Questions (FAQ)</h2>
 
