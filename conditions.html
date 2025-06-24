@@ -172,42 +172,7 @@ End Select</code></pre>
       </tr>
     </tbody>
   </table>
-</section>
-
-    
-    <section>
-      <h2>Frequently Asked Questions (FAQ)</h2>
-
-      <h3>Q: What are the main types of condition statements?</h3>
-      <p><code>If</code>, <code>If...Else</code>, <code>If...ElseIf...Else</code>, and <code>Select Case</code>—each lets your program decide what to do based on what it knows.</p>
-
-      <h3>Q: When should I use <code>Select Case</code> instead of <code>If</code> statements?</h3>
-      <p>Use <code>Select Case</code> when checking a single variable against multiple possible values—it's cleaner and easier to read.</p>
-
-      <h3>Q: Can I use variables inside conditions?</h3>
-      <p>Absolutely. That's the whole point! We store data in variables, and then use conditions to decide what to do with that data.</p>
-
-      <h3>Q: What if none of the conditions are true?</h3>
-      <p>If you’ve included an <code>Else</code> or <code>Case Else</code>, that part runs. If not, the program skips that block entirely.</p>
-
-      <h3>Q: Can I put one condition inside another?</h3>
-      <p>Yes, that’s called nested logic. It lets you make complex decisions with multiple checks—just be sure to keep your indentation clean.</p>
-
-      <h3>Q: How do I change the path based on a variable’s value?</h3>
-<p>You can track how many times a student has attempted an assessment using a variable—then apply a condition to restrict further attempts after a set number.</p>
-
-<pre><code>Dim attempts As Integer = 3
-
-If attempts >= 3 Then
-    Console.WriteLine("You have reached the maximum number of attempts for this assessment.")
-Else
-    Console.WriteLine("Attempt recorded. You have " & (3 - attempts) & " attempt(s) remaining.")
-End If</code></pre>
-
-<p>This checks the number of attempts and shows different messages depending on the result. It's a practical example of using a variable and a condition together to control what a user is allowed to do next.</p>
-
-      
-    </section>
+</section> 
   </main>
 
   <footer class="site-footer">
