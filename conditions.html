@@ -194,9 +194,19 @@ End Select</code></pre>
       <p>Yes, that’s called nested logic. It lets you make complex decisions with multiple checks—just be sure to keep your indentation clean.</p>
 
       <h3>Q: How do I change the path based on a variable’s value?</h3>
-      <p>Just write a condition that checks the variable:</p>
-      <pre><code>Dim attempts As Integer = 3
-If attempts >= 3 Then Console.WriteLine("Account locked!")</code></pre>
+<p>You can track how many times a student has attempted an assessment using a variable—then apply a condition to restrict further attempts after a set number.</p>
+
+<pre><code>Dim attempts As Integer = 3
+
+If attempts >= 3 Then
+    Console.WriteLine("You have reached the maximum number of attempts for this assessment.")
+Else
+    Console.WriteLine("Attempt recorded. You have " & (3 - attempts) & " attempt(s) remaining.")
+End If</code></pre>
+
+<p>This checks the number of attempts and shows different messages depending on the result. It's a practical example of using a variable and a condition together to control what a user is allowed to do next.</p>
+
+      
     </section>
   </main>
 
