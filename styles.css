@@ -65,15 +65,18 @@ body {
 
 /* Sidebar */
 .sidebar {
-  flex: 1 1 250px;
+  position: fixed;
+  top: 8rem; /* Adjust based on your header height */
+  left: 1rem;
+  width: 250px;
   background-color: #e8fcee;
   border-radius: 12px;
   padding: 1.5rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  position: sticky;
-  top: 2rem;
-  height: max-content;
+  height: calc(100vh - 9rem); /* Full height minus header */
+  overflow-y: auto;
 }
+
 
 .sidebar h2 {
   font-size: 1.2rem;
