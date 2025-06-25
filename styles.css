@@ -56,27 +56,26 @@ body {
 /* Layout */
 .layout {
   display: flex;
-  flex-wrap: wrap;
   max-width: 1200px;
   margin: 2rem auto;
   padding: 0 1rem;
   gap: 2rem;
+  align-items: flex-start;
 }
 
 /* Sidebar */
 .sidebar {
-  position: fixed;
-  top: 8rem; /* Adjust based on your header height */
-  left: 1rem;
   width: 250px;
+  flex-shrink: 0;
   background-color: #e8fcee;
   border-radius: 12px;
   padding: 1.5rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  height: calc(100vh - 9rem); /* Full height minus header */
+  height: calc(100vh - 6rem);
+  position: sticky;
+  top: 6rem;
   overflow-y: auto;
 }
-
 
 .sidebar h2 {
   font-size: 1.2rem;
@@ -107,7 +106,7 @@ body {
 
 /* Main Content */
 .main-content {
-  flex: 3 1 600px;
+  flex-grow: 1;
   background-color: white;
   border-radius: 12px;
   padding: 2rem;
@@ -185,7 +184,16 @@ code {
   }
 
   .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: auto;
+    overflow: visible;
     margin-bottom: 2rem;
+  }
+
+  .main-content {
+    padding: 1.5rem 1rem;
   }
 
   .navbar {
@@ -197,15 +205,12 @@ code {
     text-align: center;
   }
 
-  .main-content {
-    padding: 1.5rem 1rem;
-  }
-
   pre,
   code {
     font-size: 0.9rem;
   }
 }
+
 
 
 
