@@ -94,7 +94,52 @@
   </details>
 </section>
 
-      <section id="data"><h2>Data</h2></section>
+      <section id="data">
+  <h2>Data</h2>
+
+  <details class="qa-block">
+    <summary>Q: How does data relate to programming?</summary>
+    <div>
+      <p><strong>Data</strong> is at the heart of programming. It’s the raw material that programs work with—facts, values, input from users, sensor readings, or results of calculations. Without data, programs would have nothing to process or respond to.</p>
+
+      <h4>📦 Analogy: A Program is a Kitchen, Data is the Ingredients</h4>
+      <p>Think of a program like a kitchen and data as the ingredients. The recipes (code) say what to do—boil, mix, bake—but without ingredients (data), nothing meaningful can be made.</p>
+
+      <h4>💡 Where does data come from?</h4>
+      <ul>
+        <li>📥 User input – typing a name, selecting a product</li>
+        <li>⏳ System info – current time, file size</li>
+        <li>🌐 External sources – data from websites, spreadsheets</li>
+      </ul>
+
+      <h4>📍 Where is data stored during a program’s lifetime?</h4>
+      <p>When a program runs, it stores data in **variables** (temporary containers in memory). These variables last only while the program is active—once it closes, the data disappears unless it's saved elsewhere.</p>
+
+      <pre><code>Dim score As Integer = 90 ' score lives while the program runs</code></pre>
+
+      <h4>💾 How do we keep data after the program ends?</h4>
+      <p>This is called <strong>data persistence</strong>. We save the data to an external file or service so it’s available the next time the program runs. Common options include:</p>
+      <ul>
+        <li><strong>Text Files:</strong> Save simple lines of data like logs, scores, or configs.</li>
+        <li><strong>Spreadsheets:</strong> Great for tabular data—like quiz results or inventories.</li>
+        <li><strong>Databases:</strong> Powerful for storing large, structured datasets (like users, purchases, etc.).</li>
+      </ul>
+
+      <h4>📘 Example: Saving a Quiz Score</h4>
+      <p>Let’s say a user scores 8 out of 10 in a quiz. If we don’t store it, the result is lost when the program closes. But if we write it to a file:</p>
+      <pre><code>File.WriteAllText("score.txt", "Latest Score: 8/10")</code></pre>
+      <p>Now that score can be opened later—even if the app was closed!</p>
+
+      <h4>🧠 In Summary:</h4>
+      <ul>
+        <li><strong>Data powers the decision-making</strong> in programs.</li>
+        <li><strong>Variables hold data temporarily</strong> while a program runs.</li>
+        <li><strong>Files, spreadsheets, or databases persist data</strong> after the program exits.</li>
+      </ul>
+    </div>
+  </details>
+</section>
+
       <section id="variables"><h2>Variables</h2></section>
       <section id="datatypes"><h2>Data Types</h2></section>
       <section id="conditions"><h2>Conditions</h2></section>
