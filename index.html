@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Learn Programming With Zee</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <h1>Learn About Databases With Zee – Learning Hub</h1>
+    <nav class="navbar">
+      <a href="#about-me">About Me</a>
+      <a href="#about-platform">About Zee</a>
+      <a href="#overview">Learning DB</a>
+    </nav>
+  </header>
+
+  <div class="main-content">
+
+    <section id="about-me">
+      <h2>About Me</h2>
+      <p>Hello! I'm Zee — a developer and lifelong learner dedicated to making programming accessible. I believe everyone should be able to build tools, solve problems, and understand the logic behind the apps and systems we use every day.</p>
+      <p>Through hands-on projects and structured Q&A lessons, I’m here to help you go from “I’ve never coded before” to “I just built my first app!”</p>
+    </section>
+
+    <section id="about-platform">
+      <h2>About</h2>
+      <p><strong>Learn About Databases With Zee</strong> is an independent digital learning initiative built for clarity, curiosity, and confidence. It's a community-focused project aiming to make programming easy and accessible for everyone—one meaningful step at a time.</p>
+    </section>
+
+    <!-- ⬇️ Learning System Schema Begins -->
+    <section id="overview">
+      <h2>📚 Learning Plan DB Schema (Microsoft Access)</h2>
+
+      <p>This system is designed as a <strong>Microsoft Access database project</strong> to document and track learning activities through structured sessions, workflows, and reflective audits. It blends task management with introspection—ideal for solo learners, personal development projects, or structured training programs.</p>
+
+      <p>Each session represents a unique learning event, branching into multiple workflow tasks with monitored progression. The schema encourages deliberate practice, symbolic notation, and iterative growth.</p>
+    </section>
+
+    <section id="entities">
+      <h2>🧱 Entity Overview</h2>
+      <table>
+        <thead>
+          <tr><th>Table</th><th>Purpose</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>SessionDiaryLog</strong></td><td>Captures session-level metadata and reflective notes</td></tr>
+          <tr><td><strong>Workflow</strong></td><td>Breaks down learning sessions into structured tasks</td></tr>
+          <tr><td><strong>TaskAudit</strong></td><td>Tracks progress states of each session-task pairing</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="relationships">
+      <h2>🔗 Relational Dynamics</h2>
+      <ul>
+        <li><strong>SessionDiaryLog</strong> anchors the learning record with <code>LearningSessionID</code>.</li>
+        <li><strong>Workflow</strong> maps tasks to a session via <code>LearningSessionID</code>.</li>
+        <li><strong>TaskAudit</strong> logs task progress, linking both <code>LearningSessionID</code> and <code>WorkflowID</code>.</li>
+      </ul>
+    </section>
+
+    <section id="schema">
+      <h2>🧩 Relational Schema Overview</h2>
+      <table>
+        <thead>
+          <tr><th>Table</th><th>Field</th><th>Data Type</th><th>Key</th><th>References</th></tr>
+        </thead>
+        <tbody>
+          <!-- SessionDiaryLog -->
+          <tr><td><strong>SessionDiaryLog</strong></td><td><code>LearningSessionID</code></td><td>AutoNumber</td><td>Primary Key</td><td>–</td></tr>
+          <tr><td>SessionDiaryLog</td><td><code>SessionStart</code></td><td>Date/Time</td><td>–</td><td>–</td></tr>
+          <tr><td>SessionDiaryLog</td><td><code>LearningSession</code></td><td>Short Text</td><td>–</td><td>–</td></tr>
+          <tr><td>SessionDiaryLog</td><td><code>Notes</code></td><td>Long Text</td><td>–</td><td>–</td></tr>
+          <tr><td>SessionDiaryLog</td><td><code>SessionEnd</code></td><td>Date/Time</td><td>–</td><td>–</td></tr>
+
+          <!-- Workflow -->
+          <tr><td><strong>Workflow</strong></td><td><code>WorkflowID</code></td><td>AutoNumber</td><td>Primary Key</td><td>–</td></tr>
+          <tr><td>Workflow</td><td><code>LearningSessionID</code></td><td>Number</td><td>Foreign Key</td><td><code>SessionDiaryLog.LearningSessionID</code></td></tr>
+          <tr><td>Workflow</td><td><code>LearningTask</code></td><td>Short Text</td><td>–</td><td>–</td></tr>
+
+          <!-- TaskAudit -->
+          <tr><td><strong>TaskAudit</strong></td><td><code>LearningSessionID</code></td><td>Number</td><td>Foreign Key</td><td><code>SessionDiaryLog.LearningSessionID</code></td></tr>
+          <tr><td>TaskAudit</td><td><code>WorkflowID</code></td><td>Number</td><td>Foreign Key</td><td><code>Workflow.WorkflowID</code></td></tr>
+          <tr><td>TaskAudit</td><td><code>Progression</code></td><td>Short Text</td><td>–</td><td>–</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="guide">
+      <h2>🛠️ Step-by-Step: Build in Microsoft Access</h2>
+      <ol>
+        <li><strong>Create Database:</strong> Access → Blank DB → Name <code>LearningSystem.accdb</code></li>
+        <li><strong>Create <code>SessionDiaryLog</code>:</strong>
+          <ul>
+            <li><code>LearningSessionID</code> (AutoNumber, PK)</li>
+            <li><code>SessionStart</code>, <code>SessionEnd</code> (Date/Time)</li>
+            <li><code>LearningSession</code> (Short Text), <code>Notes</code> (Long Text)</li>
+          </ul>
+        </li>
+        <li><strong>Create <code>Workflow</code>:</strong>
+          <ul>
+            <li><code>WorkflowID</code> (AutoNumber, PK), <code>LearningSessionID</code> (Number, FK)</li>
+            <li><code>LearningTask</code> (Short Text)</li>
+          </ul>
+        </li>
+        <li><strong>Create <code>TaskAudit</code>:</strong>
+          <ul>
+            <li><code>LearningSessionID</code>, <code>WorkflowID</code> (Number, FKs)</li>
+            <li><code>Progression</code> – Lookup or Short Text</li>
+          </ul>
+        </li>
+        <li><strong>Establish Relationships:</strong>
+          <ul>
+            <li><code>SessionDiaryLog → Workflow</code> on <code>LearningSessionID</code></li>
+            <li><code>SessionDiaryLog → TaskAudit</code> on <code>LearningSessionID</code></li>
+            <li><code>Workflow → TaskAudit</code> on <code>WorkflowID</code></li>
+            <li>Enable <em>Referential Integrity</em></li>
+          </ul>
+        </li>
+      </ol>
+    </section>
+    <!-- ⬆️ End of Learning System Schema -->
+
+  </div>
+
+  <footer class="site-footer">
+    <p><span class="brain">🧠</span> Learn About Databases With Zee 2025 — Made with patience, precision, and purpose.</p>
+    <p class="attribution"><span class="sun">☀️</span> This project was built with help from Microsoft Copilot as a learning companion.</p>
+  </footer>
+
+</body>
+</html>
