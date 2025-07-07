@@ -1,265 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Learn About Databases With Zee</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn About Databases With Zee - Home</title>
+    <style>
+        body 
+        {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+        header
+        {
+            background: linear-gradient(skyblue,white);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: black;
+            padding:20px;
+            text-align: center;
+        }
+        nav
+        {
+            display: flex;
+            justify-content: center;
+            flex-wrap:wrap;
+            gap:15px;
+            margin-top:10px;
+        }
+        a
+        {
+            text-decoration: none;
+            color: black;
+            padding: 8px 12px;
+            transition: background-color 0.3s;
+        }
+        a:hover
+        {
+            background-color: lightgreen;
+            border-radius: 4px;
+        }
+        footer 
+        {
+            background: linear-gradient(lightgreen,pink);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: black;
+            text-align: center;
+            padding: 20px 10px;
+            font-size: 0.9rem;
+            margin-top: auto;
+        }
+        #mainh2{
+            padding-left: 2%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        #mainp{
+            padding-left: 2%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1>Learn About Databases With Zee</h1>
+        <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="dbtheory.html">Theory of Databases</a>
+        <a href="dbpractical.html">Databases Practical</a>
+        <a href="q&a.html">Q&A</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+        </nav>
+    </header>
 
-  <header class="site-header">
-    <h1>Learn About Databases With Zee – Learning Hub</h1>
-    <nav class="navbar">
-      <a href="#about-me">About Me</a>
-      <a href="#about-platform">About Zee</a>
-      <a href="#overview">Learning DB</a>
-    </nav>
-  </header>
+    <main>
+        <h2 id="mainh2">Welcome to Learn About Databases With Zee - Home Page</h2>
+        <p id="mainp">We will learn about what databases are, why we use them, how to design a database, and how to maintain databases.</p>
+        <figure>
+        <img src="Images/databases.png" alt="I love databases" height="5%" width="10%" />
+        <figcaption>What Databases are?</figcaption>
+        <img src="Images/ilovedb.png" alt="I love databases" height="5%" width="10%" />
+        <figcaption>Why are Databases used?</figcaption>
+        <img src="Images/tablesformsreports.png" alt="I love databases" height="5%" width="10%" />
+        </figure>
+    </main>
 
-  <div class="main-content">
-    <section id="about-me">
-      <h2>About Me</h2>
-      <p>Hi, I'm Zee! I love teaching database concepts in small, clear steps. Whether you're brand new or returning to Access, this guide will help you create a useful, beginner-friendly system.</p>
-    </section>
-
-    <section id="about-platform">
-      <h2>About the Platform</h2>
-      <p><strong>Learn About Databases With Zee</strong> helps beginners create smart database systems through structured, hands-on tutorials. No jargon. No clutter. Just progress.</p>
-    </section>
-
-    <section id="overview">
-      <h2>📚 What You’ll Build</h2>
-      <p>You’ll design a small Microsoft Access system that tracks your learning sessions, breaks them into tasks, and lets you record progress. It's built using three related tables:</p>
-      <ul>
-        <li><strong>SessionDiaryLog</strong>: Records session titles, notes, and timestamps</li>
-        <li><strong>Workflow</strong>: Lists tasks inside those sessions</li>
-        <li><strong>TaskAudit</strong>: Tracks task status (like Not Started, In Progress, Complete)</li>
-      </ul>
-    </section>
-    <section id="steps">
-      <h2>🛠️ Step-by-Step Guide: Building the Tables</h2>
-
-      <h3>1. Create a New Database</h3>
-      <ul>
-        <li>Open Microsoft Access</li>
-        <li>Select <strong>Blank Database</strong></li>
-        <li>Name it <code>LearningSystem.accdb</code> and click <strong>Create</strong></li>
-      </ul>
-
-      <h3>2. Create the <code>SessionDiaryLog</code> Table</h3>
-      <ul>
-        <li>Go to <strong>Create > Table Design</strong></li>
-        <li>Save table as <code>SessionDiaryLog</code></li>
-        <li>Add fields:
-          <ul>
-            <li><code>LearningSessionID</code> – AutoNumber → Set as Primary Key</li>
-            <li><code>LearningSession</code> – Short Text</li>
-            <li><code>Notes</code> – Long Text</li>
-            <li><code>SessionStart</code> – Date/Time → Format: General Date</li>
-            <li><code>SessionEnd</code> – Date/Time → Format: General Date</li>
-          </ul>
-        </li>
-      </ul>
-
-      <h3>3. Create the <code>Workflow</code> Table</h3>
-      <ul>
-        <li>Create a new table and name it <code>Workflow</code></li>
-        <li>Add fields:
-          <ul>
-            <li><code>WorkflowID</code> – AutoNumber (Primary Key)</li>
-            <li><code>LearningSessionID</code> – Number (Foreign Key)</li>
-            <li><code>LearningTask</code> – Short Text</li>
-          </ul>
-        </li>
-      </ul>
-
-      <h3>4. Create the <code>TaskAudit</code> Table</h3>
-      <ul>
-        <li>Create a table and name it <code>TaskAudit</code></li>
-        <li>Add fields:
-          <ul>
-            <li><code>TaskAuditID</code> – AutoNumber (Primary Key)</li>
-            <li><code>LearningSessionID</code> – Number</li>
-            <li><code>WorkflowID</code> – Number</li>
-            <li><code>Progression</code> – Short Text</li>
-          </ul>
-        </li>
-        <li><strong>Optional:</strong> Turn <code>Progression</code> into a dropdown:
-          <ul>
-            <li>Click the field → Open Lookup tab (bottom panel)</li>
-            <li>Change Display Control to <strong>Combo Box</strong></li>
-            <li>Set Row Source: <code>Not Started;In Progress;Completed</code></li>
-          </ul>
-        </li>
-      </ul>
-
-      <h3>5. Set Up Relationships</h3>
-      <ol>
-        <li>Go to <strong>Database Tools > Relationships</strong></li>
-        <li>Click <strong>Show Table</strong>, then add:
-          <ul>
-            <li><code>SessionDiaryLog</code></li>
-            <li><code>Workflow</code></li>
-            <li><code>TaskAudit</code></li>
-          </ul>
-        </li>
-        <li>Create the following connections:
-          <ol>
-            <li>Drag <code>SessionDiaryLog.LearningSessionID</code> → <code>Workflow.LearningSessionID</code></li>
-            <li>Drag <code>SessionDiaryLog.LearningSessionID</code> → <code>TaskAudit.LearningSessionID</code></li>
-            <li>Drag <code>Workflow.WorkflowID</code> → <code>TaskAudit.WorkflowID</code></li>
-          </ol>
-        </li>
-        <li>In each popup window:
-          <ul>
-            <li>✅ Tick “Enforce Referential Integrity”</li>
-            <li>Click <strong>Create</strong></li>
-          </ul>
-        </li>
-      </ol>
-    </section>
-    <section id="entity-overview">
-      <h2>🧱 Entity Overview</h2>
-      <table>
-        <thead><tr><th>Table</th><th>Description</th></tr></thead>
-        <tbody>
-          <tr><td><code>SessionDiaryLog</code></td><td>Stores each learning session’s title, notes, and timings</td></tr>
-          <tr><td><code>Workflow</code></td><td>Holds individual learning tasks linked to a session</td></tr>
-          <tr><td><code>TaskAudit</code></td><td>Tracks progress for each task with options like “Not Started”, “Completed”</td></tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section id="schema-overview">
-      <h2>🧩 Relational Schema Overview</h2>
-      <table>
-        <thead>
-          <tr><th>Table</th><th>Field</th><th>Data Type</th><th>Key</th><th>Linked To</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>SessionDiaryLog</td><td>LearningSessionID</td><td>AutoNumber</td><td>Primary</td><td>–</td></tr>
-          <tr><td>Workflow</td><td>WorkflowID</td><td>AutoNumber</td><td>Primary</td><td>–</td></tr>
-          <tr><td>Workflow</td><td>LearningSessionID</td><td>Number</td><td>Foreign</td><td>SessionDiaryLog</td></tr>
-          <tr><td>TaskAudit</td><td>TaskAuditID</td><td>AutoNumber</td><td>Primary</td><td>–</td></tr>
-          <tr><td>TaskAudit</td><td>LearningSessionID</td><td>Number</td><td>Foreign</td><td>SessionDiaryLog</td></tr>
-          <tr><td>TaskAudit</td><td>WorkflowID</td><td>Number</td><td>Foreign</td><td>Workflow</td></tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section id="faq">
-      <h2>❓ Q&A – Beginner Questions</h2>
-
-      <h3>Q: What is a Primary Key?</h3>
-      <p>A unique ID for each row. It helps Access keep track of your records—like a serial number.</p>
-
-      <h3>Q: Why create relationships between tables?</h3>
-      <p>They ensure that every task and progress update is tied to a real learning session—this keeps your data accurate and tidy.</p>
-
-      <h3>Q: Can I enter tasks without a session?</h3>
-      <p>Not if you’ve enforced relationships. Access will require that every task belongs to a valid session—this is a good thing!</p>
-
-      <h3>Q: Do I need to know SQL for this?</h3>
-      <p>Nope! Everything here can be built by clicking and typing in Access, no coding required.</p>
-    </section>
-    <section id="next-steps">
-      <h2>🚀 What’s Next?</h2>
-      <p>You now have a fully working data structure — and there’s so much more you can build on top of it! Coming up, you’ll learn to:</p>
-      <ul>
-        <li><strong>Create Forms:</strong> Let users enter sessions and tasks easily</li>
-        <li><strong>Build Reports:</strong> Print learning summaries or status sheets</li>
-        <li><strong>Design Dashboards:</strong> Show total sessions, tasks completed, time spent</li>
-        <li><strong>Export Data:</strong> Send reports or tables to Excel or PDF</li>
-      </ul>
-      <p><strong>Next Module Preview:</strong> We’ll create a custom form that lets you log a full session in under a minute — with time stamps and dropdowns ready to go!</p>
-    </section>
-    
-    <section id="forms-module">
-  <h2>🧙‍♂️ Create Input Forms Using Form Wizard (3 Forms)</h2>
-
-  <p>Now that your tables are ready, let’s build one form for each table. These forms make it easy to enter data without touching the raw tables directly. We'll use the friendly <strong>Form Wizard</strong> tool built into Microsoft Access.</p>
-
-  <h3>📄 Form 1: Create “Session Form”</h3>
-  <ol>
-    <li>Go to the top menu → Click <strong>Create</strong></li>
-    <li>Click <strong>Form Wizard</strong></li>
-    <li>In the dropdown, select the table: <code>SessionDiaryLog</code></li>
-    <li>Move all fields to the right using <code>&gt;&gt;</code></li>
-    <li>Click <strong>Next</strong></li>
-    <li>Choose layout: <strong>Columnar</strong></li>
-    <li>Click <strong>Next</strong></li>
-    <li>Type a name: <code>Session Form</code></li>
-    <li>Click <strong>Finish</strong> → Your form opens!</li>
-  </ol>
-
-  <h3>📄 Form 2: Create “Workflow Form”</h3>
-  <ol>
-    <li>Click <strong>Create</strong> → <strong>Form Wizard</strong></li>
-    <li>Select table: <code>Workflow</code></li>
-    <li>Select all fields → Click <strong>&gt;&gt;</strong></li>
-    <li>Click <strong>Next</strong> → Choose layout: <strong>Tabular</strong></li>
-    <li>Click <strong>Next</strong> → Name it: <code>Workflow Form</code></li>
-    <li>Click <strong>Finish</strong></li>
-  </ol>
-
-  <h3>📄 Form 3: Create “Task Audit Form”</h3>
-  <ol>
-    <li>Click <strong>Create</strong> → <strong>Form Wizard</strong></li>
-    <li>Pick table: <code>TaskAudit</code></li>
-    <li>Select all fields using <code>&gt;&gt;</code></li>
-    <li>Choose layout: <strong>Datasheet</strong> (good for quick edits)</li>
-    <li>Name it: <code>Audit Form</code> → Click <strong>Finish</strong></li>
-  </ol>
-
-  <p>💡 <strong>Tip:</strong> You can now use each form from the Navigation Pane to enter new data cleanly and consistently!</p>
-</section>
-
-<section id="forms-qa">
-  <h2>❓ Q&A – About Forms</h2>
-
-  <h3>Q: What if I forget to add a field in the form?</h3>
-  <p>You can right-click the form → choose <strong>Design View</strong> → then drag in additional fields from the field list.</p>
-
-  <h3>Q: Can I move or resize fields?</h3>
-  <p>Yes! In <strong>Layout View</strong> or <strong>Design View</strong>, select and drag fields, change label text, or resize boxes for better layout.</p>
-
-  <h3>Q: Can I type in dates or must I use the picker?</h3>
-  <p>You can do either. Just type like <code>04/10/2025 14:30</code> and Access will format it for you.</p>
-
-  <h3>Q: What happens when I press the arrow at the bottom?</h3>
-  <p>That’s the record navigation bar. The right arrow adds a new blank record. Access saves automatically when you move away.</p>
-</section>
-
-<section id="coming-up">
-  <h2>📈 What’s Next: Create Reports</h2>
-  <p>Forms help you enter data — but <strong>reports</strong> let you print or share summaries of what you've learned and done.</p>
-
-  <p>In the next section, you’ll learn how to:</p>
-  <ul>
-    <li>Create a learning progress report from <code>TaskAudit</code></li>
-    <li>Group reports by session or task</li>
-    <li>Apply filters and sort by date or completion status</li>
-    <li>Export reports to PDF or Excel</li>
-  </ul>
-
-  <p>We’ll build a real report that shows all your sessions, what tasks were inside them, and how much you’ve completed 🚀</p>
-</section>
-
- <section id="contact" style="text-align: center;">
-      <h2>📬 Get in Touch</h2>
-      <p>Questions, feedback, or want to share your progress?</p>
-      <p>Email me 👉 <a href="mailto:AhmedZM33@outlook.com">AhmedZM33@outlook.com</a></p>
-      <p>Stay curious, stay consistent — and keep building 🚀</p>
-    </section>
-    
-  </div>
-
-  <footer class="site-footer">
-    <p>🧠 Learn About Databases With Zee — crafted with purpose, simplicity, and love for learning.</p>
-    <p>☀️ This project has been built with help from Microsoft Copilot as a companion.</p>
-  </footer>
+    <footer>
+        <p>Learn About Databases With Zee - Website Under Construction</p>
+    </footer>
 
 </body>
+</html>
 </html>
 
