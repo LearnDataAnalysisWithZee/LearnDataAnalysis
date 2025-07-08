@@ -56,6 +56,49 @@
             text-align: center;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+         #mainp1
+        {
+            padding-left: 2%;
+            padding-right: 2%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: large;
+        }
+        #mainp2
+        {
+            padding-left: 2%;
+            padding-right: 2%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: large;
+        }
+        #mainp3
+        {
+            padding-left: 2%;
+            padding-right: 2%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: large;
+        }
+        ol 
+        {
+            padding-left: 3%;         /* Indent the list */
+            padding-right: 3%; 
+            margin-top: 20px;
+            font-family: sans-serif;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #333;
+        }
+        ol li 
+        {
+            margin-bottom: 12px;        /* Space between items */
+        }
+/* 📱 Small screen adjustment */
+        @media (max-width: 600px) 
+        {
+        ol 
+        {
+        padding-left: 30px; /* Increase left padding on small screens */
+        }
+        }
     </style>
 </head>
 <body>
@@ -74,27 +117,34 @@
 
     <main>
         <h2 id="mainh2">Welcome to Learn About Databases With Zee - Theory Of Databases Page</h2>
-        <p>A long time ago, data was handwritten and stored manually in books. This was the only way back when there were not as much technological advancements as there are in todays age.</p>
-        <p>There have been three phases during the development of modern data solutions and they are:</p>
+        <p id="mainp1">Imagine we did not have databases, we most likely will be handwriting data and storing manually in books. And before we know it, there are bound to be problems which arise that are hard to work around, from these problems could be:</p>
         <ol>
-            <li>The Books Age</li>
-            <li>The Computer Age</li>
-            <li>The Cloud Age</li>
+            <li>How will we create backups of the data that we already have had to <strong>'manually'</strong> record?</li>
+            <li>Where will we store Data <i>(including the backups)</i> which has been recorded to preserve that from being accessed by unauthorised personnel and to prevent it from being stolen?</li>
+            <li>And having said that, How could we check if the Data is still valid or indeed has become damaged?</li>
+            <li>And it won't be too long after, when the Data begins to talk, what will we do then?</li>
         </ol>
-        <img src="datadatadata.png" alt="data, data & data" height="10%" width="10%"/>        
+        
+    
+        <p id="mainp2">To address these issues there are ideas which may help:</p>
+        
         <ol>
-            <li>Calculator</li>
-            <li>SQL</li>
-            <LI>AI</LI>
+            <li>We need to find a way to organise the data initially in a structured way or put simple are required to design an Data organisation system.</li>
+            <li>We need to store the data in multiple locations for backing up the Data.</li>
+            <li>We need to speed up the rate at which we record data and create backups so we need to train people for specific tasks.</li>
+            <li>We will need to <strong>safely</strong> store the data to prevent it from being stolen or accessed by unauthorised personnel so that Data integrity remains.</li>
+            <li>We will need to have a system which can allow us to learn from the Data, key valuable insights to improve the life-cycle of the Data related operations.</li>
         </ol>
+        
+        
+        <p id="mainp2">What the fix is:</p>
+
+
     </main>
 
     <footer>
         <p>Learn About Databases With Zee - Website Under Construction</p>
     </footer>
-
-</body>
-</html>
 
 </body>
 </html>
