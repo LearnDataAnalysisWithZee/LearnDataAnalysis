@@ -99,6 +99,42 @@
         padding-left: 30px; /* Increase left padding on small screens */
         }
         }
+        h3
+        {
+            padding: 1%;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+         .figure-row 
+        {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .figure-row figure 
+        {
+            text-align: center;
+            width: 250px; /* or use max-width: 30% for fluid sizing */
+        }
+        .figure-row img {
+            width: 100%;
+            height: auto;
+        }
+        .figure-row figcaption 
+        {
+        margin-top: 8px;
+        font-size: 0.9rem;
+        color: #555;
+        }
+         #mainp4
+        {
+            padding-left: 2%;
+            padding-right: 2%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: large;
+        }
     </style>
 </head>
 <body>
@@ -129,17 +165,35 @@
         <p id="mainp2">To address these issues there are ideas which may help:</p>
         
         <ol>
-            <li>We need to find a way to organise the data initially in a structured way or put simple are required to design an Data organisation system.</li>
+            <li>We need to find a way to organise the data initially in a <strong>structured</strong> way or put simple are required to design an Data organisation system.</li>
             <li>We need to store the data in multiple locations for backing up the Data.</li>
             <li>We need to speed up the rate at which we record data and create backups so we need to train people for specific tasks.</li>
             <li>We will need to <strong>safely</strong> store the data to prevent it from being stolen or accessed by unauthorised personnel so that Data integrity remains.</li>
             <li>We will need to have a system which can allow us to learn from the Data, key valuable insights to improve the life-cycle of the Data related operations.</li>
         </ol>
         
+        <p id="mainp3">What the fix is:</p>
+
+        <h3>RDBMS - Relational Database Management System</h3>
+
+        <div class="figure-row">
+            <figure>
+                <img src="Images/rdbmsimg.png" alt="RDBMS" />
+                <figcaption>RDBMS (Relational Database Management System)</figcaption>
+            </figure>
+        </div>
         
-        <p id="mainp2">What the fix is:</p>
+        <p id="mainp4">An RDBMS is:</p>
 
-
+        <ol>
+            <li>A software system that stores, organises and thus manages data in <strong>structured</strong> formats known as tables.</li>
+            <li>Each of the tables represents a set of related information, where rows are records and columns attributes</li>
+            <li>In an RDBMS as Microsoft Access storing data in multiple locations for the purpose of backing up data is never an issue, there are a few options, we can manually save the Database file, there is an option to automate back up to a location of choice using VBA, and we can save the data on a network drive which is OneDrive.</li>
+            <li>In as far as the need to train people for specific tasks to speed up the rate of recording data (as we continue to record, the data is saved and the backup is also updated), then there is the Split Database Architecture which is encouraged, where multiple users can use the Data which speeds up the rate at which data can be recorded or inputed.</li>
+            <li>The split because the essential Data operations are categorised into two parts, Front end (forms, queries and reports) and Back end (tables/data).</li>
+            <li>The safety of data is relevant to how the data resides in multiple locations, naturally speaking this precisely is data safety, the fact that is in more than one place, is therefore preserved. Now this is true so far as 'preventing the data from being stolen' issue is resolved however when considering what if unauthorised access was granted and how this could be avoided then we could reason with the Split Database Architecture once again which does facilitate for multiple users and thereby the Multi-User Login System (as programmable using VBA) which not only prevents access for personnel not authorised to view and use the Data but also governs the users actually using the Data in an organised fashion. As a final note on Data safety, for now, Data Integrity is the given name to the set of rules which are applied to Databases within the RDBMS which ensure that the Data is not damaged or put simple the values stored remain intact and are not changed because of these rules.</li>
+            <li>Reporting allows for the creation of summaries of the Data collected which not only allows us to learn from the Data but also demonstrates how much more potential exists in the Data to be obtained and this compels to keep up with the Data operations cyclically continuing and in the meanwhile insight is gained and the quality of the Data improves,by studying the values and their relations with the rest of the values, most importantly the principal of the Data being recorded is maintained and the purpose of a Database remains.</li>
+        </ol>
     </main>
 
     <footer>
