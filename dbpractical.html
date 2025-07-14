@@ -64,6 +64,30 @@
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-size: large;
         }
+           .figure-row 
+        {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .figure-row figure 
+        {
+            text-align: center;
+            width: 250px; /* or use max-width: 30% for fluid sizing */
+        }
+        .figure-row img {
+            width: 100%;
+            height: auto;
+        }
+        .figure-row figcaption 
+        {
+        margin-top: 8px;
+        font-size: 0.9rem;
+        font-family: 'Courier New', Courier, monospace;
+        color: #555;
+        }
     </style>
 </head>
 <body>
@@ -85,6 +109,13 @@
         <h2>Welcome to Learn About Databases With Zee - DB Practicals Page</h2>
     </div>
 
+      <div class="figure-row">
+            <figure>
+                <img src="dblogicmlintelligence.png" alt="RDBMS" />
+                <figcaption><strong>Database Logic and Machine Learning Intelligence.</strong></figcaption>
+            </figure>
+
+</div>
     <div class="mainparagraphs">
         <p>Now that we have gone over a brief theory of Databases and if you're still here and curious about how to design your own database from scratch, the next few hours will be pivotal for your journey in data management.</p>
 
