@@ -93,26 +93,25 @@
 
         <h4>Phase 1: Database Logic - From Entity to Entities</h4>
         <ul>
-            <li>Define an <em>entity</em> such as Diary Entries, Users, and Tags</li>
-            <li>Design <em>attributes</em> like entry_date, tasks, and activities</li>
-            <li>Choose appropriate <em>data types</em> for each field (e.g., TEXT, DATE, BOOLEAN)</li>
-            <li>Apply <em>relational constraints</em> such as Primary Keys, Foreign Keys, and NOT NULL</li>
+            <li>Define an <em>entity</em> such as Learning Sessions, Learning Tasks, and Task Specific Activities</li>
+            <li>Design <em>attributes</em> like Sessions, Time Started Task, Tasks, Activities And Time Task Ended</li>
+            <li>Choose appropriate <em>data types</em> for each field (e.g., Text, Date/Time, Long Text etc)</li>
+            <li>Apply <em>relational constraints</em> such as Primary Keys</li>
             <li>Establish entity <em>relationships</em>: Sessions ↔ Tasks (one-to-many)</li>
         </ul>
 
         <h4>Phase 2: Data Operations (Data Ops)</h4>
         <ul>
-            <li>Set up core <strong>Read, Create & Update operations</strong> using Microsoft Access VBA</li>
-            <li>Allow users to <strong>read</strong> past entries with filters (date, tags)</li>
+            <li>Set up core <strong>Read, Create & Update operations</strong> using Microsoft Access</li>
             <li>Implement forms to <strong>create</strong> new reflections</li>
-            <li>Enable <strong>update</strong> capability to revise entries</li>
+            <li>Enable <strong>reporting</strong> capabilities to revise entries</li>
             <li>Offer <strong>search functionality</strong> with keywords and tag-based querying</li>
         </ul>
 
         <h4>Phase 3: ML Voice Assistant Extension</h4>
         <ul>
-            <li>Incorporate a basic <strong>speech-to-text interface</strong> (using Vosk or Whisper)</li>
-            <li>Train a lightweight <strong>NLP model</strong> to recognize user intents like “Show today’s entry” or “Add new mood log”</li>
+            <li>Incorporate a basic <strong>speech-to-text interface</strong> in Python Tkinter (using Vosk or Whisper)</li>
+            <li>Train a lightweight <strong>NLP model</strong> to recognize user intents like “Show today’s entry” or “Add new learning task”</li>
             <li>Enable <strong>voice-triggered commands</strong> for creating, updating, or searching entries</li>
             <li>Integrate a <strong>text-to-speech module</strong> for dynamic feedback</li>
         </ul>
