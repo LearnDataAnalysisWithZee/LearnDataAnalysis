@@ -53,6 +53,33 @@
         </ul>
       </p>
 
+      <h3>🧱 Project Folder & File Overview</h3>
+<div class="file-structure">
+  <ul>
+    <li><strong>/doc_extractor_bot/</strong> – Main project folder holding all code and logic.</li>
+    
+    <li><strong>app.py</strong> – The Flask backbone. Handles routes, file uploads, and ties everything together.</li>
+    
+    <li><strong>/templates/index.html</strong> – The frontend layout. Displays project overview and chatbot interface using Jinja2 templates.</li>
+    
+    <li><strong>/static/style.css</strong> – Stylish CSS for layout, responsiveness, and visual polish.</li>
+    
+    <li><strong>/static/script.js</strong> – JavaScript interactions: chatbot logic, scroll animations, and future enhancements.</li>
+    
+    <li><strong>/utils/file_to_text.py</strong> – Converts uploaded .docx files into plain text. First step in preprocessing.</li>
+    
+    <li><strong>/extractors/</strong> – Modular folder with regex logic:
+      <ul>
+        <li><strong>extract_money.py</strong> – Pulls currency amounts.</li>
+        <li><strong>extract_dates.py</strong> – Parses date formats from the document.</li>
+        <li><strong>extract_names.py</strong> – Finds people or item names based on structure.</li>
+      </ul>
+    </li>
+  </ul>
+  <p>💡 Each component works together to create a fluid experience—from reading a document to presenting structured insights conversationally.</p>
+</div>
+
+      
       <p class="future-scope">
         ✨ This is just the beginning. You’ll expand into full dashboards, NLP-based reporting systems, and intelligent assistants that keep your data clean and ready for action.
       </p>
