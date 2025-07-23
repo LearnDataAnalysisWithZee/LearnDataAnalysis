@@ -17,24 +17,51 @@
     <section class="overview slide-up">
       <p>
         Welcome to a hands-on project from <strong>Learn Data Analysis With Zee</strong> — where code meets clarity.
-        This Doc Data Extractor Chatbot combines Flask-powered routing, conversational interface design, and regex extraction techniques to help you turn unstructured Word documents into organized, query-ready tables.
+        This chatbot helps you extract structured data from Word documents using regex, and is perfect for managing and analyzing text-based expense records.
       </p>
 
+      <h3>🎯 Project Purpose</h3>
+      <p>
+        This project is designed to streamline data extraction from an organized folder structure used for expense tracking:
+        <ul>
+          <li><code>/Expenses Tracker/</code> – Root folder</li>
+          <li>├── Monthly subfolders <code>(e.g. Jan2025, Feb2025)</code></li>
+          <li>│   └── Daily sub-subfolders <code>(e.g. 01Jan2025, 02Jan2025)</code></li>
+          <li>│       └── <code>expenses.docx</code> – Daily record of spending</li>
+        </ul>
+        By uploading a <code>.docx</code> file from any day’s folder, the chatbot reads its text, identifies key patterns, and formats them into query-ready tables—making analysis and aggregation effortless.
+      </p>
+
+      <h3>🛠️ What You'll Build</h3>
       <ul class="features">
         <li>🗣️ Chatbot-style document queries</li>
         <li>📄 Upload and view Word file content</li>
-        <li>🔍 Extract structured data using regex</li>
-        <li>📊 Table-ready output for analysis</li>
+        <li>🔍 Extract structured data using modular regex functions</li>
+        <li>📊 Display data in formatted tables for future reporting</li>
       </ul>
 
+      <h3>📁 Tech Directory Structure</h3>
+      <p>
+        Here’s how your codebase will be structured:
+        <ul>
+          <li><code>/doc_extractor_bot/</code></li>
+          <li>├── <code>app.py</code> – Flask routes</li>
+          <li>├── <code>/templates/index.html</code> – Frontend layout</li>
+          <li>├── <code>/static/</code> – CSS & JS for UI and interactivity</li>
+          <li>├── <code>/extractors/</code> – Regex modules by data type</li>
+          <li>└── <code>/utils/file_to_text.py</code> – .docx to text converter</li>
+        </ul>
+      </p>
+
       <p class="future-scope">
-        ✨ Extendable into full AI dashboards and NLP assistants. Your future data assistant is just a few regexes away.
+        ✨ This is just the beginning. You’ll expand into full dashboards, NLP-based reporting systems, and intelligent assistants that keep your data clean and ready for action.
       </p>
     </section>
 
     <footer class="fade-in">
-      <p>Learn, build, and analyze—powered by Zee. - Website Under Construction 📚</p>
+      <p>Learn, build, and analyze—powered by Learn Data Analysis With Zee. Website Under Construction 📚</p>
     </footer>
   </div>
 </body>
 </html>
+
