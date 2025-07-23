@@ -119,4 +119,25 @@ footer {
   margin-top: 0.5em;
   margin-left: 1em;
 }
+.tutorial-steps {
+  background-color: #fff;
+  border-left: 5px solid #00c2a8;
+  padding: 2em;
+  margin-top: 2em;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.tutorial-steps ol {
+  padding-left: 1em;
+  margin-top: 1em;
+}
+.tutorial-steps li {
+  margin-bottom: 1em;
+}
+.educational-note {
+  margin-top: 1.5em;
+  font-style: italic;
+  color: #555;
+}
 
