@@ -96,4 +96,27 @@ footer {
     padding: 1em;
   }
 }
+.file-structure {
+  background-color: #fefefe;
+  border-left: 4px solid #0057e7;
+  padding: 1.5em;
+  margin-top: 2em;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.file-structure ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+.file-structure li {
+  margin-bottom: 1em;
+}
+.file-structure li strong {
+  color: #0057e7;
+}
+.file-structure ul ul {
+  margin-top: 0.5em;
+  margin-left: 1em;
+}
 
