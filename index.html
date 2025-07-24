@@ -2,112 +2,60 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Learn Data Analysis With Zee – Doc Data Extractor Chatbot</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ✅ Responsive -->
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <title>Learn Data Analysis With Zee – Doc Data Extractor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/script.js" defer></script>
 </head>
 <body>
   <div class="container">
     <header class="fade-in">
-      <h1>📄 Doc Data Extractor Chatbot</h1>
+      <h1>📄 Doc Data Extractor</h1>
       <h2>by Learn Data Analysis With Zee</h2>
     </header>
 
     <section class="overview slide-up">
       <p>
-        Welcome to a hands-on project from <strong>Learn Data Analysis With Zee</strong> — where code meets clarity.
-        This chatbot helps you extract structured data from Word documents using regex, and is perfect for managing and analyzing text-based expense records.
+        This educational project demonstrates how to extract structured data from Word documents using regular expressions. Instead of relying on chatbot logic, we focus directly on uploading a document, parsing its raw content, and extracting valuable data line by line for analysis.
       </p>
 
-      <h3>🎯 Project Purpose</h3>
-      <p>
-        This project is designed to streamline data extraction from an organized folder structure used for expense tracking:
-        <ul>
-          <li><code>/Expenses Tracker/</code> – Root folder</li>
-          <li>├── Monthly subfolders <code>(e.g. Jan2025, Feb2025)</code></li>
-          <li>│   └── Daily sub-subfolders <code>(e.g. 01Jan2025, 02Jan2025)</code></li>
-          <li>│       └── <code>expenses.docx</code> – Daily record of spending</li>
-        </ul>
-        By uploading a <code>.docx</code> file from any day’s folder, the chatbot reads its text, identifies key patterns, and formats them into query-ready tables—making analysis and aggregation effortless.
-      </p>
-
-      <h3>🛠️ What You'll Build</h3>
-      <ul class="features">
-        <li>🗣️ Chatbot-style document queries</li>
-        <li>📄 Upload and view Word file content</li>
-        <li>🔍 Extract structured data using modular regex functions</li>
-        <li>📊 Display data in formatted tables for future reporting</li>
-      </ul>
-
-      <h3>📁 Tech Directory Structure</h3>
-      <p>
-        Here’s how your codebase will be structured:
-        <ul>
-          <li><code>/doc_extractor_bot/</code></li>
-          <li>├── <code>app.py</code> – Flask routes</li>
-          <li>├── <code>/templates/index.html</code> – Frontend layout</li>
-          <li>├── <code>/static/</code> – CSS & JS for UI and interactivity</li>
-          <li>├── <code>/extractors/</code> – Regex modules by data type</li>
-          <li>└── <code>/utils/file_to_text.py</code> – .docx to text converter</li>
-        </ul>
-      </p>
-
-      <h3>🧱 Project Folder & File Overview</h3>
-<div class="file-structure">
-  <ul>
-    <li><strong>/doc_extractor_bot/</strong> – Main project folder holding all code and logic.</li>
-    
-    <li><strong>app.py</strong> – The Flask backbone. Handles routes, file uploads, and ties everything together.</li>
-    
-    <li><strong>/templates/index.html</strong> – The frontend layout. Displays project overview and chatbot interface using Jinja2 templates.</li>
-    
-    <li><strong>/static/style.css</strong> – Stylish CSS for layout, responsiveness, and visual polish.</li>
-    
-    <li><strong>/static/script.js</strong> – JavaScript interactions: chatbot logic, scroll animations, and future enhancements.</li>
-    
-    <li><strong>/utils/file_to_text.py</strong> – Converts uploaded .docx files into plain text. First step in preprocessing.</li>
-    
-    <li><strong>/extractors/</strong> – Modular folder with regex logic:
+      <h3>🎯 Why This Approach Works</h3>
       <ul>
-        <li><strong>extract_money.py</strong> – Pulls currency amounts.</li>
-        <li><strong>extract_dates.py</strong> – Parses date formats from the document.</li>
-        <li><strong>extract_names.py</strong> – Finds people or item names based on structure.</li>
+        <li>📄 We first extract the <strong>entire document content</strong> as plain text.</li>
+        <li>🔍 Then, we apply <strong>regex rules step-by-step</strong> to parse specific fields.</li>
+        <li>📊 Data is structured into predefined columns for clarity and Excel compatibility.</li>
+        <li>📤 The output is <strong>tabular</strong>, ideal for filtering, reporting, and visualization.</li>
       </ul>
-    </li>
-  </ul>
-  <p>💡 Each component works together to create a fluid experience—from reading a document to presenting structured insights conversationally.</p>
-</div>
-<h3>📚 Tutorial Exercises (Step-by-Step Guide)</h3>
-<div class="tutorial-steps">
-  <p>This project is built exclusively for educational purposes under the <strong>Learn Data Analysis With Zee</strong> initiative. Each exercise is designed to teach modular development, data preprocessing, and interactive web design.</p>
 
-  <ol>
-    <li><strong>Project Setup:</strong> Create the folder structure and initialize the Flask environment.</li>
-    <li><strong>Design Overview Page:</strong> Build `index.html` with project description and animated layout.</li>
-    <li><strong>Create Chatbot UI:</strong> Add frontend HTML and JavaScript to simulate conversational flow.</li>
-    <li><strong>Implement file_to_text.py:</strong> Convert .docx documents to readable plain text using `python-docx`.</li>
-    <li><strong>Build Extractors:</strong>
+      <h3>📑 Target Columns</h3>
       <ul>
-        <li>Use regex to extract <code>currency values</code></li>
-        <li>Extract <code>dates</code> in multiple formats</li>
-        <li>Detect <code>names/items</code> based on structure</li>
+        <li><strong>Location</strong> – Where the expense occurred</li>
+        <li><strong>Item</strong> – What was purchased</li>
+        <li><strong>Quantity</strong> – How much was bought</li>
+        <li><strong>Cost</strong> – Amount spent</li>
+        <li><strong>Method</strong> – Payment method (cash, card, etc.)</li>
+        <li><strong>Category</strong> – Purchase type (groceries, transport, etc.)</li>
       </ul>
-    </li>
-    <li><strong>Wire Flask Routes:</strong> Add endpoints for uploading files and returning extracted data.</li>
-    <li><strong>Integrate Chatbot Logic:</strong> Enhance JavaScript to detect user intent and trigger extractions.</li>
-    <li><strong>Style & Animate:</strong> Polish the UI with CSS for mobile responsiveness and smooth animations.</li>
-    <li><strong>Test & Debug:</strong> Try different documents, improve extraction, and log edge cases.</li>
-    <li><strong>Expand & Reflect:</strong> Add new extractors and reflect on how the chatbot empowers future analysis.</li>
-  </ol>
 
-  <p class="educational-note">🎓 Everything here is crafted for educational exploration, not production deployment. Feel free to experiment, break things, and rebuild — it’s how we learn.</p>
-</div>
+      <h3>📁 Current Project Structure</h3>
+      <ul>
+        <li><strong>app.py</strong> – Flask application logic: file upload, text conversion, and data extraction</li>
+        <li><strong>/templates/index.html</strong> – Project walkthrough, upload form, results display</li>
+        <li><strong>/static/style.css</strong> – Page styling</li>
+        <li><strong>/static/script.js</strong> – JS interactivity for uploads and response rendering</li>
+      </ul>
 
-      
-      <p class="future-scope">
-        ✨ This is just the beginning. You’ll expand into full dashboards, NLP-based reporting systems, and intelligent assistants that keep your data clean and ready for action.
-      </p>
+      <h3>📚 Tutorial Steps</h3>
+      <ol>
+        <li><strong>Build Flask app.py:</strong> Modular functions for file upload and regex parsing</li>
+        <li><strong>Design index.html:</strong> Simple UI for document preview and extracted results</li>
+        <li><strong>Write regex extractors:</strong> Identify fields like money, dates, item names</li>
+        <li><strong>Display results:</strong> Format the output into a neat table</li>
+        <li><strong>Explore Excel exports:</strong> Prepare output for analysis and aggregation</li>
+        <li><strong>Experiment and extend:</strong> Try new patterns, enrich results, track categories</li>
+      </ol>
+
+      <p class="educational-note">🎓 This project is a learning tool. We use plain-text transformation and modular regex logic to teach file parsing and tabular data extraction — preparing raw content for meaningful analysis.</p>
     </section>
 
     <footer class="fade-in">
@@ -116,4 +64,5 @@
   </div>
 </body>
 </html>
+
 
