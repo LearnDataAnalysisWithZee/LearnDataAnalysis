@@ -1,4 +1,4 @@
-/* === Base Styles === */
+/* === Base Reset & Layout === */
 * {
   box-sizing: border-box;
 }
@@ -6,7 +6,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #e4f0ff 0%, #ffffff 100%);
+  background: linear-gradient(to right, #f4f7fc, #ffffff);
   color: #333;
 }
 
@@ -17,46 +17,58 @@ body {
   padding: 2em;
 }
 
-/* === Typography === */
-h1, h2, h3 {
+/* === Header Styling === */
+header {
   text-align: center;
-  color: #0057e7;
-  margin-bottom: 0.5em;
+  margin-bottom: 2em;
 }
-h1 {
+header h1 {
   font-size: 2.4em;
+  color: #0057e7;
 }
-h2 {
+header h2 {
   font-size: 1.3em;
-  color: #333;
+  color: #444;
 }
-h3 {
-  font-size: 1.2em;
+
+/* === Section Styling === */
+section.overview {
+  background-color: #fff;
+  padding: 2em;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+  margin-bottom: 2em;
+}
+section h3 {
   margin-top: 2em;
+  color: #0057e7;
+}
+.features li,
+.file-structure li,
+.tutorial-steps li {
+  margin-bottom: 0.6em;
+}
+.tutorial-steps ul {
+  margin-top: 0.5em;
+  padding-left: 1em;
+}
+.educational-note {
+  font-style: italic;
+  margin-top: 1.5em;
+  color: #555;
 }
 
-p {
-  line-height: 1.6;
-  font-size: 1.05em;
-}
-
+/* === List Styling === */
 ul {
   list-style: none;
   padding-left: 1em;
 }
-ul li {
-  margin-bottom: 0.5em;
-  position: relative;
-  padding-left: 1.2em;
-}
 ul li::before {
   content: "✔️";
-  position: absolute;
-  left: 0;
-  top: 0;
+  margin-right: 0.5em;
 }
 
-/* === Footer === */
+/* === Footer Styling === */
 footer {
   text-align: center;
   font-size: 0.95em;
@@ -65,79 +77,20 @@ footer {
   border-top: 1px solid #ccc;
 }
 
-/* === Animations === */
+/* === Animation Effects === */
 .fade-in {
   animation: fadeIn 1.2s ease-in-out;
 }
 .slide-up {
-  animation: slideUp 1s ease-out;
+  animation: slideUp 0.9s ease-out;
 }
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 @keyframes slideUp {
-  from {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
-/* === Responsive Adjustments === */
-@media screen and (max-width: 640px) {
-  h1 {
-    font-size: 1.8em;
-  }
-  .container {
-    padding: 1em;
-  }
-}
-.file-structure {
-  background-color: #fefefe;
-  border-left: 4px solid #0057e7;
-  padding: 1.5em;
-  margin-top: 2em;
-  border-radius: 8px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-}
-
-.file-structure ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-.file-structure li {
-  margin-bottom: 1em;
-}
-.file-structure li strong {
-  color: #0057e7;
-}
-.file-structure ul ul {
-  margin-top: 0.5em;
-  margin-left: 1em;
-}
-.tutorial-steps {
-  background-color: #fff;
-  border-left: 5px solid #00c2a8;
-  padding: 2em;
-  margin-top: 2em;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-.tutorial-steps ol {
-  padding-left: 1em;
-  margin-top: 1em;
-}
-.tutorial-steps li {
-  margin-bottom: 1em;
-}
-.educational-note {
-  margin-top: 1.5em;
-  font-style: italic;
-  color: #555;
-}
 
