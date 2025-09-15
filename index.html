@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Learn Data Analysis With Zee – Doc Data Extractor</title>
+  <title>Learn Data Analysis With Zee – Input Channels Process & Data Divisions</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
@@ -10,65 +10,53 @@
 <body>
   <div class="container">
     <header class="fade-in">
-      <h1>📄 Doc Data Extractor</h1>
+      <h1>📄 Input Channels Process & Data Divisions</h1>
       <h2>by Learn Data Analysis With Zee</h2>
     </header>
 
     <section class="overview slide-up">
-      <p>
-        This educational project demonstrates how to extract structured data from Word documents using regular expressions. We focus on uploading a document, parsing its raw content, and extracting valuable data line by line for analysis.
-      </p>
-
-      <h3>🎯 Why This Approach Works</h3>
-      <ul>
-        <li>📄 We first extract the <strong>entire document content</strong> as plain text.</li>
-        <li>🔍 Then, we apply <strong>regex rules step-by-step</strong> to parse specific fields.</li>
-        <li>📊 Data is structured into predefined columns for clarity and Excel compatibility.</li>
-        <li>📤 The output is <strong>tabular</strong>, ideal for filtering, reporting, and visualization.</li>
-      </ul>
-
-      <h3>📑 Target Columns</h3>
-      <ul>
-        <li><strong>Location</strong> – Where the expense occurred</li>
-        <li><strong>Item</strong> – What was purchased</li>
-        <li><strong>Quantity</strong> – How much was bought</li>
-        <li><strong>Cost</strong> – Amount spent</li>
-        <li><strong>Method</strong> – Payment method (cash, card, etc.)</li>
-        <li><strong>Category</strong> – Purchase type (groceries, transport, etc.)</li>
-      </ul>
-
-      <h3>📁 Current Project Structure</h3>
-      <ul>
-        <li><strong>app.py</strong> – Flask application logic: file upload, text conversion, and data extraction</li>
-        <li><strong>/templates/index.html</strong> – Project walkthrough, upload form, results display</li>
-        <li><strong>/static/style.css</strong> – Page styling</li>
-        <li><strong>/static/script.js</strong> – JS interactivity for uploads and response rendering</li>
-      </ul>
-
-      <h3>📚 Tutorial Steps</h3>
+      <h3>🔗 Input Channels Process</h3>
       <ol>
-        <li><strong>Design index.html:</strong> Simple UI for document preview and extracted results</li>
-        <li><strong>Build Flask app.py:</strong> Modular functions for file upload and regex parsing</li>
-        <li><strong>Write regex extractors:</strong> Identify fields like money, dates, item names</li>
-        <li><strong>Display results:</strong> Format the output into a neat table</li>
-        <li><strong>Explore Excel exports:</strong> Prepare output for analysis and aggregation</li>
-        <li><strong>Experiment and extend:</strong> Try new patterns, enrich results, track categories</li>
+        <li><strong>Central Entity</strong></li>
+        <li><strong>Strong Synonym</strong></li>
+        <li><strong>Organisational Terms</strong></li>
+        <li><strong>Expose Descriptive Features</strong></li>
       </ol>
 
-      <section class="project-intro-section fade-in">
-  <h3>📘 From Journal to Analytics</h3>
-  <p class="project-intro">
-    In our day-to-day routine, we often jot down expenses casually in a Word document we refer to as the <strong>Expenses Journal</strong>—
-    a stream of purchases, costs, and notes recorded without rigid structure. This project takes that informal journal and, using our 
-    <strong>Doc Data Extractor</strong>, transforms it into a clean, structured <strong>Expenses Log Sheet</strong>. By extracting key data points like 
-    <em>location</em>, <em>item</em>, <em>quantity</em>, <em>cost</em>, <em>method</em>, and <em>category</em> through regular expressions, we pave the 
-    way for meaningful analysis. Whether you're visualizing spending trends in Excel or building dashboards, this conversion marks the first 
-    step toward harnessing unstructured notes into actionable insights for data analytics.
-  </p>
-</section>
+      <h4>📌 Central Entity</h4>
+      <p>
+        Central Entity is derived from the title of the application. For example, if the application is <em>Activity Tracker</em>, then the Central Entity is <strong>Activity</strong>. If it's <em>Expenses Tracker</em>, then the Central Entity is <strong>Expenses</strong>.
+      </p>
 
-      
-      <p class="educational-note">🎓 This project is a learning tool. We use plain-text transformation and modular regex logic to teach file parsing and tabular data extraction — preparing raw content for meaningful analysis.</p>
+      <h4>📌 Strong Synonym</h4>
+      <p>
+        We identify the strongest synonym for the Central Entity. For instance, the strongest synonym for <strong>Activity</strong> is <em>Task</em>, and for <strong>Expenses</strong> it is <em>Expenditures</em>. This synonym becomes the first Input Channel or Data Division—commonly referred to as a field.
+      </p>
+
+      <h4>📌 Organisational Terms</h4>
+      <p>
+        These are universal terms that strengthen the input structure. If <strong>Task</strong> is the first field, organisational terms like <em>Date</em> and <em>Time</em> help structure the input. The full list includes:
+      </p>
+      <ul>
+        <li>Date</li>
+        <li>Time</li>
+        <li>Location</li>
+        <li>Session Activities / Session Expenses (based on Central Entity)</li>
+        <li>Status</li>
+      </ul>
+      <p>
+        Note: The fourth term dynamically reflects the plural of the Central Entity. For <strong>Activity</strong>, it's <em>Session Activities</em>. For <strong>Expenses</strong>, it's <em>Session Expenses</em>. This reflects the reality that multiple activities or expenses may occur during a single session.
+      </p>
+
+      <h4>📌 Expose Descriptive Features</h4>
+      <p>
+        This final layer of the Input Channels Process adds <strong>Categorisation</strong> and <strong>Importance</strong> to enrich the data structure. These features are universal and allow deeper exploration as data entries grow.
+      </p>
+      <p>
+        The benefits of Categorisation and Importance include surfacing key insights and adding a storytelling dimension to each record. An optional field, <strong>Notes</strong>, further enhances this by capturing context and nuance—revealing patterns and meaning after just a few entries.
+      </p>
+
+      <p class="educational-note">🎓 This framework supports structured input design for scalable data analysis—ideal for transforming raw entries into meaningful insights.</p>
     </section>
 
     <footer class="fade-in">
@@ -77,5 +65,6 @@
   </div>
 </body>
 </html>
+
 
 
