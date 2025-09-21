@@ -1,97 +1,139 @@
-/* === Base Reset & Layout === */
+/* style.css */
+
+/* Reset & Base */
 * {
-  box-sizing: border-box;
-}
-body {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to right, #f4f7fc, #ffffff);
-  color: #333;
+  box-sizing: border-box;
 }
 
-/* === Container === */
+body {
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(to right, #f4f7fa, #eaf0f6);
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Container */
 .container {
   max-width: 960px;
   margin: auto;
-  padding: 2em;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 40px;
+  animation: fadeIn 1s ease-in-out;
 }
 
-/* === Header Styling === */
+/* Header */
 header {
   text-align: center;
-  margin-bottom: 2em;
-}
-header h1 {
-  font-size: 2.4em;
-  color: #0057e7;
-}
-header h2 {
-  font-size: 1.3em;
-  color: #444;
+  margin-bottom: 40px;
 }
 
-/* === Section Styling === */
-section.overview {
-  background-color: #fff;
-  padding: 2em;
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.06);
-  margin-bottom: 2em;
+header h1 {
+  font-size: 2.2rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
 }
-section h3 {
-  margin-top: 2em;
-  color: #0057e7;
+
+header h2 {
+  font-size: 1.2rem;
+  color: #7f8c8d;
 }
-.features li,
-.file-structure li,
-.tutorial-steps li {
-  margin-bottom: 0.6em;
+
+/* Section Titles */
+h3 {
+  font-size: 1.6rem;
+  color: #34495e;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  border-left: 6px solid #3498db;
+  padding-left: 12px;
 }
-.tutorial-steps ul {
-  margin-top: 0.5em;
-  padding-left: 1em;
+
+h4 {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin-top: 20px;
+  margin-bottom: 8px;
 }
-.educational-note {
-  font-style: italic;
-  margin-top: 1.5em;
+
+/* Paragraphs */
+p {
+  margin-bottom: 16px;
+  font-size: 1rem;
   color: #555;
 }
 
-/* === List Styling === */
-ul {
-  list-style: none;
-  padding-left: 1em;
-}
-ul li::before {
-  content: "✔️";
-  margin-right: 0.5em;
+/* Lists */
+ol, ul {
+  margin-left: 20px;
+  margin-bottom: 20px;
 }
 
-/* === Footer Styling === */
+li {
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+/* Highlighted Notes */
+.educational-note {
+  background: #dff9fb;
+  border-left: 6px solid #00a8ff;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-style: italic;
+  color: #2f3640;
+}
+
+/* Footer */
 footer {
   text-align: center;
-  font-size: 0.95em;
-  margin-top: 3em;
-  padding-top: 2em;
-  border-top: 1px solid #ccc;
+  margin-top: 40px;
+  font-size: 0.95rem;
+  color: #7f8c8d;
 }
 
-/* === Animation Effects === */
-.fade-in {
-  animation: fadeIn 1.2s ease-in-out;
-}
-.slide-up {
-  animation: slideUp 0.9s ease-out;
-}
+/* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.slide-up {
+  animation: slideUp 1s ease-in-out;
+}
+
 @keyframes slideUp {
-  from { transform: translateY(20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
 }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+  }
+
+  h4 {
+    font-size: 1.1rem;
+  }
+}
+
 
 
 
