@@ -117,6 +117,34 @@ footer {
   }
 }
 
+/* Glossary-style ordered list */
+.data-glossary {
+  margin: 30px 0;
+  padding-left: 20px;
+  list-style-type: decimal;
+  counter-reset: glossary-counter;
+}
+
+.data-glossary li {
+  margin-bottom: 15px;
+  padding: 12px 15px;
+  background: #f9fbfc;
+  border-left: 4px solid #0078d7;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+  position: relative;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.data-glossary li:hover {
+  background: #eef4fa;
+}
+
+.data-glossary li::marker {
+  font-weight: bold;
+  color: #0078d7;
+}
 
 
 
