@@ -113,6 +113,124 @@
         </table>
       </div>
 
+    <section class="overview slide-up">
+  <h3>🛠 Inconsistency Detection</h3>
+
+  <h4>Pre Inconsistency Detection Steps:</h4>
+  <ul>
+    <li>Create New Folder In One Drive And Name It Data Lake</li>
+    <li>Inside The Folder Create A Excel Workbook And Name It Data Cleaning</li>
+    <li>Copy And Paste Table Into Sheet1</li>
+    <li>Rename Sheet1 As MessyData</li>
+    <li>Create New Sheet And Rename CleanedData</li>
+    <li>In CleanedData Copy The Messy Data From MessyData And Paste As Values</li>
+    <li>In CleanedData, Click On Insert From The Ribbon</li>
+    <li>Click Anywhere Inside The Data Range</li>
+    <li>Click Table</li>
+    <li>Click OK</li>
+    <li>Click Table Design From Ribbon If Not Already Selected</li>
+    <li>Change Table Name To <code>data_set</code></li>
+  </ul>
+
+  <h4>First Inconsistency Detected:</h4>
+  <p>No ID Column</p>
+
+  <p><strong>Solution:</strong></p>
+  <ul>
+    <li>Click On Any Cell Inside The First Available Column</li>
+    <li>Click On Home From The Ribbon</li>
+    <li>Click On The Insert Drop Down</li>
+    <li>Click Insert Table Columns To The Left</li>
+    <li>Rename Column ID</li>
+    <li>Highlight All Available Table Cells Inside The New ID Column</li>
+    <li>Click Format → Select Number → Reduce Decimal Places To 0</li>
+    <li>Click The First Table Cell → Input Number 1</li>
+    <li>Hover Over The Bottom Right Of The Cell → Hold <kbd>Ctrl</kbd> → Drag Down</li>
+    <li>All ID's Will Have Incremented By 1</li>
+  </ul>
+
+  <h4>Snapshot Of Table After Having Reduced Noise So Far With Caption Of Text</h4>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>ID</th><th>Date</th><th>Type</th><th>Item</th><th>Qty</th>
+        <th>Unit Price</th><th>Total</th><th>Currency</th>
+        <th>Vendor/Customer</th><th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>2025-10-27</td><td>Sale</td><td>cricket bat</td><td>2</td><td>£45</td><td>£90</td><td>GBP</td><td>John Smith</td><td>-</td></tr>
+      <tr><td>2</td><td>2025/10/27</td><td>Purchase</td><td>gloves</td><td>10</td><td>5 USD</td><td>50</td><td>USD</td><td>SportsGear Inc.</td><td>urgent restock</td></tr>
+      <!-- … continue rows with IDs incremented … -->
+    </tbody>
+  </table>
+
+  <h4>Second Inconsistency Detected:</h4>
+  <p>Snapshot Of Noisy Column With Caption Of Text</p>
+  <p>Inconsistent Casing In Type & Item Columns</p>
+
+  <p><strong>Solution:</strong></p>
+  <ul>
+    <li>Helper column L with <code>=PROPER(C2)</code> for Type → Paste values back</li>
+    <li>Helper column M with <code>=PROPER(D2)</code> for Item → Paste values back</li>
+    <li>Delete helper columns</li>
+  </ul>
+
+  <h4>Snapshot Of Table Now After Having Reduced Noise So Far With Caption Of Text</h4>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>ID</th><th>Date</th><th>Type</th><th>Item</th><th>Qty</th>
+        <th>Unit Price</th><th>Total</th><th>Currency</th>
+        <th>Vendor/Customer</th><th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>2025-10-27</td><td>Sale</td><td>Cricket Bat</td><td>2</td><td>£45</td><td>£90</td><td>GBP</td><td>John Smith</td><td>-</td></tr>
+      <tr><td>2</td><td>2025-10-27</td><td>Purchase</td><td>Gloves</td><td>10</td><td>5 USD</td><td>50</td><td>USD</td><td>SportsGear Inc.</td><td>urgent restock</td></tr>
+      <!-- … casing corrected for Type & Item … -->
+    </tbody>
+  </table>
+
+  <h4>Third Inconsistency Detected:</h4>
+  <p>Snapshot Of Table Unit Price, Total & Currency Columns With Caption Of Text</p>
+  <p>Use Of Currency Symbols In Unit Price & Total Columns</p>
+
+  <p><strong>Solution:</strong></p>
+  <ul>
+    <li>Format Unit Price and Total as Number (2 decimals)</li>
+    <li>Use helper formula to strip USD/GBP text</li>
+    <li>Paste values back into table</li>
+  </ul>
+
+  <h4>Snapshot Of Table With Reduced Noise With Caption Of Text</h4>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>ID</th><th>Date</th><th>Type</th><th>Item</th><th>Qty</th>
+        <th>Unit Price</th><th>Total</th><th>Currency</th>
+        <th>Vendor/Customer</th><th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>2025-10-27</td><td>Sale</td><td>Cricket Bat</td><td>2</td><td>45.00</td><td>90.00</td><td>GBP</td><td>John Smith</td><td>-</td></tr>
+      <tr><td>2</td><td>2025-10-27</td><td>Purchase</td><td>Gloves</td><td>10</td><td>5.00</td><td>50.00</td><td>USD</td><td>SportsGear Inc.</td><td>urgent restock</td></tr>
+      <!-- … currency symbols removed, numeric values … -->
+    </tbody>
+  </table>
+
+  <h4>Fourth Inconsistency Detected:</h4>
+  <p>Duplicate Entry</p>
+
+  <p><strong>Solution:</strong></p>
+  <ul>
+    <li>Select duplicate row</li>
+    <li>Right click → Delete</li>
+    <li>Re‑order IDs</li>
+    <li>Save changes</li>
+  </ul>
+</section>
+
 
     
     <footer class="fade-in">
