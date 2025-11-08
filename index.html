@@ -149,7 +149,7 @@
     <li>All ID's Will Have Incremented By 1</li>
   </ul>
 
-  <h4>Snapshot Of Table After Having Reduced Noise So Far With Caption Of Text</h4>
+  <h4>Snapshot Of Table After Having Reduced Noise So Far</h4>
   <table class="data-table">
     <thead>
       <tr>
@@ -166,14 +166,27 @@
   </table>
 
   <h4>Second Inconsistency Detected:</h4>
-  <p>Snapshot Of Noisy Column With Caption Of Text</p>
   <p>Inconsistent Casing In Type & Item Columns</p>
 
   <p><strong>Solution:</strong></p>
   <ul>
-    <li>Helper column L with <code>=PROPER(C2)</code> for Type → Paste values back</li>
-    <li>Helper column M with <code>=PROPER(D2)</code> for Item → Paste values back</li>
-    <li>Delete helper columns</li>
+    <li>The Data As Noticeable Stretches From Column A To Column J</li>
+    <li>Click In Column L Cell 2 (One Column Away From The Table So New Table Column Is Not Created, This Is A Helper Column)</li>
+    <li>In The Formula Bar Type <code>=PROPER(C2)</code> And Hit Enter</li>
+    <li>This Will Capitalise Each First Word In The Cell</li>
+    <li>Hover Over The Bottom Right Of The Cell</li>
+    <li>Click And Drag To The Next Cell And Any Subsequent Cells Until All The Data Of The Column Has Been Effected</li>
+    <li>Copy All The Cleaned Cells</li>
+    <li>Paste As Values Into The Table Column For Type</li>
+    <li>Delete The Helper Column And Clear Contents</li>
+    <li>Click In Column M Cell 2 (As This Is A Helper Column)</li>
+    <li>In The Formula Bar Type <code>=PROPER(C2)</code> And Hit Enter</li>
+    <li>This Will Capitalise Each First Word In The Cell</li>
+    <li>Hover Over The Bottom Right Of The Cell</li>
+    <li>Click And Drag To The Next Cell And Any Subsequent Cells Until All The Data Of The Column Have Been Effected</li>
+    <li>Copy All The Cleaned Cells</li>
+    <li>Paste As Values Into The Table Column For Item</li>
+    <li>Delete The Helper Column And Clear Contents</li>
   </ul>
 
   <h4>Snapshot Of Table Now After Having Reduced Noise So Far With Caption Of Text</h4>
@@ -193,17 +206,30 @@
   </table>
 
   <h4>Third Inconsistency Detected:</h4>
-  <p>Snapshot Of Table Unit Price, Total & Currency Columns With Caption Of Text</p>
   <p>Use Of Currency Symbols In Unit Price & Total Columns</p>
 
   <p><strong>Solution:</strong></p>
   <ul>
-    <li>Format Unit Price and Total as Number (2 decimals)</li>
-    <li>Use helper formula to strip USD/GBP text</li>
-    <li>Paste values back into table</li>
+    <li>The Table As Noticeable Has A Metadata Column Named Currency To Seperate Meaning From Value</li>
+    <li>The Unit Price & Total Columns Need To Be Formatted As Number With Decimals For Calculation Integrity</li>
+    <li>Select All The Table Cells In The Unit Price Column</li>
+    <li>Right Click And Click On Format Cell</li>
+    <li>Select Number, Change To 2 Decimal Places If Not Selected As Default, And Click Ok</li>
+    <li>As Noticeable All The Currency Symbols Have Been Safely Removed</li>
+    <li>Highlight The Table Cells In The Total Column, Right Click, Click On Format Cell</li>
+    <li>Select Number, Change To 2 Decimal Places If Not Selected As Default, And Click Ok</li>
+    <li>As Noticeable All The Currency Symbols Have Been Safely Removed</li>
+    <li>Click In Column L Cell 2</li>
+    <li>In The Formula Bar Type =IF(OR(ISNUMBER(F2),F2=""),F2,VALUE(SUBSTITUTE(SUBSTITUTE(F2,"USD",""),"GBP",""))) And Hit Enter</li>
+    <li><italic>"If the cell is already a number or blank, leave it alone. Otherwise, strip out USD/GBP text and convert the result into a proper number."</italic> - Copilot</li>
+    <li>Hover Over The Bottom Right Of The Cell</li>
+    <li>Click And Drag To The Cell Underneath And Keep Doing This Until All The Columns Have Been Effected</li>
+    <li>Copy All The Cleaned Cells</li>
+    <li>Paste As Values Into The Table Column For Unit Price</li>
+    <li>Delete The Helper Column And Clear Contents</li>
   </ul>
 
-  <h4>Snapshot Of Table With Reduced Noise With Caption Of Text</h4>
+  <h4>Snapshot Of Table With Reduced Noise</h4>
   <table class="data-table">
     <thead>
       <tr>
@@ -224,15 +250,16 @@
 
   <p><strong>Solution:</strong></p>
   <ul>
-    <li>Select duplicate row</li>
+    <li>Click The Row Number Of The Duplicate Entry As Identifiable From The Notes Column (Although After Studying The Data Will Be Obvious Too)</li>
     <li>Right click → Delete</li>
-    <li>Re‑order IDs</li>
-    <li>Save changes</li>
+    <li>Hover Over The Bottom Right Of The First ID Cell</li>
+    <li>Keep Hold Of ctrl On The Keyboard</li>
+    <li>Click And Drag The Bold Cross Down To The Bottom Till The Last Table Cell</li>
+    <li>All ID's Will Have Been Re-Ordered To Be Incremented By 1</li>
+    <li>Save Changes So Far</li>
   </ul>
+      
 </section>
-
-
-    
     <footer class="fade-in">
       <p>Learn, build, and analyze—powered by Learn Data Analysis With Zee. Website Under Construction 📚</p>
     </footer>
