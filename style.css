@@ -148,7 +148,8 @@ footer {
 /* Responsive table wrapper */
 .table-container {
   width: 100%;
-  overflow-x: auto;
+  overflow-x: auto;                 /* enables horizontal scroll */
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
   margin: 20px 0;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
@@ -158,11 +159,12 @@ footer {
 .data-table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 800px; /* ensures structure on small screens */
+  min-width: 900px; /* ensures table doesn’t collapse on small screens */
   font-size: 0.95rem;
 }
 
-.data-table th, .data-table td {
+.data-table th,
+.data-table td {
   border: 1px solid #ddd;
   padding: 10px 12px;
   text-align: left;
@@ -189,10 +191,12 @@ footer {
     font-size: 0.85rem;
   }
 
-  .data-table th, .data-table td {
+  .data-table th,
+  .data-table td {
     padding: 8px;
   }
 }
+
 
 
 
