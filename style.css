@@ -159,8 +159,9 @@ footer {
 .data-table {
   width: 100%;
   border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 0.9rem;
   min-width: 900px; /* ensures table doesn’t collapse on small screens */
-  font-size: 0.95rem;
 }
 
 .data-table th,
@@ -196,6 +197,7 @@ footer {
     padding: 8px;
   }
 }
+
 
 
 
