@@ -345,6 +345,77 @@
       <h4>Sixth Inconsistency Detected:</h4>
       <p>Logical Inconsistency - Item Being Sold Before Is Purchased</p>
 
+      <p><strong>Solution:</strong></p>
+      <ul>
+  <li>Update Notes column with "urgent restock" wherever an item is a Sale in Type before any Purchase has been made.</li>
+  <li>Firstly, Cricket Bat is appearing for the first time in Item with no previous Purchase noticeable in Type. In Notes for this row input "urgent restock".</li>
+  <li>Do the same for Gloves, Pads, Balls, Helmet, Stumps, and Kit Bag.</li>
+  <li>Create a new Helper sheet and copy Type column data. Hold Ctrl and copy Notes column data too.</li>
+  <li>Paste as values into the new Helper sheet.</li>
+  <li>Click on any cell in the Helper sheet where there is data.</li>
+  <li>Click on Data from the Ribbon.</li>
+  <li>Look for Get &amp; Transform Data.</li>
+  <li>Click on From Table/Range.</li>
+  <li>There will be a prompt to create a table, click OK.</li>
+  <li>This will open and load the data into Power Query Editor.</li>
+  <li>Click on Transform from the Power Query Editor menu.</li>
+  <li>Select Column2, click on Format and Trim (trims residual spaces leftover after standardising).</li>
+  <li>Click on Add Column from the Power Query Editor menu.</li>
+  <li>Click on Conditional Column.</li>
+  <li>This will open the Conditional dialog.</li>
+  <li>Does not matter what new name is given to this new column, only not a name which exists in the dataset which has been loaded.</li>
+  <li>From Column Name dropdown after the If clause select Column2.</li>
+  <li>From the Operator dropdown select "contains".</li>
+  <li>In Value input "urgent restock".</li>
+  <li>In Output input "Purchase".</li>
+  <li>In Else text box input "Sale".</li>
+  <li>Click OK.</li>
+  <li>Remove Column1 and Column2.</li>
+  <li>Now load the cleaned data back into Excel.</li>
+  <li>Click on Home from the Power Query Editor menu and click Close &amp; Load.</li>
+  <li>The data is loaded as a new table in a new sheet called Table1.</li>
+  <li>Copy this data and paste as values back into the data_set table over at the Cleaned Data sheet inside the Type column.</li>
+  <li>Delete the Table sheet and the Helper sheet.</li>
+  <li>There is Queries &amp; Connections on the right.</li>
+  <li>Right click where it reads Connection Only and click Delete.</li>
+  <li>Close the Queries and Connections pane.</li>
+  <li>Yet again the workbook is the way it was originally with two sheets, Cleaned Data and Noisy Data, and one more column has been cleaned.</li>
+</ul>
+
+      <h4>The Cleaned Data Set As Is:</h4>
+      <table border="1">
+        <caption>Cleaned Data Set</caption>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Date</th>
+            <th>Type</th>
+            <th>Item</th>
+            <th>Qty</th>
+            <th>Unit Price</th>
+            <th>Total</th>
+            <th>Currency</th>
+            <th>VendorCustomer</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>27/10/2025</td><td>Purchase</td><td>Cricket Bat</td><td>2</td><td>45.00</td><td>90.00</td><td>GBP</td><td>John Smith</td><td>urgent restock</td></tr>
+          <tr><td>2</td><td>27/10/2025</td><td>Purchase</td><td>Gloves</td><td>10</td><td>5.00</td><td>50.00</td><td>USD</td><td>SportsGear Inc.</td><td>urgent restock</td></tr>
+          <tr><td>3</td><td>28/10/2025</td><td>Purchase</td><td>Pads</td><td>3</td><td>20.00</td><td>60.00</td><td>GBP</td><td>Annete Wilkinson</td><td>urgent restock</td></tr>
+          <tr><td>4</td><td>28/10/2025</td><td>Purchase</td><td>Balls</td><td>12</td><td>3.00</td><td>36.00</td><td>GBP</td><td>CricketWorld Ltd</td><td>urgent restock</td></tr>
+          <tr><td>5</td><td>28/10/2025</td><td>Purchase</td><td>Helmet</td><td>1</td><td>35.00</td><td>35.00</td><td>GBP</td><td>Mike</td><td>urgent restock</td></tr>
+          <tr><td>6</td><td>29/10/2025</td><td>Purchase</td><td>Stumps</td><td>5</td><td>7.00</td><td>35.00</td><td>USD</td><td>SportsGear Inc.</td><td>urgent restock</td></tr>
+          <tr><td>7</td><td>30/10/2025</td><td>Sale</td><td>Gloves</td><td>4</td><td>6.00</td><td>24.00</td><td>GBP</td><td>Emma</td><td>-</td></tr>
+          <tr><td>8</td><td>30/10/2025</td><td>Sale</td><td>Cricket Bat</td><td>1</td><td>45.00</td><td>45.00</td><td>GBP</td><td>John Smith</td><td>repeat customer</td></tr>
+          <tr><td>9</td><td>31/10/2025</td><td>Purchase</td><td>Kit Bag</td><td>2</td><td>25.00</td><td>50.00</td><td>GBP</td><td>GearUp</td><td>urgent restock</td></tr>
+          <tr><td>10</td><td>01/11/2025</td><td>Sale</td><td>Pads</td><td>2</td><td>20.00</td><td>40.00</td><td>GBP</td><td>Annete Wilkinson</td><td>-</td></tr>
+          <tr><td>11</td><td>01/11/2025</</td><td>Sale</td><td>Gloves</td><td>6</td><td>5.00</td><td>30.00</td><td>USD</td><td>SportsGear Inc.</td><td>-</td></tr>
+          <tr><td>12</td><td>02/11/2025</</td><td>Sale</td><td>Helmet</td><td>2</td><td>35.00</td><td>70.00</td><td>GBP</td><td>Mike</td><td>-</td></tr>
+          <tr><td>13</td><td>02/11/2025</td><td>Sale</td><td>Balls</td><td>6</td><td>3.00</td><td>18.00</td><td>GBP</td><td>Emma</td><td>-</td></tr>
+          <tr><td>14</td><td>02/11/2025</td><td>Sale</td><td>Cricket Bat</td><td>3</td><td>40.00</td><td>120.00</td><td>USD</td><td>BatMakers Ltd.</td><td>-</td></tr>
+        </tbody>
+      </table>
       <h4>Seventh Inconsistency Detected:</h4>
       <p>Structural Inconsistency - Missing VendorOrCustomer Metadata Field/Column</p>
 
