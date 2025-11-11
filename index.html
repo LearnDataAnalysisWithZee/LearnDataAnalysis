@@ -417,12 +417,37 @@
         </tbody>
       </table>
       <h4>Seventh Inconsistency Detected:</h4>
-      <p>Structural Inconsistency - Missing VendorOrCustomer Metadata Field And Customer Surnames/Column</p>
+      <p>Missing VendorOrCustomer Metadata Field And Customer Surnames/Column</p>
 
       <p><strong>Solution</strong></p>
       <ul>
         <li>The Notes In A Data Set Need To Be Updated Holding Crucial Information To The Flow Of Tasks Important At The Time</li>
       </ul>
+
+      <h4>Eighth Inconsistency Detected:</h4>
+      <p>Missing Customer Surnames In VendorCustomer Column</p>
+
+      <p><strong>Solution:</strong></p>
+      <ul>
+        <li>On the way...</li>
+      </ul>
+
+      <h4>Ninth Inconsistency Detected:</h4>
+      <p>Not Enough Bat Purchase's Are Recorded In The Quantity Column</p>
+
+      <p><strong>Solution:</strong></p>
+      <ul>
+        <li>On the way...</li>
+      </ul>
+
+       <h4>Tenth Inconsistency Detected:</h4>
+      <p>Not Enough Helmet Purchase's Are Recorded In The Quantity Column</p>
+
+      <p><strong>Solution:</strong></p>
+      <ul>
+        <li>On the way...</li>
+      </ul>
+      
       <h3>Lesson Summary:</h3>
       <ul>
         <li>Inconsistency Detection Is About Fixing Errors Which Is The Purpose Of Data Cleaning</li>
@@ -440,13 +465,14 @@
   <tr><td>No ID Column</td><td>Added a unique id to each row to prevent ambiguity and track duplicates.</td></tr>
   <tr><td>Inconsistent Casing In Type & Item Columns</td><td>Standardized text casing (e.g., “Sale” vs “SALE”) for reliable grouping.</td></tr>
   <tr><td>Use Of Currency Symbols In Unit Price & Total Columns</td><td>Removed symbols (e.g., £, USD) so values remain numeric and currency is stored separately.</td></tr>
-  <tr><td>Duplicate Entry</td><td>Eliminated repeated rows to maintain data integrity and avoid counting same entries again.</td></tr>
+  <tr><td>Duplicate Entry</td><td>Eliminated repeated rows to maintain data integrity and avoid counting entries again.</td></tr>
   <tr><td>No Space Between Vendor Names In Vendor/Customer Column</td><td>Corrected formatting by inserting spaces, so vendor/customer names are clearly readable and distinct.</td></tr>
-  <tr><td>Item Can Not Be Sold Until Has Been Purchased</td><td>Enforced fundamental logical rule: sales must follow purchases, preventing impossible transactions.</td></tr>
+  <tr><td>Item Can Not Be Sold Until Has Been Purchased</td><td>Enforced logic rule: 'sale must follow purchase', preventing impossible transactions.</td></tr>
   <tr><td>Missing VendorOrCustomer Metadata Field/Column</td><td>Added a metadata field to distinguish vendors from customers for schema-level clarity.</td></tr>
   <tr><td>Missing Customer Surnames In VendorCustomer Column</td><td>Fixed customer entries to include surnames, improving identification and consistency.</td></tr>
-  <tr><td>Not Enough Bat's Were Purchased To Match The Quantity Sold</td><td>Reconciled stock vs. sales by adjusting purchase records to align with quantitity of products sold.</td></tr>
-</tbody>
+  <tr><td>Not Enough Bat Purchase's Are Recorded In The Quantity Column</td><td>Reconciled stock vs. sales by adjusting purchase records to align with quantitity of products sold.</td></tr>
+<tr><td>Not Enough Helmet Purchase's Are Recorded In The Quantity Column</td><td>Again, Reconciled stock vs. sales by adjusting purchase records to align with quantitity of products sold.</td></tr>
+        </tbody>
       </table>
 
       <h3>Lesson 2 - Data Preparation</h3>
