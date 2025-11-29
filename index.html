@@ -553,7 +553,7 @@
 
 <p>Let’s Put What Has Been Learned So Far To Mimic A Real Life Scenario On The Job, Where Up Until Now Has Been The Way That, Formulas And Power Query Have Been Used To Perform Data Cleaning Tasks For The Cricket Equipment Outlet’s Data Team, Now Due To The advent of AI More-so Than Ever Before, A New Manifesto Has Been Issued At The Latest Team Meeting, Which States, ‘From 01/12/2025, The Data Analyst Team Needs To Prepare An <strong>Internal Excel Agentic AI System</strong>, To Quicken The Flow Of Tasks Which Are Otherwise Taking Far Too Long, To Continue On Working As Per Compliance & Auditing Report 2025’.</p>
 <p>The Task At Hand Is A, Data Repair AI Agent, Which Autonomously Detects And Fixes Structural And Logical Inconsistencies Each Time Runs Behind A New Data Set From The Data Source To Be Added To The Previously Cleaned Data Set.</p>
-<p>For The Purpose Of This Task, A New Data Set Will Be Used, Because The Goal Is To Learn How To Proficiently Clean As Many Data Sets As Can, Or Have Data Sets Cleaned, As The Step Now Is For An AI Agent To Intermediate Between The Person And Digital Records Of Data That Require A Fix, Saving Time And All While Adding An Extra Layer Of Intelligence To The Result Achieved, Repaired Records Of Information.</p>
+<p>For The Purpose Of This Task, A New Data Set (Dummy Data Which Mimics Real World Scenario) Will Be Used, Because The Goal Is To Learn How To Proficiently Clean As Many Data Sets As Can, Or Have Data Sets Cleaned, As The Step Now Is For An AI Agent To Intermediate Between The Person And Digital Records Of Data That Require A Fix, Saving Time And All While Adding An Extra Layer Of Intelligence To The Result Achieved, Repaired Records Of Information.</p>
 <p>Manual Efforts Reveal Summaries Which Are Satisfactorily Compliant With Expectations, Therefore Is Crucial To Manually Put In The Work, And That Too Constantly, A Good Way Is To Often Split Tasks Into Main Categories, And Within Each Category, Have A Manual Run Each Time, Before, Introducing Cutting Edge AI.</p>
 <p>For Example, Inconsistency Detection Is One Of The Many Data Analytics Workloads, This Is Therefore A Main Category, So Is Helpful To Single This Out And Separate From The Remainder Of Workloads, Such As, Outlier Detection, And Then, Manually Performing The Necessary Tasks Until The Inconsistencies Have Been Fixed.</p>
 <p>Now To Easily Grasp The Role Of AI, In The Context Of, Initial Data Repairing (Detecting Inconsistencies And Fixing), What Needs To Be Recalled Is The Previous Manual Run And What Results Were Achieved Due To That Manual Run, Inconsistencies Were Detected And Replaced With Standardised Forms, And Although One Could Have Recorded Logs Of Detections And Repairs Too And Even Go The Extent Of Manually Presenting Detailed Reports, Including Summaries, But Wouldn’t It Be Better If One Could Have This Done And Save Hours If Not Days’ Worth Of Time Which Could Be Spent Investing In Actually Analysing The Data And All Of This Done With Little To No Effort.</p>
@@ -574,67 +574,67 @@
   <li>Give a browser interface to view reports and logs easily.</li>
   <li>Output a clean CSV (final_clean.csv) ready for downstream use.</li>
 </ul>
-  <h2>🔎 The Agent’s Actions</h2>
+  <h2>Agent’s Actions</h2>
   <ol>
     <li>
-      <strong>Load the datasets</strong>
-      <p>Reads the private CSV (with sensitive fields like name, email, phone, DOB, address).</p>
-      <p>Reads the sales CSV (with public fields like product_code, category, notes, etc.).</p>
-      <p>Stores them in memory as Pandas DataFrames.</p>
+      <strong>Load The Datasets</strong>
+      <p>Reads The Private Csv (With Sensitive Fields Like Name, Email, Phone, Dob, Address).</p>
+      <p>Reads The Sales Csv (With Public Fields Like Product_Code, Category, Notes, Etc.).</p>
+      <p>Stores Them In Memory As Pandas Dataframes.</p>
     </li>
     <li>
-      <strong>Clean sensitive fields (local rules)</strong>
-      <p>Phone numbers: Normalize to US format (+1 1234567890).</p>
-      <p>Emails: Lowercase and trim whitespace.</p>
-      <p>DOB: Convert to ISO format (YYYY-MM-DD).</p>
-      <p>Addresses: Collapse extra spaces.</p>
-      <p>Logs every change with before/after values, rule applied, and timestamp.</p>
+      <strong>Clean Sensitive Fields (Local Rules)</strong>
+      <p>Phone Numbers: Normalize To US Format (+1 1234567890).</p>
+      <p>Emails: Lowercase And Trim Whitespace.</p>
+      <p>Dob: Convert To Iso Format (Yyyy-Mm-Dd).</p>
+      <p>Addresses: Collapse Extra Spaces.</p>
+      <p>Logs Every Change With Before/After Values, Rule Applied, And Timestamp.</p>
     </li>
     <li>
-      <strong>Clean public fields (AI‑assisted rules)</strong>
-      <p>Sends a sample of the sales data to the AI model with rules like:</p>
+      <strong>Clean Public Fields (Ai‑Assisted Rules)</strong>
+      <p>Sends A Sample Of The Sales Data To The Ai Model With Rules Like:</p>
       <ul>
-        <li>Product codes should be uppercase and padded (BAT-001).</li>
-        <li>Categories should be canonical (Bats, Balls, Helmets, etc.).</li>
-        <li>Notes should be trimmed.</li>
+        <li>Product Codes Should Be Uppercase And Padded (Bat-001).</li>
+        <li>Categories Should Be Canonical (Bats, Balls, Helmets, Etc.).</li>
+        <li>Notes Should Be Trimmed.</li>
       </ul>
-      <p>AI suggests transformations.</p>
-      <p>Applies them row by row.</p>
-      <p>Logs every change with before/after values, rule type, and timestamp.</p>
+      <p>Ai Suggests Transformations.</p>
+      <p>Applies Them Row By Row.</p>
+      <p>Logs Every Change With Before/After Values, Rule Type, And Timestamp.</p>
     </li>
     <li>
-      <strong>Merge datasets</strong>
-      <p>Joins private and sales tables on customer_id.</p>
-      <p>Creates a unified dataset with both sensitive and public fields.</p>
+      <strong>Merge Datasets</strong>
+      <p>Joins Private And Sales Tables On Customer_Id.</p>
+      <p>Creates A Unified Dataset With Both Sensitive And Public Fields.</p>
     </li>
     <li>
-      <strong>Redact sensitive fields for audit</strong>
-      <p>Replaces sensitive values with placeholders ({{EMAIL}}, {{PHONE}}) before sending to AI for reporting.</p>
-      <p>Ensures sensitive data is never exposed outside the app.</p>
+      <strong>Redact Sensitive Fields For Audit</strong>
+      <p>Replaces Sensitive Values With Placeholders ({{Email}}, {{Phone}}) Before Sending To Ai For Reporting.</p>
+      <p>Ensures Sensitive Data Is Never Exposed Outside The App.</p>
     </li>
     <li>
-      <strong>Generate audit report</strong>
-      <p>Asks AI to summarize:</p>
+      <strong>Generate Audit Report</strong>
+      <p>Asks Ai To Summarize:</p>
       <ul>
-        <li>Inconsistencies found.</li>
-        <li>Fixes applied.</li>
-        <li>Example rows (with placeholders).</li>
-        <li>Recommendations for prevention.</li>
+        <li>Inconsistencies Found.</li>
+        <li>Fixes Applied.</li>
+        <li>Example Rows (With Placeholders).</li>
+        <li>Recommendations For Prevention.</li>
       </ul>
-      <p>Locally replaces placeholders with actual sensitive values in the final report.</p>
-      <p>Saves the cleaned dataset as final_clean.csv.</p>
+      <p>Locally Replaces Placeholders With Actual Sensitive Values In The Final Report.</p>
+      <p>Saves The Cleaned Dataset As Final_Clean.Csv.</p>
     </li>
     <li>
-      <strong>Provide outputs</strong>
-      <p>Audit report: Human‑readable summary.</p>
-      <p>Logs: Detailed table of all transformations.</p>
-      <p>Cleaned dataset: Downloadable final_clean.csv.</p>
-      <p>Logs CSV: Downloadable logs_export.csv.</p>
-      <p>Original uploads: Links to the files you uploaded.</p>
+      <strong>Provide Outputs</strong>
+      <p>Audit Report: Human‑Readable Summary.</p>
+      <p>Logs: Detailed Table Of All Transformations.</p>
+      <p>Cleaned Dataset: Downloadable Final_Clean.Csv.</p>
+      <p>Logs Csv: Downloadable Logs_Export.Csv.</p>
+      <p>Original Uploads: Links To The Files You Uploaded.</p>
     </li>
   </ol>
-  <p>✨ In short<br>
-  The agent’s actions are: Load → Clean sensitive → Clean public → Merge → Redact → Report → Save → Provide outputs.</p>
+  <p>To Summarise:<br>
+  The Agent’s Actions Are: Load → Clean Sensitive → Clean Public → Merge → Redact → Report → Save → Provide Outputs.</p>
       
       <h3>Lesson 2 - Data Preparation</h3>
       <p>Outlier Detection Is Numerics Way Of Flagging Statistical Anomalies For Review Across The Business Timeline That Reveal Problems To Be Solved Rather Than Fixing Errors Directly.</p>
