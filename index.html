@@ -567,19 +567,19 @@
   <li>Basics Of Python, Primarily Regex (Regular Expressions) In Functions For Now</li>
 </ul>
 <p>Not Only, From Knowing Zero About AI, To Being Crystal Clear As To What On Earth AI Is Even About, Also, The Result Will Be An GDPR Compliant Data Repair Agent Which Perfectly Fits Into A Data Analytics Portfolio And Will:</p>
-<ul>
-  <li>Keep customer data safe (sensitive fields never leave your system unprotected).</li>
-  <li>Make sure sales data is consistent (product codes, categories, notes).</li>
-  <li>Produce a transparent audit trail (before/after logs).</li>
-  <li>Give a browser interface to view reports and logs easily.</li>
-  <li>Output a clean CSV (final_clean.csv) ready for downstream use.</li>
-</ul>
+ <ul>
+    <li>Keep Customer Data Safe (Sensitive Fields Never Leave Your System Unprotected).</li>
+    <li>Make Sure Sales Data Is Consistent (Product Codes, Categories, Notes).</li>
+    <li>Produce A Transparent Audit Trail (Before/After Logs).</li>
+    <li>Give A Browser Interface To View Reports And Logs Easily.</li>
+    <li>Output A Clean Csv (Final_Clean.Csv) Ready For Downstream Use.</li>
+  </ul>
   <h2>Agent’s Actions</h2>
   <ol>
     <li>
       <strong>Load The Datasets</strong>
-      <p>Reads The Private Csv (With Sensitive Fields Like Name, Email, Phone, Dob, Address).</p>
-      <p>Reads The Sales Csv (With Public Fields Like Product_Code, Category, Notes, Etc.).</p>
+      <p>Reads The Private CSV (With Sensitive Fields Like Name, Email, Phone, Dob, Address).</p>
+      <p>Reads The Sales CSV (With Public Fields Like Product_Code, Category, Notes, Etc.).</p>
       <p>Stores Them In Memory As Pandas Dataframes.</p>
     </li>
     <li>
@@ -591,14 +591,14 @@
       <p>Logs Every Change With Before/After Values, Rule Applied, And Timestamp.</p>
     </li>
     <li>
-      <strong>Clean Public Fields (Ai‑Assisted Rules)</strong>
-      <p>Sends A Sample Of The Sales Data To The Ai Model With Rules Like:</p>
+      <strong>Clean Public Fields (AI‑Assisted Rules)</strong>
+      <p>Sends A Sample Of The Sales Data To The AI Model With Rules Like:</p>
       <ul>
         <li>Product Codes Should Be Uppercase And Padded (Bat-001).</li>
         <li>Categories Should Be Canonical (Bats, Balls, Helmets, Etc.).</li>
         <li>Notes Should Be Trimmed.</li>
       </ul>
-      <p>Ai Suggests Transformations.</p>
+      <p>AI Suggests Transformations.</p>
       <p>Applies Them Row By Row.</p>
       <p>Logs Every Change With Before/After Values, Rule Type, And Timestamp.</p>
     </li>
@@ -609,12 +609,12 @@
     </li>
     <li>
       <strong>Redact Sensitive Fields For Audit</strong>
-      <p>Replaces Sensitive Values With Placeholders ({{Email}}, {{Phone}}) Before Sending To Ai For Reporting.</p>
+      <p>Replaces Sensitive Values With Placeholders ({{Email}}, {{Phone}}) Before Sending To AI For Reporting.</p>
       <p>Ensures Sensitive Data Is Never Exposed Outside The App.</p>
     </li>
     <li>
       <strong>Generate Audit Report</strong>
-      <p>Asks Ai To Summarize:</p>
+      <p>Asks AI To Summarize:</p>
       <ul>
         <li>Inconsistencies Found.</li>
         <li>Fixes Applied.</li>
