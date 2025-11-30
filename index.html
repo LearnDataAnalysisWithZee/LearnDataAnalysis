@@ -574,67 +574,104 @@
     <li>Give A Browser Interface To View Reports And Logs Easily.</li>
     <li>Output A Clean Csv (Final_Clean.Csv) Ready For Downstream Use.</li>
   </ul>
-  <h2>Agent’s Actions</h2>
+  <p><strong>Towards Gaining An Insight Into How AI Can Be Used For Data Analytics, Is Knowing What An LLM Is.</strong></p>
   <ol>
-    <li>
-      <strong>Load The Datasets</strong>
-      <p>Reads The Private CSV (With Sensitive Fields Like Name, Email, Phone, Dob, Address).</p>
-      <p>Reads The Sales CSV (With Public Fields Like Product_Code, Category, Notes, Etc.).</p>
-      <p>Stores Them In Memory As Pandas Dataframes.</p>
-    </li>
-    <li>
-      <strong>Clean Sensitive Fields (Local Rules)</strong>
-      <p>Phone Numbers: Normalize To US Format (+1 1234567890).</p>
-      <p>Emails: Lowercase And Trim Whitespace.</p>
-      <p>Dob: Convert To Iso Format (Yyyy-Mm-Dd).</p>
-      <p>Addresses: Collapse Extra Spaces.</p>
-      <p>Logs Every Change With Before/After Values, Rule Applied, And Timestamp.</p>
-    </li>
-    <li>
-      <strong>Clean Public Fields (AI‑Assisted Rules)</strong>
-      <p>Sends A Sample Of The Sales Data To The AI Model With Rules Like:</p>
-      <ul>
-        <li>Product Codes Should Be Uppercase And Padded (Bat-001).</li>
-        <li>Categories Should Be Canonical (Bats, Balls, Helmets, Etc.).</li>
-        <li>Notes Should Be Trimmed.</li>
-      </ul>
-      <p>AI Suggests Transformations.</p>
-      <p>Applies Them Row By Row.</p>
-      <p>Logs Every Change With Before/After Values, Rule Type, And Timestamp.</p>
-    </li>
-    <li>
-      <strong>Merge Datasets</strong>
-      <p>Joins Private And Sales Tables On Customer_Id.</p>
-      <p>Creates A Unified Dataset With Both Sensitive And Public Fields.</p>
-    </li>
-    <li>
-      <strong>Redact Sensitive Fields For Audit</strong>
-      <p>Replaces Sensitive Values With Placeholders ({{Email}}, {{Phone}}) Before Sending To AI For Reporting.</p>
-      <p>Ensures Sensitive Data Is Never Exposed Outside The App.</p>
-    </li>
-    <li>
-      <strong>Generate Audit Report</strong>
-      <p>Asks AI To Summarize:</p>
-      <ul>
-        <li>Inconsistencies Found.</li>
-        <li>Fixes Applied.</li>
-        <li>Example Rows (With Placeholders).</li>
-        <li>Recommendations For Prevention.</li>
-      </ul>
-      <p>Locally Replaces Placeholders With Actual Sensitive Values In The Final Report.</p>
-      <p>Saves The Cleaned Dataset As Final_Clean.Csv.</p>
-    </li>
-    <li>
-      <strong>Provide Outputs</strong>
-      <p>Audit Report: Human‑Readable Summary.</p>
-      <p>Logs: Detailed Table Of All Transformations.</p>
-      <p>Cleaned Dataset: Downloadable Final_Clean.Csv.</p>
-      <p>Logs Csv: Downloadable Logs_Export.Csv.</p>
-      <p>Original Uploads: Links To The Files You Uploaded.</p>
-    </li>
+    <li>Think Of An LLM As Having Read Millions Of Books, Articles And Datasets.</li>
+    <li>LLM Only Needs Instructions In Plain Language.</li>
+    <li>Without LLM Custom Functions Have To Be Written For Each Task Such As Cleaning, Summarising, Generating Insights.</li>
+    <li>LLM Saves Time Because With An LLM Just Enough Code Is Required To Send The Data + Instructions Also Known As Prompts To The Model And The Heavy Lifting Takes Place Inside The LLM.</li>
+    <li>What’s Inside The LLM Alleviates The Need To Write Functions For Each Step Rather Only An Instruction (Prompt) Is Required In Natural Language.</li>
+    <li>Inside The LLM There Is, Tokens, Parameters, And Neural Network Layers.</li>
+    <li>Tokens = The Building Blocks Of Text.</li>
+    <li>Parameters = The Memory Of The Model.</li>
+    <li>Neural Network Layers = The Reasoning Engine.</li>
+    <li>Python Is Only A Switch To Activate The LLM And The LLM Does The Reasoning And Returns The Narrative.</li>
   </ol>
-  <p>To Summarise:<br>
-  The Agent’s Actions Are: Load → Clean Sensitive → Clean Public → Merge → Redact → Report → Save → Provide Outputs.</p>
+
+  <h3>Summary:</h3>
+  <p>LLMs Are Giant Pattern-Recognisers Made Of Tokens, Parameters And Layers, And Python Can Be A Remote Control To Activate Them, Therefore Because The LLM Already Knows What Steps To Take, We Only Have To Describe The Tasks Without The Need To Code The Math Or Summary Logic.</p>
+
+  <h3>How It Exactly Works Under The Hood Is:</h3>
+  <ol>
+    <li>Prompt – Simple Instruction Given By User/Developer To The AI.</li>
+    <li>API Request – System Takes Prompt And Sends To The LLM Through API.</li>
+    <li>LLM Reasoning – LLM Interprets Request, Figures Out Is Meant In The Context And Plans To Respond.</li>
+    <li>LLM Response – LLM Generates The Actual Output.</li>
+    <li>API Packaging – API Formats The Raw Response Into A Usable Structure Like HTML Preview, Downloadable File.</li>
+    <li>API Response – Packaged Answer Is Sent Back To User/Developer.</li>
+  </ol>
+
+  <h3>Example Workflow:</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Step</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Prompt</td>
+        <td>Detect Inconsistencies In This Uploaded Dataset Of Cricket Equipment Sales, Fix Them, And Prepare A Report.</td>
+      </tr>
+      <tr>
+        <td>API Request</td>
+        <td>The API Wraps Your Instruction Into A Structured Request And Forwards It.</td>
+      </tr>
+      <tr>
+        <td>LLM Reasoning</td>
+        <td>Check For Missing Product Ids, Mismatched Prices, Duplicate Entries. Apply Corrections. Prepare Structured Report + Audit Trail.</td>
+      </tr>
+      <tr>
+        <td>LLM Response</td>
+        <td>3 Duplicate Entries Removed, 2 Missing Product Ids Filled, 1 Incorrect Price Corrected. Audit Log Attached.</td>
+      </tr>
+      <tr>
+        <td>API Packaging</td>
+        <td>The API Organises The Corrected Dataset, Report, And Audit Logs Into A Clean Package.</td>
+      </tr>
+      <tr>
+        <td>API Response</td>
+        <td>You Receive The Corrected Cricket Sales Dataset, A Summary Report, And An Audit Log File Showing Every Change.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Analogy – Repair Desk In A Cricket Equipment Outlet:</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Step</th>
+        <th>Analogy</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Prompt</td>
+        <td>Customer Says: “Check My Sales Records For Errors.”</td>
+      </tr>
+      <tr>
+        <td>API Request</td>
+        <td>Assistant Writes It Down And Sends It To The Back Office.</td>
+      </tr>
+      <tr>
+        <td>LLM Reasoning</td>
+        <td>Back-Office Staff Think: “Look For Duplicate Invoices, Wrong Prices, Missing Stock Codes.”</td>
+      </tr>
+      <tr>
+        <td>LLM Response</td>
+        <td>They Fix The Records And Note Every Change.</td>
+      </tr>
+      <tr>
+        <td>API Packaging</td>
+        <td>Assistant Bundles The Corrected Records + Change Log Neatly.</td>
+      </tr>
+      <tr>
+        <td>API Response</td>
+        <td>Customer Gets The Corrected Ledger + Audit Trail.</td>
+      </tr>
+    </tbody>
+  </table>
       
       <h3>Lesson 2 - Data Preparation</h3>
       <p>Outlier Detection Is Numerics Way Of Flagging Statistical Anomalies For Review Across The Business Timeline That Reveal Problems To Be Solved Rather Than Fixing Errors Directly.</p>
