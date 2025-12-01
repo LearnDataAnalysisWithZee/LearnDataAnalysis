@@ -666,21 +666,124 @@
   </table>
 <p>Not Only, From Knowing Zero About AI, To Being Crystal Clear As To What On Earth AI Is Even About, Also, The Result Will Be An GDPR Compliant Data Repair Agent Which Perfectly Fits Into A Data Analytics Portfolio.</p>
  <p>Before Getting Started With The Practical, Here Is An Overview Of What The AI Driven Application Will Do For The First Part Of The Data Cleaning Process Namely Inconsistency Detection And Fixing.</p>
-      <h3>Agent Actions - AI Driven Data Repair Application</h3>
-      <ol>
-        <li>Upload Action</li>
-        <li>Run Action</li>
-        <li>Save Action</li>
-        <li>View Action</li>
-        <li>Download Action</li>
-        <li>Chatbot Action</li>
-      </ol>
-      <p>The Big Picture:</p>
-      <ol>
-        <li>Upload -> Run -> Save -> View -> Download -> Chatbot</li>
-        <li>GDPR Compliance, Auditablity, Usability</li>
-        <li>Provides Transparent Logs & AI Explanations Every Step Of The Way</li>
-      </ol>
+      <h3>AI Driven Data Repair Application - Built With Flask And Pandas, Enhanced By AI</h3>
+       <p>This Is A Web Application Built With Flask And Pandas, Enhanced By AI For Specific Tasks. It Provides A Structured Workflow For Cleaning, Auditing, And Explaining Datasets, With Full Transparency And Auditability.</p>
+
+    <h2>Core Process Flow</h2>
+    <h3>1. Upload Stage (Local)</h3>
+    <p>Users Upload Two CSV Files:</p>
+    <ul>
+        <li>Private Dataset → Contains Sensitive Fields (Phone, Email, Dob, Address).</li>
+        <li>Sales Dataset → Contains Public Fields (Product Codes, Categories, Notes).</li>
+    </ul>
+    <p>Files Are Timestamped And Stored Locally In /Uploads/.</p>
+    <p><b>Why Local?</b> Sensitive Data Must Remain Under Strict Control And Never Leave The Application.</p>
+
+    <h3>2. Cleaning Stage</h3>
+    <h4>Local Cleaning</h4>
+    <p>Applied To Sensitive Fields:</p>
+    <ul>
+        <li>Normalize Phone Numbers.</li>
+        <li>Lowercase + Trim Emails.</li>
+        <li>Convert Dates To ISO Format.</li>
+        <li>Collapse Whitespace In Addresses.</li>
+    </ul>
+    <p><b>Why Local?</b> These Are Deterministic, Rule‑Based Fixes That Don’t Require AI Judgment. Keeping Them Local Ensures GDPR Compliance And Avoids Exposing Sensitive Data Externally.</p>
+
+    <h4>AI‑Driven Cleaning</h4>
+    <p>Applied To Public Fields:</p>
+    <ul>
+        <li>Canonicalize Product Categories (E.G., “Batteries” Vs “Battery”).</li>
+        <li>Standardize Product Codes (E.G., Bat-001).</li>
+        <li>Trim And Normalize Notes.</li>
+    </ul>
+    <p><b>Why AI?</b> Public Fields Often Contain Inconsistencies, Free‑Text, Or Ambiguous Values. AI Is Used Here To Interpret Context, Suggest Canonical Forms, And Handle Variability That Rules Alone Can’t Capture.</p>
+
+    <h3>3. Audit & Reporting Stage (AI)</h3>
+    <p>AI Generates A Human‑Readable Audit Report:</p>
+    <ul>
+        <li>Summarizes Inconsistencies Found.</li>
+        <li>Explains What Was Fixed And Why.</li>
+        <li>Provides Recommendations For Future Data Entry.</li>
+    </ul>
+    <p><b>Why AI?</b> The Audit Report Requires Natural Language Explanation And Contextual Reasoning — Tasks That Benefit From AI’s Ability To Synthesize And Communicate Clearly.</p>
+
+    <h3>4. Logging Stage (Local + AI)</h3>
+    <p>Local Logs: Every Sensitive Fix Is Recorded (Before → After, Rule Applied, Timestamp).</p>
+    <p>AI Logs: Every AI Call Is Recorded (Prompt Length, Response Length, Status, Timestamp).</p>
+    <p><b>Why Both?</b> Together They Provide A Complete Audit Trail: Deterministic Fixes For Sensitive Data, And Transparent Records Of AI Involvement For Public Data.</p>
+
+    <h3>5. Output Stage</h3>
+    <ul>
+        <li>Private Cleaned Dataset → Private_Clean_&lt;Timestamp&gt;.Csv</li>
+        <li>Sales Cleaned Dataset → Sales_Clean_&lt;Timestamp&gt;.Csv</li>
+        <li>Llm Runs Log → Llm_Runs_&lt;Timestamp&gt;.Csv</li>
+        <li>Llm Inconsistencies Log → Llm_Inconsistencies_&lt;Timestamp&gt;.Csv</li>
+        <li>Combined Logs → Logs_Export_&lt;Timestamp&gt;.Csv</li>
+    </ul>
+    <p><b>Why Separate Outputs?</b> Separation Ensures Sensitive Vs Public Data Integrity, And Makes Audit Trails Clear.</p>
+
+    <h3>6. User Interface Stage</h3>
+    <ul>
+        <li>Report Page → Shows Audit Report, Uploaded Filenames, Navigation, Refresh, Upload New Files.</li>
+        <li>Logs Page → Shows Combined Logs, With Download Option.</li>
+        <li>Private Page → Shows Cleaned Private Dataset, With Download Option.</li>
+        <li>Sales Page → Shows Cleaned Sales Dataset, With Download Option.</li>
+        <li>Llm Runs Page → Shows AI Performance Metadata.</li>
+        <li>Llm Inconsistencies Page → Shows AI‑Detected Fixes.</li>
+        <li>Chatbot Page → Lets Users Ask Questions About The Process, With AI Explaining What’s Happening.</li>
+    </ul>
+    <p><b>Why This Design?</b> Transparency And Usability — Every Step Is Visible, Downloadable, And Explainable.</p>
+
+    <h2>Division Of Roles</h2>
+    <table border="1">
+        <tr>
+            <th>Stage</th>
+            <th>Local Role (Deterministic)</th>
+            <th>AI Role (Interpretive)</th>
+        </tr>
+        <tr>
+            <td>Upload</td>
+            <td>File Handling, Timestamping</td>
+            <td>—</td>
+        </tr>
+        <tr>
+            <td>Cleaning (Sensitive)</td>
+            <td>Regex, Formatting, ISO Dates</td>
+            <td>—</td>
+        </tr>
+        <tr>
+            <td>Cleaning (Public)</td>
+            <td>—</td>
+            <td>Canonicalization, Free‑Text Interpretation</td>
+        </tr>
+        <tr>
+            <td>Audit Report</td>
+            <td>—</td>
+            <td>Natural Language Explanation</td>
+        </tr>
+        <tr>
+            <td>Logging</td>
+            <td>Rule Application Logs</td>
+            <td>AI Call Metadata + Inconsistencies</td>
+        </tr>
+        <tr>
+            <td>Outputs</td>
+            <td>Save CSVs</td>
+            <td>—</td>
+        </tr>
+        <tr>
+            <td>UI</td>
+            <td>Render Tables, Navigation</td>
+            <td>Chatbot Explanations</td>
+        </tr>
+    </table>
+
+    <h2>Why This Split Matters?</h2>
+    <p>Local Logic Is Used Where Rules Are Clear, Sensitive Data Is Involved, And Compliance Is Critical.</p>
+    <p>AI Logic Is Used Where Ambiguity, Variability, Or Explanation Is Needed — Especially For Public Fields And Reporting.</p>
+    <p>This Separation Of Concerns Maintains Trust, Transparency, And Compliance, While Still Leveraging AI Where It Adds Real Value.</p>
+      
       <h3>Lesson 2 - Data Preparation</h3>
       <p>Outlier Detection Is Numerics Way Of Flagging Statistical Anomalies For Review Across The Business Timeline That Reveal Problems To Be Solved Rather Than Fixing Errors Directly.</p>
       <p><strong>Remember Inconsistency Detection:</strong></p>
