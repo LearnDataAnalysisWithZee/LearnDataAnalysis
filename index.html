@@ -1,108 +1,332 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Learn Data Analysis With Zee – Excel For Data Analytics</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Data Analysis eBook — Your Title Here</title>
+  <meta name="description" content="A single-page e-book teaching data analysis with practical examples and exercises." />
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
 
-  <header>
-    <h1>📄 Excel For Data Analytics</h1>
-    <h2>by Learn Data Analysis With Zee</h2>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <!-- Sticky header -->
+  <header class="site-header" role="banner" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Back to top">
+        <span class="brand-mark" aria-hidden="true">◼</span>
+        <span class="brand-text">
+          <span class="brand-title">Data Analysis eBook</span>
+          <span class="brand-subtitle">Learn by doing — chapters, examples, exercises</span>
+        </span>
+      </a>
+
+      <nav class="header-nav" aria-label="Quick chapters">
+        <a href="#ch1">Chapter 1</a>
+        <a href="#ch2">Chapter 2</a>
+        <a href="#ch3">Chapter 3</a>
+        <a class="btn" href="#download">Download</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section>
-      <h2>Welcome To Learn Data Analysis With Zee</h2>
+  <main id="content" class="container layout">
+    <!-- Table of contents (sidebar on desktop) -->
+    <aside class="toc" aria-label="Table of contents">
+      <div class="toc-card">
+        <h2 class="toc-title">Contents</h2>
 
-      <h2><u>What is Data Analysis?</u></h2>
-      <p>
-        The Practice Of Data Analysis Is To ‘Extract Meaningful Information From Data To Increase Insight’.
-      </p>
-      <p>
-        How Plumbing And Book-keeping Is Helpful, So Is Data Analysis For Improving, The Quality Of Life, Whether The Reason Is To Get A Job, Freelance Or Pursue Study To Improve Work Prospects.
-      </p>
-      <p>
-        A Data Analyst Strives To Deliver Cutting Edge Data Solutions To Businesses To Meet With Client Demands, This Is True Whether The Analyst Is A Freelancer, Business Owner Themselves, Or Work’s With A Company.
-      </p>
-      <p>
-        The Data Analyst Ought To Come With A Diverse Portfolio, Demonstrating Expertise In A Variety Of Industries Serving The Interests Of The Many Levels Within.
-      </p>
-      <p>
-        The Learn Data Analysis With Zee Is An Open Source And Unbiased Initiative Which Aims To Provide Key Data Analysis Skills To All Those Purely Interested Or Fascinated By It As Well As Those Who Want To Get Started Working Or Already Maybe Work But Would Want To Enhance Their Job Prospects.
-      </p>
-
-      <h2><u>Learning Plan:</u></h2>
-      <p><a href="#Lesson 1">Lesson 1 - Essential Theory</a></p>
-      <p><a href="#Lesson 2">Lesson 2 - Excel For Data Analytics</a></p>
-      <p><a href="#Lesson 3">Lesson 3 - Programming For Deeper Analytics</a></p>
-
-      <h2 id="Lesson 1"><u>Lesson 1 - Essential Theory</u></h2>
-   
-<h2>Consider An Inquiry Using Data Analytics</h2>
-      <h3>Performance Register Dataset</h3>
-      <ol>
-        <li>Object{s} Of Analysis - Performance</li>
-        <li>Subject{s} Of Analysis - Demand & Comparison</li>
-        <li>GDPR Compliance</li>
-        <li>Stakeholders & Their Particular Requirements</li>
-      </ol>
-        <p>When Considering Data Analysis, Is Important To Become Comfortable With Client Demand.</p>
-        <p><i>'A Data Analysts Mindset On The Job Must Be Client-Oriented On Behalf Of Their Contractor/Employer'.</i></p>
-        <p>Data, Seems As Is Everywhere, When The Client Introduces The Data Analyst To The Data To Be Analysed, Which May Be In More Than One Place.</p>
-        <p>To Officially Recognise The Clients Demand, Classes Of Objects Can Be Created That Categorise The Main Task Flow Of The Client.</p>
-        <p><i>'If A Client Is A Cricket Equipent Supplier, A Class Of Objects Could Be, Products, Or Maybe Even, Operational Expenses'.</i></p>
-        <p>Once The Object{s} Of Analysis Are Known, Then Satisfying The Clients (Who Is Always A Major Stakeholder) Requirement, Is All Of A Sudden, Realistic.</p>
-        <p>As Mentioned Earlier, The Data That Needs To Be Analysed Can Be In More Than One Place, Which Can Be Thought Of As, 'Various Data Sources'.</p>
-        <p>The Performance Register Dataset Is A Unified Dataset, Consisting Of Data Imported From These, 'Various Data Sources'.</p>
-        <p>The Workflow Of A Data Analyst Must Demonstrate Full Compliance With The GDPR And Respect These Principles, Each Piece Of The Puzzle, In Turn Helps Carve An Helpful And Fruitful Data Analytics Project.</p>
-           
-        <h3>General Data Protection Regulation (GDPR)</h3>
-          <ol>
-    <li>Lawful Basis – Legal reason for collecting and processing personal data (e.g. consent, contract, legal obligation).</li>
-    <li>Transparency – Inform individuals about how their data is used, stored and shared.</li>
-    <li>Data Minimisation – Only collect the data truly needed.</li>
-    <li>Accuracy – Keep the data up to date and correct errors.</li>
-    <li>Storage Limitation – Do not keep the data longer than required</li>
-    <li>Security – Protect the data using appropriate technical and organisational measures.</li>
-    <li>Rights Of Individuals – People possess rights under the GDPR (access, rectification, erasure, portability, objection)</li>
-    <li>Accountability – Organisations must demonstrate compliance (documentation, policies, audits)</li>
+        <ol class="toc-list">
+          <li><a href="#intro">Introduction</a></li>
+          <li>
+            <a href="#ch1">Chapter 1: Foundations</a>
+            <ol>
+              <li><a href="#ch1-1">What data analysis is</a></li>
+              <li><a href="#ch1-2">A simple workflow</a></li>
+              <li><a href="#ch1-ex">Exercises</a></li>
+            </ol>
+          </li>
+          <li>
+            <a href="#ch2">Chapter 2: Cleaning & Preparing Data</a>
+            <ol>
+              <li><a href="#ch2-1">Common data issues</a></li>
+              <li><a href="#ch2-2">Cleaning checklist</a></li>
+              <li><a href="#ch2-ex">Exercises</a></li>
+            </ol>
+          </li>
+          <li>
+            <a href="#ch3">Chapter 3: Exploratory Analysis</a>
+            <ol>
+              <li><a href="#ch3-1">Summary statistics</a></li>
+              <li><a href="#ch3-2">Visual exploration</a></li>
+              <li><a href="#ch3-ex">Exercises</a></li>
+            </ol>
+          </li>
+          <li><a href="#resources">Resources</a></li>
+          <li><a href="#download">Download / Next steps</a></li>
         </ol>
-      
-      <h3>Analytics Dataset</h3>
-      <ol>
-        <li>Extract Up To Date Data From The Performance Register Dataset</li>
-      </ol>
-      <h3>Dashboard UI</h3>
-      <ol>
-        <li>Sequence Of Defined Questions</li>
-        <li>Extract Data From Analytics Dataset To Answer Each Question - A Dataset (For Each Question Defined) For Each Chart (Answer)</li>
-      </ol>
-      <h3>Seasonal Reporting</h3>
-      <ol>
-        <li>Encapsulate Dashboard Information</li>
-      </ol>
-      <h3>Audit</h3>
-      <ol>
-        <li>Create A Log To Transfer The Analytics Dataset's Data From The Previous Month In The Working Season</li>
-        <li>Create A Log To Transfer The Dataset's For Charts Data From The Previous Month In The Working Season</li>
-      </ol>
-      <h3>Drill-Down</h3>
-      <ol>
-        <li>Forest (Main) -> Tree (Type Of Main) -> Root = Deeper Questions Stemming From Questions Defined Already</li>
-        <li>Forest (Main) -> Tree (Type Of Main) -> Trunk = Statistical Methods</li>
-        <li>Forest (Main) -> Tree (Type Of Main) -> Branches = Revealed Performance Variables</li>
-      </ol>
-      <p><em>
-      For greater clarity in learning, Microsoft Copilot can be consulted alongside official Microsoft documentation on Data Analysis and AI. These resources provide reinforcement of key concepts and offer practical, real-world examples.
-      </em></p>
-    </section>
+
+        <p class="toc-note">
+          Tip: Use <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>F</kbd> to search within this book.
+        </p>
+      </div>
+    </aside>
+
+    <!-- Main reading column -->
+    <article class="book" aria-label="E-book content">
+      <!-- Cover / hero -->
+      <section class="hero" aria-labelledby="book-title">
+        <p class="kicker">Single-page eBook</p>
+        <h1 id="book-title">Your eBook Title Here</h1>
+        <p class="lead">
+          A practical guide to learning data analysis from scratch — with examples, mini projects, and exercises.
+        </p>
+
+        <div class="meta">
+          <span>Audience: Beginner → Intermediate</span>
+          <span aria-hidden="true">•</span>
+          <span>Estimated time: self-paced</span>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn" href="#ch1">Start Chapter 1</a>
+          <a class="btn ghost" href="#download">Get the PDF</a>
+        </div>
+      </section>
+
+      <!-- Introduction -->
+      <section id="intro" class="chapter" aria-labelledby="intro-title">
+        <header class="chapter-header">
+          <h2 id="intro-title">Introduction</h2>
+          <p class="chapter-summary">
+            What you’ll learn, how the book is structured, and what tools you’ll need.
+          </p>
+        </header>
+
+        <p>
+          Replace this text with your own introduction. A strong intro usually includes:
+          the promise (what readers will be able to do), prerequisites, and how to practice.
+        </p>
+
+        <div class="callout">
+          <h3>Suggested tools</h3>
+          <ul>
+            <li>Spreadsheet (Excel/Google Sheets) or Python (Pandas)</li>
+            <li>A sample dataset (CSV)</li>
+            <li>A notebook for notes and questions</li>
+          </ul>
+        </div>
+
+        <p class="backtop"><a href="#top">↑ Back to top</a></p>
+      </section>
+
+      <!-- Chapter 1 -->
+      <section id="ch1" class="chapter" aria-labelledby="ch1-title">
+        <header class="chapter-header">
+          <p class="chapter-kicker">Chapter 1</p>
+          <h2 id="ch1-title">Foundations</h2>
+          <p class="chapter-summary">The mindset and workflow behind effective analysis.</p>
+        </header>
+
+        <section id="ch1-1" class="section">
+          <h3>What data analysis is</h3>
+          <p>
+            Data analysis is the process of turning raw data into useful insight for decisions.
+            It involves asking good questions, cleaning data, exploring patterns, and communicating results.
+          </p>
+        </section>
+
+        <section id="ch1-2" class="section">
+          <h3>A simple workflow</h3>
+          <ol>
+            <li>Define the question</li>
+            <li>Collect & understand the data</li>
+            <li>Clean & prepare</li>
+            <li>Explore (EDA)</li>
+            <li>Model or summarise</li>
+            <li>Communicate results</li>
+          </ol>
+
+          <pre><code># Example (pseudo/Python-ish)
+question = "What drives customer churn?"
+data = load("customers.csv")
+clean = clean_data(data)
+insights = explore(clean)
+report(insights)</code></pre>
+        </section>
+
+        <section id="ch1-ex" class="section">
+          <h3>Exercises</h3>
+          <ul class="checklist">
+            <li>Write 3 business questions you’d like to answer with data.</li>
+            <li>Find one dataset and identify 5 columns you don’t understand (yet).</li>
+            <li>Describe how you’d measure “success” for your question.</li>
+          </ul>
+        </section>
+
+        <p class="backtop"><a href="#top">↑ Back to top</a></p>
+      </section>
+
+      <!-- Chapter 2 -->
+      <section id="ch2" class="chapter" aria-labelledby="ch2-title">
+        <header class="chapter-header">
+          <p class="chapter-kicker">Chapter 2</p>
+          <h2 id="ch2-title">Cleaning & Preparing Data</h2>
+          <p class="chapter-summary">Make messy data usable and trustworthy.</p>
+        </header>
+
+        <section id="ch2-1" class="section">
+          <h3>Common data issues</h3>
+          <ul>
+            <li>Missing values</li>
+            <li>Duplicates</li>
+            <li>Inconsistent categories (e.g., “UK”, “U.K.”, “United Kingdom”)</li>
+            <li>Bad types (numbers stored as text)</li>
+            <li>Outliers and impossible values</li>
+          </ul>
+        </section>
+
+        <section id="ch2-2" class="section">
+          <h3>Cleaning checklist</h3>
+          <div class="grid-2">
+            <div class="card">
+              <h4>Structure</h4>
+              <ul>
+                <li>One row = one observation</li>
+                <li>One column = one variable</li>
+                <li>Consistent column names</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h4>Quality</h4>
+              <ul>
+                <li>Handle missing values intentionally</li>
+                <li>Remove/merge duplicates</li>
+                <li>Validate ranges & types</li>
+              </ul>
+            </div>
+          </div>
+
+          <pre><code># Example cleaning snippet (Python)
+df.columns = [c.strip().lower().replace(" ", "_") for c in df.columns]
+df = df.drop_duplicates()
+df["age"] = pd.to_numeric(df["age"], errors="coerce")</code></pre>
+        </section>
+
+        <section id="ch2-ex" class="section">
+          <h3>Exercises</h3>
+          <ul class="checklist">
+            <li>Pick a dataset and list 10 potential cleaning checks.</li>
+            <li>Find duplicates: what counts as “duplicate” in your data?</li>
+            <li>Choose a missing-value strategy for 2 columns and justify it.</li>
+          </ul>
+        </section>
+
+        <p class="backtop"><a href="#top">↑ Back to top</a></p>
+      </section>
+
+      <!-- Chapter 3 -->
+      <section id="ch3" class="chapter" aria-labelledby="ch3-title">
+        <header class="chapter-header">
+          <p class="chapter-kicker">Chapter 3</p>
+          <h2 id="ch3-title">Exploratory Data Analysis (EDA)</h2>
+          <p class="chapter-summary">Understand distributions, relationships, and patterns.</p>
+        </header>
+
+        <section id="ch3-1" class="section">
+          <h3>Summary statistics</h3>
+          <p>Start with counts, means/medians, spreads, and simple group comparisons.</p>
+
+          <pre><code># Example EDA (Python)
+df.describe(include="all")
+df.groupby("segment")["revenue"].mean().sort_values(ascending=False)</code></pre>
+        </section>
+
+        <section id="ch3-2" class="section">
+          <h3>Visual exploration</h3>
+          <ul>
+            <li>Histograms for distributions</li>
+            <li>Box plots for spread/outliers</li>
+            <li>Scatter plots for relationships</li>
+            <li>Bar charts for comparisons</li>
+          </ul>
+
+          <div class="callout">
+            <h3>Rule of thumb</h3>
+            <p>
+              If you can’t explain the chart in one sentence, it’s probably doing too much.
+            </p>
+          </div>
+        </section>
+
+        <section id="ch3-ex" class="section">
+          <h3>Exercises</h3>
+          <ul class="checklist">
+            <li>Create 3 charts that answer 3 different questions.</li>
+            <li>Write one insight and one caveat per chart.</li>
+            <li>List 5 follow-up questions your EDA suggests.</li>
+          </ul>
+        </section>
+
+        <p class="backtop"><a href="#top">↑ Back to top</a></p>
+      </section>
+
+      <!-- Resources -->
+      <section id="resources" class="chapter" aria-labelledby="resources-title">
+        <header class="chapter-header">
+          <h2 id="resources-title">Resources</h2>
+          <p class="chapter-summary">Links and references you can add later.</p>
+        </header>
+
+        <ul>
+          <li><a href="#" rel="nofollow">Your recommended datasets link</a></li>
+          <li><a href="#" rel="nofollow">Your Python/SQL learning link</a></li>
+          <li><a href="#" rel="nofollow">Your visualisation cheatsheet link</a></li>
+        </ul>
+
+        <p class="backtop"><a href="#top">↑ Back to top</a></p>
+      </section>
+
+      <!-- Download / CTA -->
+      <section id="download" class="chapter" aria-labelledby="download-title">
+        <header class="chapter-header">
+          <h2 id="download-title">Download / Next steps</h2>
+          <p class="chapter-summary">Offer a PDF, newsletter signup, or bonus chapters.</p>
+        </header>
+
+        <div class="cta">
+          <h3>Want the printable version?</h3>
+          <p>Add your PDF link here. You can also collect emails for updates.</p>
+
+          <div class="cta-actions">
+            <a class="btn" href="#" aria-disabled="true">Download PDF (add link)</a>
+
+            <form class="mini-form" action="#" method="post">
+              <label class="sr-only" for="email2">Email</label>
+              <input id="email2" type="email" name="email" placeholder="you@example.com" />
+              <button type="submit">Get updates</button>
+            </form>
+          </div>
+        </div>
+
+        <p class="backtop"><a href="#top">↑ Back to top</a></p>
+      </section>
+    </article>
   </main>
 
-  <footer>
-    <p>Learn, build, and analyze—powered by Learn Data Analysis With Zee. Website Under Construction 📚</p>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Your Name — Built as a single-page eBook.</p>
+      <p class="fine">
+        <a href="#top">Back to top</a> · <a href="#download">Download</a>
+      </p>
+    </div>
   </footer>
 
+  <script>
+    // purely cosmetic: set current year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
