@@ -4,27 +4,26 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Human Agency & AI — A Single‑Page eBook</title>
-  <meta name="description" content="A single-page eBook on human agency, KPIs, descriptive statistics, and AI-assisted data analysis with Microsoft 365 Copilot." />
+  <meta name="description" content="A single-page eBook on human agency, KPIs, descriptive statistics, and AI-assisted data analysis." />
 
-  <!-- ✅ Correct CSS link -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <a class="skip-link" href="#content">Skip to content</a>
+  <a href="#content" class="skip-link">Skip to content</a>
 
-  <!-- Sticky header -->
-  <header class="site-header" id="top" role="banner">
+  <!-- Header -->
+  <header class="site-header" id="top">
     <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="Back to top">
-        <span class="brand-mark" aria-hidden="true">◼</span>
+      <a href="#top" class="brand">
+        <span class="brand-mark">◼</span>
         <span class="brand-text">
           <span class="brand-title">Human Agency & AI</span>
-          <span class="brand-subtitle">A practical single‑page eBook</span>
+          <span class="brand-subtitle">Single‑page eBook</span>
         </span>
       </a>
 
-      <nav class="header-nav" aria-label="Quick navigation">
+      <nav class="header-nav">
         <a href="#intro">Intro</a>
         <a href="#ch1">Ch 1</a>
         <a href="#ch2">Ch 2</a>
@@ -34,580 +33,208 @@
   </header>
 
   <main id="content" class="container layout">
-    <!-- TOC: sidebar on desktop, collapsible on mobile -->
-    <aside class="toc" aria-label="Table of contents">
-      <details class="toc-details" open>
-        <summary class="toc-summary">
-          <span>Contents</span>
-          <span class="toc-summary-hint" aria-hidden="true">Tap to open</span>
-        </summary>
+    <!-- Table of contents -->
+    <aside class="toc">
+      <details class="toc-details">
+        <summary class="toc-summary">Contents</summary>
 
         <div class="toc-card">
-          <h2 class="toc-title">Contents</h2>
-
           <ol class="toc-list">
             <li><a href="#intro">Introduction</a></li>
 
             <li>
-              <a href="#ch1">Chapter 1: Human Agency & the AI Data Strategist</a>
+              <a href="#ch1">Chapter 1 — Human Agency</a>
               <ol>
-                <li><a href="#ch1-1">Human agency in the age of Copilot</a></li>
-                <li><a href="#ch1-2">Prompting Copilot like a strategist</a></li>
-                <li><a href="#ch1-3">Responsibility, limits, and trust</a></li>
+                <li><a href="#ch1-1">Agency in the age of AI</a></li>
+                <li><a href="#ch1-2">Prompting as strategy</a></li>
+                <li><a href="#ch1-3">Responsibility & trust</a></li>
                 <li><a href="#ch1-ex">Exercises</a></li>
               </ol>
             </li>
 
             <li>
-              <a href="#ch2">Chapter 2: From Data to Information</a>
+              <a href="#ch2">Chapter 2 — From Data to Information</a>
               <ol>
                 <li><a href="#ch2-1">What data is</a></li>
                 <li><a href="#ch2-2">Descriptive statistics</a></li>
                 <li><a href="#ch2-3">KPI analysis</a></li>
-                <li><a href="#ch2-4">Copilot and AI agents</a></li>
+                <li><a href="#ch2-4">AI & Copilot</a></li>
                 <li><a href="#ch2-ex">Exercises</a></li>
               </ol>
             </li>
 
             <li>
-              <a href="#ch3">Chapter 3: Exploratory Data Analysis (EDA)</a>
+              <a href="#ch3">Chapter 3 — Exploratory Data Analysis</a>
               <ol>
-                <li><a href="#ch3-1">What EDA is (and isn’t)</a></li>
-                <li><a href="#ch3-2">A simple EDA workflow</a></li>
-                <li><a href="#ch3-3">Using Copilot to support EDA</a></li>
+                <li><a href="#ch3-1">What EDA is</a></li>
+                <li><a href="#ch3-2">EDA workflow</a></li>
+                <li><a href="#ch3-3">EDA with AI</a></li>
                 <li><a href="#ch3-ex">Exercises</a></li>
               </ol>
             </li>
-
-            <li><a href="#end">Closing notes</a></li>
           </ol>
-
-          <p class="toc-note">
-            Tip: Use <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>F</kbd> to search within this page.
-          </p>
         </div>
       </details>
     </aside>
 
-    <!-- Book content -->
-    <article class="book" aria-label="E-book content">
+    <!-- Book -->
+    <article class="book">
       <!-- Hero -->
-      <section class="hero" aria-labelledby="book-title">
+      <section class="hero">
         <p class="kicker">Single‑page eBook</p>
-        <h1 id="book-title">Human Agency & AI in Modern Data Work</h1>
+        <h1>Human Agency & AI in Modern Data Work</h1>
         <p class="lead">
-          A practical guide to extracting meaning from data while keeping humans in control—
-          especially when working with AI tools like Microsoft 365 Copilot and agent-based automation.
+          A practical guide to extracting meaning from data while keeping humans
+          accountable and in control in an AI‑assisted world.
         </p>
-        <div class="meta">
-          <span>Audience: Beginner → Intermediate</span>
-          <span aria-hidden="true">•</span>
-          <span>Format: Read on-site</span>
-          <span aria-hidden="true">•</span>
-          <span>Focus: Agency, clarity, decision-making</span>
-        </div>
-
-        <div class="hero-actions">
-          <a class="btn" href="#ch1">Start Chapter 1</a>
-          <a class="btn ghost" href="#ch2">Jump to Chapter 2</a>
-        </div>
       </section>
 
       <!-- Introduction -->
-      <section id="intro" class="chapter" aria-labelledby="intro-title">
-        <header class="chapter-header">
-          <h2 id="intro-title">Introduction</h2>
-          <p class="chapter-summary">
-            Why this eBook exists, and how to use it effectively.
-          </p>
-        </header>
-
+      <section id="intro" class="chapter">
+        <h2>Introduction</h2>
         <p>
-          AI is becoming normal—not a specialist capability, but a default layer in everyday tools.
-          That changes how analysis is produced, but it also changes what good analysis looks like.
-          When output is easy to generate, the real challenge is deciding what to ask for, what to trust,
-          and what to do next.
+          AI is becoming a default layer in everyday work. This eBook focuses on how
+          to think clearly about data, KPIs, and analysis when AI tools are always present.
         </p>
-
-        <p>
-          This eBook is designed to build a modern foundation. It focuses on three things:
-          (1) how to keep <strong>human agency</strong> central,
-          (2) how to turn data into <strong>information</strong> using simple, reliable methods,
-          and (3) how to work with AI such as Copilot in a way that improves decisions rather than merely producing text.
-        </p>
-
-        <div class="callout">
-          <h3>How to read this</h3>
-          <ul>
-            <li>Skim the chapter summaries first to understand the map.</li>
-            <li>Do the exercises—this is where insight becomes skill.</li>
-            <li>Keep a “prompt journal”: what you asked, what you got, what you changed, and why.</li>
-          </ul>
-        </div>
-
         <p class="backtop"><a href="#top">↑ Back to top</a></p>
       </section>
 
       <!-- ===================== -->
-      <!-- CHAPTER 1 (FULL) -->
+      <!-- CHAPTER 1 -->
       <!-- ===================== -->
-      <section id="ch1" class="chapter" aria-labelledby="ch1-title">
-        <header class="chapter-header">
-          <p class="chapter-kicker">Chapter 1</p>
-          <h2 id="ch1-title">Human Agency & the AI Data Strategist</h2>
-          <p class="chapter-summary">
-            Why the most valuable skill in modern analysis isn’t producing outputs—it’s directing intelligence with purpose.
-          </p>
-        </header>
+      <section id="ch1" class="chapter">
+        <h2>Chapter 1 — Human Agency & the AI Data Strategist</h2>
 
-        <section id="ch1-1" class="section">
-          <h3>Human agency in the age of Copilot</h3>
-
+        <section id="ch1-1">
+          <h3>Human agency in the age of AI</h3>
           <p>
-            Data analysis used to be defined largely by execution: extracting, cleaning, summarising, and reporting.
-            Skill was often measured by how efficiently you could do those steps. As AI becomes embedded in tools
-            like Microsoft 365 Copilot, many mechanical parts of analysis become faster and cheaper.
-          </p>
-
-          <p>
-            That doesn’t make humans irrelevant. It changes the nature of value.
-            When execution becomes easier, <strong>judgment becomes the differentiator</strong>.
-            The question shifts from “How fast can you compute?” to “How well can you decide what matters?”
-          </p>
-
-          <p>
-            That is what we mean by <strong>human agency</strong>: the human ability to choose the goal, define the question,
-            set boundaries, interpret outcomes, and take responsibility for decisions influenced by data.
-            AI can generate options and drafts; it cannot own consequences.
-          </p>
-
-          <div class="callout">
-            <h3>Key idea</h3>
-            <p>
-              Copilot doesn’t replace thinking—it shifts your work upward.
-              You spend less effort on <em>doing</em> and more on <em>directing</em>.
-            </p>
-          </div>
-
-          <p>
-            Agency shows up in the questions AI won’t reliably ask on its own:
-            “What decision are we trying to make?” “What assumptions are embedded here?”
-            “What would be a technically correct but misleading conclusion?”
-            “What context is missing from the dataset?”
+            As AI tools make execution easier, judgment becomes the scarce skill.
+            Human agency is the ability to define goals, frame questions, and take responsibility
+            for decisions influenced by data.
           </p>
         </section>
 
-        <section id="ch1-2" class="section">
-          <h3>Prompting Copilot like an AI Data Strategist</h3>
-
+        <section id="ch1-2">
+          <h3>Prompting as strategy</h3>
           <p>
-            Many people start by treating Copilot as an answer machine: “Analyse this,” “Summarise that,” “Create a chart.”
-            This can work, but often produces shallow output because the prompt contains no strategy.
-            Copilot can only optimise toward what you ask for—and vague prompts produce vague results.
-          </p>
-
-          <p>
-            The AI Data Strategist uses Copilot differently: as a <strong>thinking partner</strong> that can explore,
-            draft, compare, and iterate—while the human stays in control of intent.
-            Prompting becomes less about “magic words” and more about structured reasoning.
-          </p>
-
-          <p>A strategist-style prompt usually includes:</p>
-          <ul>
-            <li><strong>Outcome</strong>: what decision or action this analysis should inform</li>
-            <li><strong>Scope</strong>: which segment, timeframe, or slice matters most</li>
-            <li><strong>Constraints</strong>: assumptions, definitions, and what to ignore</li>
-            <li><strong>Quality checks</strong>: limitations, missing data, or risks to call out</li>
-            <li><strong>Format</strong>: how results should be delivered (bullets, table, narrative)</li>
-          </ul>
-
-          <div class="callout">
-            <h3>Example: modern prompting (copy &amp; adapt)</h3>
-            <pre><code>Copilot, analyse this dataset to answer:
-1) What are the strongest signals associated with churn for long-tenured customers?
-2) Which patterns are actionable for retention strategy next quarter?
-
-Constraints:
-- Treat “churn” as customers inactive for 60+ days.
-- Call out data quality risks (missing values, duplicates, inconsistent categories).
-- Separate findings into: (a) insights, (b) evidence, (c) confidence level, (d) recommended next checks.
-
-Output format:
-- Executive summary (5 bullets)
-- Then a short table of top drivers with brief explanation and caveats.</code></pre>
-          </div>
-
-          <p>
-            This is the core shift: we are not “only data analysts” anymore.
-            Execution still matters, but the higher-value capability is <strong>strategy</strong>—
-            turning messy questions into analysable problems, and turning AI output into decisions with clear reasoning.
+            Prompting is not about clever wording. It is about expressing intent:
+            what decision matters, what assumptions apply, and what uncertainty remains.
           </p>
         </section>
 
-        <section id="ch1-3" class="section">
-          <h3>Responsibility, limits, and trust</h3>
-
+        <section id="ch1-3">
+          <h3>Responsibility and trust</h3>
           <p>
-            One of the biggest risks of AI-assisted analysis is false confidence.
-            AI output can sound polished and authoritative—even when it’s wrong, incomplete, or based on shaky assumptions.
-            This is precisely why human agency matters: it is the discipline of verification.
+            AI output should be treated as a draft, not a truth.
+            Humans remain accountable for validation and interpretation.
           </p>
-
-          <p>
-            A useful rule is to treat AI output as a <strong>draft</strong>, not a truth.
-            Ask: What evidence supports this? What definitions were assumed? What data might be missing?
-            What would change my mind?
-          </p>
-
-          <div class="callout">
-            <h3>Responsibility stays with you</h3>
-            <p>
-              If an AI-generated insight influences a decision, the human is still accountable.
-              Agency means checking logic, validating data, and stating uncertainty clearly.
-            </p>
-          </div>
         </section>
 
-        <section id="ch1-ex" class="section">
+        <section id="ch1-ex">
           <h3>Exercises</h3>
-
-          <ul class="checklist">
-            <li>
-              Take a vague prompt like “Analyse this data” and rewrite it into a strategist prompt that includes:
-              outcome, scope, constraints, quality checks, and output format.
-            </li>
-            <li>
-              Write down one decision you care about (work, study, or personal). Then list:
-              (a) what you <em>need</em> to decide, (b) what data could inform it, (c) what context the data won’t capture.
-            </li>
-            <li>
-              Identify one “dangerous” scenario where a polished AI answer could mislead you.
-              Write two checks you would perform before acting on it.
-            </li>
-          </ul>
-
-          <p>
-            <strong>Chapter takeaway:</strong>
-            AI changes how analysis is produced. Human agency determines whether the analysis is useful—and safe.
-          </p>
-        </section>
-
-        <p class="backtop"><a href="#top">↑ Back to top</a></p>
-      </section>
-
-      <!-- ===================== -->
-      <!-- CHAPTER 2 (FULL) -->
-      <!-- ===================== -->
-      <section id="ch2" class="chapter" aria-labelledby="ch2-title">
-        <header class="chapter-header">
-          <p class="chapter-kicker">Chapter 2</p>
-          <h2 id="ch2-title">From Data to Information: KPIs & Descriptive Statistics</h2>
-          <p class="chapter-summary">
-            How raw observations become usable insight—and how AI accelerates (but does not replace) that process.
-          </p>
-        </header>
-
-        <section id="ch2-1" class="section">
-          <h3>What do we mean by “data”?</h3>
-
-          <p>
-            At its simplest, <strong>data is recorded observation</strong>.
-            It can be numbers in a spreadsheet, categories in a dropdown, timestamps in a log,
-            text in a form, or events like clicks and purchases.
-          </p>
-
-          <p>
-            On its own, data has no meaning. A table of numbers does not tell a story.
-            A list of transactions does not explain performance. Meaning emerges when humans ask questions.
-          </p>
-
-          <p>
-            This matters even more in an AI-enabled world:
-            AI can process data, but humans decide what the data is for.
-            If you don’t define purpose, you risk getting “analysis” that is technically impressive yet practically irrelevant.
-          </p>
-        </section>
-
-        <section id="ch2-2" class="section">
-          <h3>Descriptive statistics: extracting information from data</h3>
-
-          <p>
-            Descriptive statistics answer one powerful question:
-            <strong>“What is going on in this data?”</strong>
-            They do not predict the future or explain causes; they summarise what is present.
-          </p>
-
-          <p>Common descriptive statistics include:</p>
           <ul>
-            <li>Counts (how many?)</li>
-            <li>Totals and sums (how much?)</li>
-            <li>Averages and medians (what’s typical?)</li>
-            <li>Minimums and maximums (what are the extremes?)</li>
-            <li>Variation/spread (how consistent or noisy is it?)</li>
+            <li>Rewrite a vague prompt as a strategic one.</li>
+            <li>Identify one risk of trusting AI output too quickly.</li>
           </ul>
-
-          <p>
-            These summaries help you see patterns you can’t see by staring at rows.
-            They also provide a grounding layer: a way to sanity-check conclusions before you trust higher-level interpretation.
-          </p>
-
-          <div class="callout">
-            <h3>Why descriptive stats still matter with AI</h3>
-            <p>
-              AI can summarise instantly, but descriptive statistics help you validate:
-              Is this trend real? Is it driven by outliers? Are we measuring the right thing?
-            </p>
-          </div>
-        </section>
-
-        <section id="ch2-3" class="section">
-          <h3>KPI analysis: focusing attention on what matters</h3>
-
-          <p>
-            KPI analysis is often misunderstood as “tracking dashboard numbers.”
-            In reality, KPIs (Key Performance Indicators) are <strong>decision lenses</strong>:
-            selected measures that help humans judge whether something is moving in the right direction.
-          </p>
-
-          <p>
-            A KPI is not just a metric. It is a metric <em>with intent</em>.
-            For example, “revenue” is a metric; “revenue growth rate” might be a KPI;
-            “revenue growth among returning customers” might be a strategic KPI.
-          </p>
-
-          <p>
-            What turns a metric into a KPI is the question behind it:
-            <em>“What behaviour or outcome are we trying to understand or influence?”</em>
-          </p>
-
-          <p>
-            KPI analysis typically involves:
-            tracking changes over time, comparing to baselines or targets,
-            segmenting performance (by region, product, customer type),
-            and asking what intervention is warranted.
-          </p>
-
-          <div class="callout">
-            <h3>Agency moment</h3>
-            <p>
-              AI can calculate thousands of metrics quickly.
-              Humans must decide which few deserve attention—and what “good” should mean.
-            </p>
-          </div>
-        </section>
-
-        <section id="ch2-4" class="section">
-          <h3>Copilot and AI agents: acceleration with accountability</h3>
-
-          <p>
-            Tools like Microsoft 365 Copilot can accelerate KPI analysis and descriptive statistics
-            by drafting summaries, comparing periods, highlighting anomalies, and generating narrative explanations.
-            Used well, Copilot functions as a compression engine: it turns large data into digestible insight drafts.
-          </p>
-
-          <p>
-            In more advanced setups, AI agents (for example, built in Copilot Studio) can be designed to:
-            monitor KPIs continuously, flag unusual changes, and prepare recurring “performance briefs.”
-            These agents don’t create strategy—they operationalise it.
-          </p>
-
-          <p>
-            Every agent reflects human decisions: which KPIs it watches, what counts as unusual,
-            how often it reports, and who receives the information.
-            Agency doesn’t disappear—it becomes encoded.
-          </p>
-
-          <div class="callout">
-            <h3>Boundary</h3>
-            <p>
-              AI can observe and report. Humans interpret, decide, and remain accountable.
-            </p>
-          </div>
-        </section>
-
-        <section id="ch2-ex" class="section">
-          <h3>Exercises</h3>
-
-          <ul class="checklist">
-            <li>
-              Choose a process you care about (work, study, or personal). Define one KPI that would genuinely
-              indicate success or failure—and explain why.
-            </li>
-            <li>
-              Take any dataset and list five descriptive statistics you want to see before trusting any AI-generated insight.
-            </li>
-            <li>
-              Imagine an AI agent monitoring a KPI. What would you <em>not</em> want it to decide without human review?
-              Write two safeguards you would put in place.
-            </li>
-          </ul>
-
-          <p>
-            <strong>Chapter takeaway:</strong>
-            KPIs focus attention. Descriptive statistics provide grounding. AI accelerates insight—but humans decide what it means.
-          </p>
         </section>
 
         <p class="backtop"><a href="#top">↑ Back to top</a></p>
       </section>
 
       <!-- ===================== -->
-      <!-- CHAPTER 3 (FULL, so nothing feels missing) -->
+      <!-- CHAPTER 2 -->
       <!-- ===================== -->
-      <section id="ch3" class="chapter" aria-labelledby="ch3-title">
-        <header class="chapter-header">
-          <p class="chapter-kicker">Chapter 3</p>
-          <h2 id="ch3-title">Exploratory Data Analysis (EDA): Structured Curiosity</h2>
-          <p class="chapter-summary">
-            A practical way to ask better questions, discover patterns, and avoid false confidence—especially with AI in the loop.
-          </p>
-        </header>
+      <section id="ch2" class="chapter">
+        <h2>Chapter 2 — From Data to Information</h2>
 
-        <section id="ch3-1" class="section">
-          <h3>What EDA is (and isn’t)</h3>
-
+        <section id="ch2-1">
+          <h3>What data is</h3>
           <p>
-            Exploratory Data Analysis is the phase where you learn what your data is actually saying—before you commit to conclusions.
-            It’s a discipline of curiosity: you look for distributions, relationships, anomalies, missingness, and contradictions.
+            Data is recorded observation. On its own, it has no meaning.
+            Meaning emerges only when humans ask questions of it.
           </p>
-
-          <p>
-            EDA is not about proving a point. It’s about discovering what is plausibly true and what needs more evidence.
-            In a world where AI can generate confident narratives quickly, EDA is one of the best protections against being misled.
-          </p>
-
-          <div class="callout">
-            <h3>EDA mindset</h3>
-            <p>
-              “Show me what’s there, what’s weird, what’s missing, and what might be misleading.”
-            </p>
-          </div>
         </section>
 
-        <section id="ch3-2" class="section">
+        <section id="ch2-2">
+          <h3>Descriptive statistics</h3>
+          <p>
+            Descriptive statistics summarise data so humans can reason about it:
+            counts, averages, ranges, and variation.
+          </p>
+        </section>
+
+        <section id="ch2-3">
+          <h3>KPI analysis</h3>
+          <p>
+            KPIs are metrics chosen to reflect goals.
+            What makes them powerful is intent, not calculation.
+          </p>
+        </section>
+
+        <section id="ch2-4">
+          <h3>AI, Copilot, and agents</h3>
+          <p>
+            AI accelerates analysis but does not decide what matters.
+            Human agency remains central.
+          </p>
+        </section>
+
+        <section id="ch2-ex">
+          <h3>Exercises</h3>
+          <ul>
+            <li>Define one KPI that truly reflects success.</li>
+            <li>List statistics you’d check before trusting AI insight.</li>
+          </ul>
+        </section>
+
+        <p class="backtop"><a href="#top">↑ Back to top</a></p>
+      </section>
+
+      <!-- ===================== -->
+      <!-- CHAPTER 3 -->
+      <!-- ===================== -->
+      <section id="ch3" class="chapter">
+        <h2>Chapter 3 — Exploratory Data Analysis</h2>
+
+        <section id="ch3-1">
+          <h3>What EDA is</h3>
+          <p>
+            EDA is structured curiosity. It helps you understand what the data
+            is actually saying before drawing conclusions.
+          </p>
+        </section>
+
+        <section id="ch3-2">
           <h3>A simple EDA workflow</h3>
-
           <p>
-            A useful beginner workflow is:
-          </p>
-          <ol>
-            <li><strong>Orientation:</strong> What columns exist? What do they mean? What is the unit of analysis?</li>
-            <li><strong>Quality scan:</strong> Missing values, duplicates, inconsistent categories, impossible ranges.</li>
-            <li><strong>Univariate view:</strong> Distributions of key variables (typical values, spread, outliers).</li>
-            <li><strong>Segment comparisons:</strong> How metrics differ by group (region, product, cohort, etc.).</li>
-            <li><strong>Relationships:</strong> Correlations or patterns worth exploring (without assuming causation).</li>
-            <li><strong>Questions log:</strong> Document follow-ups: what you need to check next and why.</li>
-          </ol>
-
-          <p>
-            This is where descriptive statistics become practical: they let you quickly test whether a story is supported by the shape of the data.
-            EDA often produces better questions than it produces final answers—and that’s a sign it’s working.
+            Inspect structure, check quality, explore distributions, compare segments,
+            and log follow‑up questions.
           </p>
         </section>
 
-        <section id="ch3-3" class="section">
-          <h3>Using Copilot to support EDA (without outsourcing thinking)</h3>
-
+        <section id="ch3-3">
+          <h3>EDA with AI</h3>
           <p>
-            Copilot can help you move faster through EDA by drafting summaries, suggesting checks, and helping you compare groups.
-            The key is to keep the human in control: use Copilot to generate candidates, then verify using basic statistics and logic.
-          </p>
-
-          <div class="callout">
-            <h3>EDA prompt pattern</h3>
-            <pre><code>Copilot, help me do a first-pass EDA on this dataset.
-
-Please provide:
-- A quick data dictionary guess (what each column likely represents)
-- Missing values and duplicates to watch for
-- Basic descriptive statistics for key numeric columns
-- Notable outliers or unusual distributions
-- 5 questions I should ask next, based on what you see
-
-Important:
-- Clearly label uncertainties and assumptions
-- Suggest sanity checks I can run to verify.</code></pre>
-          </div>
-
-          <p>
-            If you build an AI agent for EDA (for example, to run a recurring “data health + KPI brief”),
-            keep it constrained: define what it monitors, what it can claim, and what it must flag for human review.
-            Agents are powerful—but without guardrails, they can amplify noise into “insight.”
+            AI can assist exploration, but humans must verify and interpret.
           </p>
         </section>
 
-        <section id="ch3-ex" class="section">
+        <section id="ch3-ex">
           <h3>Exercises</h3>
-
-          <ul class="checklist">
-            <li>Pick a dataset and write 10 questions you can ask without doing any modelling (only EDA).</li>
-            <li>Identify one variable that could mislead you if you ignore distribution and outliers—and explain why.</li>
-            <li>Create a simple “EDA checklist” you would run before trusting an AI-generated narrative.</li>
+          <ul>
+            <li>Write five EDA questions for a dataset you know.</li>
           </ul>
-
-          <p>
-            <strong>Chapter takeaway:</strong>
-            EDA is structured curiosity. AI can help you explore faster, but humans must keep control of meaning and claims.
-          </p>
         </section>
-
-        <p class="backtop"><a href="#top">↑ Back to top</a></p>
-      </section>
-
-      <!-- Closing -->
-      <section id="end" class="chapter" aria-labelledby="end-title">
-        <header class="chapter-header">
-          <h2 id="end-title">Closing notes</h2>
-          <p class="chapter-summary">
-            A simple principle to keep.
-          </p>
-        </header>
-
-        <p>
-          The modern opportunity is not that AI can do analysis faster.
-          The opportunity is that humans can spend more time on what only humans can do:
-          define purpose, question assumptions, interpret responsibly, and decide wisely.
-        </p>
-
-        <div class="callout">
-          <h3>Final reminder</h3>
-          <p>
-            AI makes output cheaper. Human agency keeps decisions trustworthy.
-          </p>
-        </div>
 
         <p class="backtop"><a href="#top">↑ Back to top</a></p>
       </section>
     </article>
   </main>
 
-  <footer class="site-footer" role="contentinfo">
+  <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© <span id="year">2026</span> Human Agency & AI — Single-page eBook.</p>
-      <p class="fine"><a href="#top">Back to top</a></p>
+      <p>© 2026 Human Agency & AI</p>
     </div>
   </footer>
-
-  <script>
-    // Set current year
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Make TOC collapsible by default on small screens
-    (function () {
-      const toc = document.querySelector(".toc-details");
-      if (!toc) return;
-
-      const mq = window.matchMedia("(max-width: 900px)");
-      function apply() {
-        if (mq.matches) {
-          toc.removeAttribute("open"); // collapsed by default on mobile
-        } else {
-          toc.setAttribute("open", ""); // open by default on desktop
-        }
-      }
-      apply();
-      mq.addEventListener?.("change", apply);
-    })();
-  </script>
 </body>
 </html>
