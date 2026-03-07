@@ -3,329 +3,324 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Data Analysis eBook — Your Title Here</title>
-  <meta name="description" content="A single-page e-book teaching data analysis with practical examples and exercises." />
+  <title>Human Agency & AI — A Single‑Page eBook</title>
+  <meta name="description" content="A single-page e-book on human agency, KPIs, descriptive statistics, and AI-assisted data analysis with Microsoft Copilot." />
+
+  <!-- ✅ CSS linked correctly -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
   <a class="skip-link" href="#content">Skip to content</a>
 
-  <!-- Sticky header -->
-  <header class="site-header" role="banner" id="top">
+  <!-- Header -->
+  <header class="site-header" id="top">
     <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="Back to top">
-        <span class="brand-mark" aria-hidden="true">◼</span>
+      <a href="#top" class="brand">
+        <span class="brand-mark">◼</span>
         <span class="brand-text">
-          <span class="brand-title">Data Analysis eBook</span>
-          <span class="brand-subtitle">Learn by doing — chapters, examples, exercises</span>
+          <span class="brand-title">Human Agency & AI</span>
+          <span class="brand-subtitle">A practical eBook</span>
         </span>
       </a>
 
-      <nav class="header-nav" aria-label="Quick chapters">
+      <nav class="header-nav">
+        <a href="#intro">Intro</a>
         <a href="#ch1">Chapter 1</a>
         <a href="#ch2">Chapter 2</a>
         <a href="#ch3">Chapter 3</a>
-        <a class="btn" href="#download">Download</a>
       </nav>
     </div>
   </header>
 
   <main id="content" class="container layout">
-    <!-- Table of contents (sidebar on desktop) -->
-    <aside class="toc" aria-label="Table of contents">
+    <!-- TOC -->
+    <aside class="toc">
       <div class="toc-card">
         <h2 class="toc-title">Contents</h2>
-
         <ol class="toc-list">
           <li><a href="#intro">Introduction</a></li>
           <li>
-            <a href="#ch1">Chapter 1: Foundations</a>
+            <a href="#ch1">Chapter 1 — Human Agency</a>
             <ol>
-              <li><a href="#ch1-1">What data analysis is</a></li>
-              <li><a href="#ch1-2">A simple workflow</a></li>
+              <li><a href="#ch1-1">Agency in the age of AI</a></li>
+              <li><a href="#ch1-2">The AI Data Strategist</a></li>
+              <li><a href="#ch1-3">Prompting as intent</a></li>
               <li><a href="#ch1-ex">Exercises</a></li>
             </ol>
           </li>
           <li>
-            <a href="#ch2">Chapter 2: Cleaning & Preparing Data</a>
+            <a href="#ch2">Chapter 2 — From Data to Information</a>
             <ol>
-              <li><a href="#ch2-1">Common data issues</a></li>
-              <li><a href="#ch2-2">Cleaning checklist</a></li>
+              <li><a href="#ch2-1">What data is</a></li>
+              <li><a href="#ch2-2">Descriptive statistics</a></li>
+              <li><a href="#ch2-3">KPIs and focus</a></li>
+              <li><a href="#ch2-4">AI & Copilot</a></li>
               <li><a href="#ch2-ex">Exercises</a></li>
             </ol>
           </li>
-          <li>
-            <a href="#ch3">Chapter 3: Exploratory Analysis</a>
-            <ol>
-              <li><a href="#ch3-1">Summary statistics</a></li>
-              <li><a href="#ch3-2">Visual exploration</a></li>
-              <li><a href="#ch3-ex">Exercises</a></li>
-            </ol>
-          </li>
-          <li><a href="#resources">Resources</a></li>
-          <li><a href="#download">Download / Next steps</a></li>
+          <li><a href="#ch3">Chapter 3 — EDA</a></li>
         </ol>
-
-        <p class="toc-note">
-          Tip: Use <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>F</kbd> to search within this book.
-        </p>
       </div>
     </aside>
 
-    <!-- Main reading column -->
-    <article class="book" aria-label="E-book content">
-      <!-- Cover / hero -->
-      <section class="hero" aria-labelledby="book-title">
-        <p class="kicker">Single-page eBook</p>
-        <h1 id="book-title">Your eBook Title Here</h1>
+    <!-- Book -->
+    <article class="book">
+
+      <!-- Hero -->
+      <section class="hero">
+        <p class="kicker">Single‑page eBook</p>
+        <h1>Human Agency & AI in Modern Data Work</h1>
         <p class="lead">
-          A practical guide to learning data analysis from scratch — with examples, mini projects, and exercises.
+          A reflective and practical guide to understanding data, extracting meaning,
+          and working responsibly with AI tools such as Microsoft 365 Copilot.
         </p>
-
-        <div class="meta">
-          <span>Audience: Beginner → Intermediate</span>
-          <span aria-hidden="true">•</span>
-          <span>Estimated time: self-paced</span>
-        </div>
-
-        <div class="hero-actions">
-          <a class="btn" href="#ch1">Start Chapter 1</a>
-          <a class="btn ghost" href="#download">Get the PDF</a>
-        </div>
       </section>
 
       <!-- Introduction -->
-      <section id="intro" class="chapter" aria-labelledby="intro-title">
+      <section id="intro" class="chapter">
         <header class="chapter-header">
-          <h2 id="intro-title">Introduction</h2>
+          <h2>Introduction</h2>
           <p class="chapter-summary">
-            What you’ll learn, how the book is structured, and what tools you’ll need.
+            Why this book exists and how to read it.
           </p>
         </header>
 
         <p>
-          Replace this text with your own introduction. A strong intro usually includes:
-          the promise (what readers will be able to do), prerequisites, and how to practice.
+          We are entering a phase of work where AI is no longer a specialist tool.
+          It is embedded into everyday systems: documents, spreadsheets, chats,
+          and dashboards. This shift changes not only how analysis is performed,
+          but how responsibility and judgment must be exercised.
         </p>
 
-        <div class="callout">
-          <h3>Suggested tools</h3>
-          <ul>
-            <li>Spreadsheet (Excel/Google Sheets) or Python (Pandas)</li>
-            <li>A sample dataset (CSV)</li>
-            <li>A notebook for notes and questions</li>
-          </ul>
-        </div>
+        <p>
+          This eBook is not about learning formulas or tools in isolation.
+          It is about learning how to think clearly about data in an AI‑assisted world—
+          where the cost of producing analysis is low, but the cost of misinterpretation
+          can be very high.
+        </p>
 
         <p class="backtop"><a href="#top">↑ Back to top</a></p>
       </section>
 
-      <!-- Chapter 1 -->
-      <section id="ch1" class="chapter" aria-labelledby="ch1-title">
+      <!-- ===================== -->
+      <!-- CHAPTER 1 -->
+      <!-- ===================== -->
+
+      <section id="ch1" class="chapter">
         <header class="chapter-header">
           <p class="chapter-kicker">Chapter 1</p>
-          <h2 id="ch1-title">Foundations</h2>
-          <p class="chapter-summary">The mindset and workflow behind effective analysis.</p>
+          <h2>Human Agency & the AI Data Strategist</h2>
+          <p class="chapter-summary">
+            Why direction, judgment, and responsibility matter more than execution.
+          </p>
         </header>
 
         <section id="ch1-1" class="section">
-          <h3>What data analysis is</h3>
+          <h3>Human agency in the age of AI</h3>
+
           <p>
-            Data analysis is the process of turning raw data into useful insight for decisions.
-            It involves asking good questions, cleaning data, exploring patterns, and communicating results.
+            For much of the past, data analysis was defined by execution:
+            writing queries, building models, and producing reports.
+            Skill was measured by technical fluency and speed.
           </p>
+
+          <p>
+            AI fundamentally changes this balance. When tools like Copilot
+            can summarise, visualise, and draft analysis instantly,
+            execution becomes abundant. Judgment becomes scarce.
+          </p>
+
+          <p>
+            Human agency is the ability to decide what is worth analysing,
+            what assumptions are acceptable, and what conclusions should—or should not—
+            be acted upon. This agency cannot be delegated to AI.
+          </p>
+
+          <div class="callout">
+            <h3>Key shift</h3>
+            <p>
+              As AI reduces effort, responsibility increases.
+            </p>
+          </div>
         </section>
 
         <section id="ch1-2" class="section">
-          <h3>A simple workflow</h3>
-          <ol>
-            <li>Define the question</li>
-            <li>Collect & understand the data</li>
-            <li>Clean & prepare</li>
-            <li>Explore (EDA)</li>
-            <li>Model or summarise</li>
-            <li>Communicate results</li>
-          </ol>
+          <h3>The emergence of the AI Data Strategist</h3>
 
-          <pre><code># Example (pseudo/Python-ish)
-question = "What drives customer churn?"
-data = load("customers.csv")
-clean = clean_data(data)
-insights = explore(clean)
-report(insights)</code></pre>
+          <p>
+            The AI Data Strategist is not defined by mastery of tools,
+            but by mastery of intent. They translate vague goals into
+            analytical questions that AI can assist with—but not decide.
+          </p>
+
+          <p>
+            This role involves framing problems, defining success,
+            evaluating trade‑offs, and communicating uncertainty.
+            AI supports these tasks, but does not replace them.
+          </p>
+        </section>
+
+        <section id="ch1-3" class="section">
+          <h3>Prompting as an expression of intent</h3>
+
+          <p>
+            Prompting is often misunderstood as “finding the right wording.”
+            In practice, it is the act of expressing what you care about.
+          </p>
+
+          <p>
+            A strong prompt reflects:
+          </p>
+
+          <ul>
+            <li>The decision the analysis should support</li>
+            <li>The audience for the result</li>
+            <li>The assumptions that matter</li>
+            <li>The limits of confidence</li>
+          </ul>
+
+          <div class="callout">
+            <h3>Strategist prompt example</h3>
+            <pre><code>Analyse this dataset to understand
+which factors most influence customer churn.
+
+Constraints:
+- Focus on long‑tenured customers
+- Highlight data quality risks
+- Separate insight from confidence
+
+Output:
+- Executive summary
+- Key drivers with caveats</code></pre>
+          </div>
         </section>
 
         <section id="ch1-ex" class="section">
           <h3>Exercises</h3>
           <ul class="checklist">
-            <li>Write 3 business questions you’d like to answer with data.</li>
-            <li>Find one dataset and identify 5 columns you don’t understand (yet).</li>
-            <li>Describe how you’d measure “success” for your question.</li>
+            <li>Rewrite a vague prompt as a strategic one.</li>
+            <li>List three assumptions hidden in a KPI you use.</li>
+            <li>Identify one decision AI should never make alone.</li>
           </ul>
         </section>
 
         <p class="backtop"><a href="#top">↑ Back to top</a></p>
       </section>
 
-      <!-- Chapter 2 -->
-      <section id="ch2" class="chapter" aria-labelledby="ch2-title">
+      <!-- ===================== -->
+      <!-- CHAPTER 2 -->
+      <!-- ===================== -->
+
+      <section id="ch2" class="chapter">
         <header class="chapter-header">
           <p class="chapter-kicker">Chapter 2</p>
-          <h2 id="ch2-title">Cleaning & Preparing Data</h2>
-          <p class="chapter-summary">Make messy data usable and trustworthy.</p>
+          <h2>From Data to Information</h2>
+          <p class="chapter-summary">
+            How data becomes understandable, actionable, and meaningful.
+          </p>
         </header>
 
         <section id="ch2-1" class="section">
-          <h3>Common data issues</h3>
-          <ul>
-            <li>Missing values</li>
-            <li>Duplicates</li>
-            <li>Inconsistent categories (e.g., “UK”, “U.K.”, “United Kingdom”)</li>
-            <li>Bad types (numbers stored as text)</li>
-            <li>Outliers and impossible values</li>
-          </ul>
+          <h3>What data actually is</h3>
+
+          <p>
+            Data is recorded observation: numbers, categories, timestamps,
+            text, or events. On its own, data does nothing.
+          </p>
+
+          <p>
+            Meaning only emerges when humans decide what questions to ask
+            and what decisions the data should inform.
+          </p>
         </section>
 
         <section id="ch2-2" class="section">
-          <h3>Cleaning checklist</h3>
-          <div class="grid-2">
-            <div class="card">
-              <h4>Structure</h4>
-              <ul>
-                <li>One row = one observation</li>
-                <li>One column = one variable</li>
-                <li>Consistent column names</li>
-              </ul>
-            </div>
-            <div class="card">
-              <h4>Quality</h4>
-              <ul>
-                <li>Handle missing values intentionally</li>
-                <li>Remove/merge duplicates</li>
-                <li>Validate ranges & types</li>
-              </ul>
-            </div>
-          </div>
+          <h3>Descriptive statistics as sense‑making tools</h3>
 
-          <pre><code># Example cleaning snippet (Python)
-df.columns = [c.strip().lower().replace(" ", "_") for c in df.columns]
-df = df.drop_duplicates()
-df["age"] = pd.to_numeric(df["age"], errors="coerce")</code></pre>
+          <p>
+            Descriptive statistics reduce complexity.
+            They help humans answer a basic question:
+            <strong>What is happening?</strong>
+          </p>
+
+          <p>
+            Counts, averages, medians, ranges, and distributions
+            provide grounding and context—especially when validating AI output.
+          </p>
+        </section>
+
+        <section id="ch2-3" class="section">
+          <h3>KPIs: choosing what deserves attention</h3>
+
+          <p>
+            KPIs are not neutral metrics.
+            They encode priorities, values, and trade‑offs.
+          </p>
+
+          <p>
+            Choosing a KPI is a human act of focus:
+            deciding what matters enough to be watched continuously.
+          </p>
+        </section>
+
+        <section id="ch2-4" class="section">
+          <h3>Copilot, AI agents, and responsibility</h3>
+
+          <p>
+            Copilot can accelerate summarisation, comparison, and reporting.
+            AI agents can monitor KPIs continuously.
+          </p>
+
+          <p>
+            But acceleration does not remove accountability.
+            Humans remain responsible for interpretation and action.
+          </p>
         </section>
 
         <section id="ch2-ex" class="section">
           <h3>Exercises</h3>
           <ul class="checklist">
-            <li>Pick a dataset and list 10 potential cleaning checks.</li>
-            <li>Find duplicates: what counts as “duplicate” in your data?</li>
-            <li>Choose a missing-value strategy for 2 columns and justify it.</li>
+            <li>Define one KPI and explain why it matters.</li>
+            <li>List statistics you’d review before trusting AI insight.</li>
+            <li>Describe one context AI cannot see.</li>
           </ul>
         </section>
 
         <p class="backtop"><a href="#top">↑ Back to top</a></p>
       </section>
 
-      <!-- Chapter 3 -->
-      <section id="ch3" class="chapter" aria-labelledby="ch3-title">
+      <!-- ===================== -->
+      <!-- CHAPTER 3 (placeholder) -->
+      <!-- ===================== -->
+
+      <section id="ch3" class="chapter">
         <header class="chapter-header">
           <p class="chapter-kicker">Chapter 3</p>
-          <h2 id="ch3-title">Exploratory Data Analysis (EDA)</h2>
-          <p class="chapter-summary">Understand distributions, relationships, and patterns.</p>
+          <h2>Exploratory Data Analysis</h2>
+          <p class="chapter-summary">
+            Structured curiosity in an AI‑assisted world.
+          </p>
         </header>
 
-        <section id="ch3-1" class="section">
-          <h3>Summary statistics</h3>
-          <p>Start with counts, means/medians, spreads, and simple group comparisons.</p>
-
-          <pre><code># Example EDA (Python)
-df.describe(include="all")
-df.groupby("segment")["revenue"].mean().sort_values(ascending=False)</code></pre>
-        </section>
-
-        <section id="ch3-2" class="section">
-          <h3>Visual exploration</h3>
-          <ul>
-            <li>Histograms for distributions</li>
-            <li>Box plots for spread/outliers</li>
-            <li>Scatter plots for relationships</li>
-            <li>Bar charts for comparisons</li>
-          </ul>
-
-          <div class="callout">
-            <h3>Rule of thumb</h3>
-            <p>
-              If you can’t explain the chart in one sentence, it’s probably doing too much.
-            </p>
-          </div>
-        </section>
-
-        <section id="ch3-ex" class="section">
-          <h3>Exercises</h3>
-          <ul class="checklist">
-            <li>Create 3 charts that answer 3 different questions.</li>
-            <li>Write one insight and one caveat per chart.</li>
-            <li>List 5 follow-up questions your EDA suggests.</li>
-          </ul>
-        </section>
+        <p>
+          This chapter will explore EDA as a disciplined way
+          to explore data while maintaining human control.
+        </p>
 
         <p class="backtop"><a href="#top">↑ Back to top</a></p>
       </section>
 
-      <!-- Resources -->
-      <section id="resources" class="chapter" aria-labelledby="resources-title">
-        <header class="chapter-header">
-          <h2 id="resources-title">Resources</h2>
-          <p class="chapter-summary">Links and references you can add later.</p>
-        </header>
-
-        <ul>
-          <li><a href="#" rel="nofollow">Your recommended datasets link</a></li>
-          <li><a href="#" rel="nofollow">Your Python/SQL learning link</a></li>
-          <li><a href="#" rel="nofollow">Your visualisation cheatsheet link</a></li>
-        </ul>
-
-        <p class="backtop"><a href="#top">↑ Back to top</a></p>
-      </section>
-
-      <!-- Download / CTA -->
-      <section id="download" class="chapter" aria-labelledby="download-title">
-        <header class="chapter-header">
-          <h2 id="download-title">Download / Next steps</h2>
-          <p class="chapter-summary">Offer a PDF, newsletter signup, or bonus chapters.</p>
-        </header>
-
-        <div class="cta">
-          <h3>Want the printable version?</h3>
-          <p>Add your PDF link here. You can also collect emails for updates.</p>
-
-          <div class="cta-actions">
-            <a class="btn" href="#" aria-disabled="true">Download PDF (add link)</a>
-
-            <form class="mini-form" action="#" method="post">
-              <label class="sr-only" for="email2">Email</label>
-              <input id="email2" type="email" name="email" placeholder="you@example.com" />
-              <button type="submit">Get updates</button>
-            </form>
-          </div>
-        </div>
-
-        <p class="backtop"><a href="#top">↑ Back to top</a></p>
-      </section>
     </article>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© <span id="year">2026</span> Your Name — Built as a single-page eBook. Website under construction</p>
-      <p class="fine">
-        <a href="#top">Back to top</a> · <a href="#download">Download</a>
-      </p>
+      <p>© <span id="year">2026</span> Human Agency & AI</p>
     </div>
   </footer>
 
   <script>
-    // purely cosmetic: set current year
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
