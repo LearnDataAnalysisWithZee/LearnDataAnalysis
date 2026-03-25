@@ -9,6 +9,7 @@
     <meta name="robots" content="index, follow">
 
     <style>
+        /* Base page */
 body {
     margin: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont,
@@ -17,36 +18,58 @@ body {
     color: #1f2933;
 }
 
+/* Reading container */
 main {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: clamp(1.5rem, 4vw, 3rem);
+    max-width: 880px;
+    margin: clamp(1.5rem, 4vw, 4rem) auto;
+    padding: clamp(1.75rem, 4vw, 3.25rem);
+
     background: #ffffff;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+    border-radius: 14px;
+
+    box-shadow:
+        0 1px 3px rgba(0,0,0,0.04),
+        0 12px 40px rgba(0,0,0,0.08);
 }
 
-/* Turn <pre> into editorial typography */
+/* Editorial-style text (still verbatim-safe) */
 pre {
+    margin: 0;
+
     white-space: pre-wrap;
     word-wrap: break-word;
 
     font-family: inherit;      /* remove monospace */
     font-size: 1rem;
-    line-height: 1.75;
+    line-height: 1.8;
 
-    margin: 0;
+    color: #1f2933;
+    letter-spacing: 0.01em;
 }
 
-/* Improve paragraph rhythm */
+/* Gentle visual hierarchy without altering text */
 pre::first-line {
     font-weight: 600;
-    font-size: 1.15rem;
+    font-size: 1.2rem;
+}
+
+/* Improve vertical rhythm between paragraphs */
+pre br {
+    display: block;
+    margin-bottom: 0.6rem;
 }
 
 /* Mobile optimisation */
 @media (max-width: 600px) {
+    main {
+        margin: 1rem;
+        padding: 1.5rem;
+        border-radius: 10px;
+    }
+
     pre {
         font-size: 0.95rem;
+        line-height: 1.75;
     }
 }
     </style>
