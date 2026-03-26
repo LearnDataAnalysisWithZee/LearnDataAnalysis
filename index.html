@@ -112,6 +112,78 @@
                 border-radius: 12px;
             }
         }
+        /* ---------------------------
+   Calls Log Table
+--------------------------- */
+
+.calls-log-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 3rem 0;
+    font-size: 0.95rem;
+    background: transparent;
+}
+
+/* Header */
+.calls-log-table thead th {
+    text-align: left;
+    font-weight: 600;
+    padding: 0.9rem 1rem;
+    color: var(--ink);
+    border-bottom: 2px solid var(--rule);
+    background: transparent;
+}
+
+/* Body cells */
+.calls-log-table tbody td {
+    padding: 0.9rem 1rem;
+    vertical-align: top;
+    border-bottom: 1px solid var(--rule);
+    color: var(--ink-soft);
+}
+
+/* First column (Field names) */
+.calls-log-table tbody td:first-child {
+    font-weight: 500;
+    color: var(--ink);
+    white-space: nowrap;
+}
+
+/* Subtle hover for readability */
+.calls-log-table tbody tr:hover {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+/* Mobile handling */
+@media (max-width: 600px) {
+    .calls-log-table {
+        font-size: 0.9rem;
+    }
+
+    .calls-log-table thead {
+        display: none;
+    }
+
+    .calls-log-table tbody tr {
+        display: block;
+        margin-bottom: 1.5rem;
+        border-bottom: 2px solid var(--rule);
+    }
+
+    .calls-log-table tbody td {
+        display: block;
+        padding: 0.5rem 0;
+        border-bottom: none;
+    }
+
+    .calls-log-table tbody td:first-child {
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        margin-bottom: 0.25rem;
+        color: var(--ink-soft);
+    }
+}
     </style>
 </head>
 
@@ -206,6 +278,84 @@
         content
     </p>
 
+    <table class="calls-log-table">
+    <thead>
+        <tr>
+            <th>Field</th>
+            <th>Role / Purpose</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>id</td>
+            <td>Unique identifier for each call. Anchors the call to FAQs, scripts, guides, and artefacts, enabling traceability.</td>
+        </tr>
+        <tr>
+            <td>number</td>
+            <td>Phone number associated with the interaction. Supports continuity and identification of repeat interactions.</td>
+        </tr>
+        <tr>
+            <td>time</td>
+            <td>Date and time the call occurred. Used to analyse demand patterns and timing behaviour.</td>
+        </tr>
+        <tr>
+            <td>call type</td>
+            <td>Nature of the call (inbound, outbound, follow‑up, internal). Helps determine handling logic.</td>
+        </tr>
+        <tr>
+            <td>call status</td>
+            <td>Technical outcome of the call (answered, missed, voicemail, abandoned). Highlights service gaps.</td>
+        </tr>
+        <tr>
+            <td>contact type</td>
+            <td>Identifies the relationship of the caller to the organisation (customer, partner, internal).</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>Name of the contact if available. Supports personalisation and continuity.</td>
+        </tr>
+        <tr>
+            <td>intent</td>
+            <td>What the caller is trying to achieve. Core semantic field for routing, FAQs, and scripts.</td>
+        </tr>
+        <tr>
+            <td>purpose</td>
+            <td>Specific reason behind the call. Adds nuance to intent.</td>
+        </tr>
+        <tr>
+            <td>follow up</td>
+            <td>Indicates whether further action is required and what that action is.</td>
+        </tr>
+        <tr>
+            <td>working day</td>
+            <td>Indicates whether the call occurred during standard operating hours.</td>
+        </tr>
+        <tr>
+            <td>status</td>
+            <td>Business outcome of the call (open, resolved, escalated, pending).</td>
+        </tr>
+        <tr>
+            <td>FAQ</td>
+            <td>Frequently asked question derived from this call or similar calls.</td>
+        </tr>
+        <tr>
+            <td>answer</td>
+            <td>Approved response to the FAQ. Acts as trusted knowledge.</td>
+        </tr>
+        <tr>
+            <td>script</td>
+            <td>Structured conversation flow generated from calls and FAQs.</td>
+        </tr>
+        <tr>
+            <td>guide</td>
+            <td>Supporting guidance such as tone, escalation rules, or compliance notes.</td>
+        </tr>
+        <tr>
+            <td>artefact</td>
+            <td>Reusable output created from the call (FAQ, script, prompt, guide, report).</td>
+        </tr>
+    </tbody>
+</table>
 </main>
 
 </body>
