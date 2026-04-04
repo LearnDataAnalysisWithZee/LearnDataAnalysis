@@ -113,10 +113,10 @@
             }
         }
         /* ---------------------------
-   Calls Log Table
+   Table
 --------------------------- */
 
-.calls-log-table {
+.table {
     width: 100%;
     border-collapse: collapse;
     margin: 3rem 0;
@@ -125,7 +125,7 @@
 }
 
 /* Header */
-.calls-log-table thead th {
+.table thead th {
     text-align: left;
     font-weight: 600;
     padding: 0.9rem 1rem;
@@ -135,7 +135,7 @@
 }
 
 /* Body cells */
-.calls-log-table tbody td {
+.table tbody td {
     padding: 0.9rem 1rem;
     vertical-align: top;
     border-bottom: 1px solid var(--rule);
@@ -143,40 +143,40 @@
 }
 
 /* First column (Field names) */
-.calls-log-table tbody td:first-child {
+.table tbody td:first-child {
     font-weight: 500;
     color: var(--ink);
     white-space: nowrap;
 }
 
 /* Subtle hover for readability */
-.calls-log-table tbody tr:hover {
+.table tbody tr:hover {
     background: rgba(0, 0, 0, 0.02);
 }
 
 /* Mobile handling */
 @media (max-width: 600px) {
-    .calls-log-table {
+    .table {
         font-size: 0.9rem;
     }
 
-    .calls-log-table thead {
+    .table thead {
         display: none;
     }
 
-    .calls-log-table tbody tr {
+    .table tbody tr {
         display: block;
         margin-bottom: 1.5rem;
         border-bottom: 2px solid var(--rule);
     }
 
-    .calls-log-table tbody td {
+    .table tbody td {
         display: block;
         padding: 0.5rem 0;
         border-bottom: none;
     }
 
-    .calls-log-table tbody td:first-child {
+    .table tbody td:first-child {
         font-size: 0.85rem;
         text-transform: uppercase;
         letter-spacing: 0.04em;
@@ -243,7 +243,7 @@
 
 <section>
   <h2>Create New Scripts Workflow</h2>
-  <table>
+  <table class="table">
     <thead>
       <tr>
         <th>Step</th>
