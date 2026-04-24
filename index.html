@@ -285,6 +285,9 @@
 <hr>
     <h3><u>Schema</u></h3>
     <p>Because of this shared requirement, a common schema can be used to track and analyse quote performance across industries. The first table in this schema is the, <b>Quote Register</b>, that acts as the master record for each quote journey. Each entry represents a single quoting process and captures both operational and conversational context. Fields such as ID and Working Day allow the quote to be tracked over time, while Client, Postcode, and Contact anchor the quote to a specific customer. Product or Service Type and Product or Service describe what is being quoted, while Inception or Start Date records when coverage or service is expected to begin. Performance or Current Status reflects the outcome of the quote process, such as quoted, pending, declined, or converted. Agent or Handling Team identifies ownership, and Notes provide qualitative insight from the interaction, including objections, concerns, or special requirements raised during the conversation.</p>
+    <p>
+        Running alongside this is the <b>Quote Pricing Register</b>, that focuses specifically on the pricing outcome of the interaction. This table links back to the quote register through the shared ID and client details, but isolates pricing events so they can be analysed independently. It records the Working Day the quote was delivered, who delivered the quote, the quoted price itself, and relevant pricing notes. This separation allows businesses to distinguish between the progression of the quote as a process and the delivery of price as an event, which is particularly important when pricing is delayed, revised or delivered through multiple channels.
+    </p>
     <hr>
     
 <figure class="content-image">
